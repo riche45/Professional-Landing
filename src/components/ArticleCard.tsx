@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Calendar } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -8,59 +9,53 @@ interface ArticleCardProps {
   date: string;
   category: string;
   slug: string;
-  imageSrc?: string;
+  imageSrc: string;
 }
 
 export default function ArticleCard({ title, description, date, category, slug, imageSrc }: ArticleCardProps) {
+  const { i18n } = useTranslation();
+
+  const formattedDate = new Date(date).toLocaleDateString(
+    i18n.language === 'es' ? 'es-ES' : 'en-US',
+    { year: 'numeric', month: 'long', day: 'numeric' }
+  );
+
   return (
     <motion.article
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className="bg-white dark:bg-dark-800 rounded-card overflow-hidden mb-6 border border-gray-200 dark:border-transparent shadow-sm dark:shadow-none transition-colors duration-300"
+      className="bg-dark-800 rounded-card overflow-hidden hover:bg-dark-700 transition-colors"
     >
-      {imageSrc && (
-        <div className="h-48 overflow-hidden">
-          <img 
-            src={imageSrc} 
-            alt={title} 
-            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+      <Link to={`/articles/${slug}`} className="block">
+        <div className="relative h-48 overflow-hidden">
+          <img
+            src={imageSrc}
+            alt={title}
+            className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
           />
-        </div>
-      )}
-      
-      <div className="p-6">
-        <div className="flex items-center mb-2">
-          <Link 
-            to={`/category/${category.toLowerCase()}`}
-            className="text-sm font-medium px-3 py-1 rounded-full bg-blue-100 dark:bg-primary-900/20 text-blue-600 dark:text-primary-400 hover:bg-blue-200 dark:hover:bg-primary-900/30 transition-colors"
-          >
-            {category}
-          </Link>
-          <div className="flex items-center ml-4 text-sm text-gray-500 dark:text-gray-400">
-            <Calendar size={14} className="mr-1" />
-            {date}
+          <div className="absolute top-4 left-4">
+            <span className="px-3 py-1 bg-dark-800/90 text-primary-400 rounded-full text-sm">
+              {category}
+            </span>
           </div>
         </div>
         
-        <h3 className="text-xl font-medium mb-2">
-          <Link 
-            to={`/article/${slug}`}
-            className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-primary-400 transition-colors"
-          >
+        <div className="p-6">
+          <div className="flex items-center gap-2 text-sm text-gray-400 mb-3">
+            <Calendar size={14} />
+            <time dateTime={date}>{formattedDate}</time>
+          </div>
+          
+          <h2 className="text-xl font-medium mb-2 text-white hover:text-primary-400 transition-colors">
             {title}
-          </Link>
-        </h3>
-        
-        <p className="text-gray-600 dark:text-gray-400 mb-4">{description}</p>
-        
-        <Link 
-          to={`/article/${slug}`}
-          className="inline-flex items-center text-blue-600 dark:text-primary-400 hover:text-blue-700 dark:hover:text-primary-300 transition-colors"
-        >
-          Read more
-        </Link>
-      </div>
+          </h2>
+          
+          <p className="text-gray-400 text-sm line-clamp-2">
+            {description}
+          </p>
+        </div>
+      </Link>
     </motion.article>
   );
 }

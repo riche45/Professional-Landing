@@ -3,7 +3,7 @@ import { Send, Bot, User } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
-interface Message {
+export interface Message {
   id: string;
   role: 'user' | 'assistant';
   content: string;
@@ -11,12 +11,12 @@ interface Message {
 }
 
 export default function IntegratedChat() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
       role: 'assistant',
-      content: '¡Hola! Soy Richard García, desarrollador de software con más de 5 años de experiencia. Puedo contarte sobre mis proyectos, experiencia profesional, artículos técnicos y colaboraciones. ¿En qué puedo ayudarte?',
+      content: t('chat.welcome'),
       timestamp: new Date()
     }
   ]);
@@ -24,6 +24,17 @@ export default function IntegratedChat() {
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    setMessages([
+      {
+        id: '1',
+        role: 'assistant',
+        content: t('chat.welcome'),
+        timestamp: new Date()
+      }
+    ]);
+  }, [i18n.language, t]);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -37,30 +48,30 @@ export default function IntegratedChat() {
     const lowerMessage = userMessage.toLowerCase();
     
     if (lowerMessage.includes('experiencia') || lowerMessage.includes('experience')) {
-      return 'Tengo más de 5 años de experiencia en desarrollo de software, trabajando en diversos sectores como finanzas, tecnología, salud y educación. Me especializo en desarrollo web moderno con React, TypeScript, y tecnologías de machine learning con Python.';
+      return t('chat.responses.experience');
     }
     
     if (lowerMessage.includes('proyecto') || lowerMessage.includes('project')) {
-      return 'He trabajado en múltiples proyectos incluyendo dashboards empresariales, aplicaciones móviles de salud, sistemas de e-learning y plataformas de análisis financiero. Puedes ver algunos de mis trabajos en la sección de artículos y categorías.';
+      return t('chat.responses.projects');
     }
     
     if (lowerMessage.includes('tecnología') || lowerMessage.includes('technology') || lowerMessage.includes('stack')) {
-      return 'Mi stack tecnológico incluye React, TypeScript, Node.js, Python, PostgreSQL, MongoDB, y herramientas de AI/ML. También trabajo con frameworks como Next.js, Express, Django y tecnologías cloud como AWS y Docker.';
+      return t('chat.responses.tech');
     }
     
     if (lowerMessage.includes('colabora') || lowerMessage.includes('trabajo') || lowerMessage.includes('hire')) {
-      return 'Estoy disponible para proyectos freelance, consultoría técnica y colaboraciones. Puedes contactarme a través de la sección "Connects" donde encontrarás más información sobre oportunidades actuales y cómo trabajar conmigo.';
+      return t('chat.responses.collaboration');
     }
     
     if (lowerMessage.includes('artículo') || lowerMessage.includes('blog') || lowerMessage.includes('escribes')) {
-      return 'Escribo regularmente sobre desarrollo de software, inteligencia artificial, y tecnologías emergentes. Mis artículos recientes incluyen temas como el uso de LLMs en desarrollo, integración de AI en e-commerce, y reviews de herramientas tecnológicas.';
+      return t('chat.responses.articles');
     }
     
     if (lowerMessage.includes('hola') || lowerMessage.includes('hello') || lowerMessage.includes('hi')) {
-      return '¡Hola! Es un placer conocerte. Soy un desarrollador apasionado por crear soluciones innovadoras. ¿Te interesa conocer más sobre algún proyecto específico o mi experiencia en alguna tecnología en particular?';
+      return t('chat.responses.greeting');
     }
     
-    return 'Gracias por tu pregunta. Como desarrollador full-stack con experiencia en AI/ML, estoy aquí para ayudarte con cualquier consulta sobre desarrollo de software, proyectos tecnológicos o oportunidades de colaboración. ¿Hay algo específico que te gustaría saber?';
+    return t('chat.responses.default');
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -109,10 +120,12 @@ export default function IntegratedChat() {
           </div>
           <div>
             <h1 className="text-2xl font-medium text-gray-900 dark:text-white">👋 {t('profile.greeting')}</h1>
-            <p className="text-sm text-gray-600 dark:text-gray-400">Asistente Virtual • Siempre disponible</p>
+            <p className="text-sm text-gray-600 dark:text-gray-400">{t('chat.assistant_status')}</p>
           </div>
         </div>
-        <p className="text-gray-700 dark:text-gray-300 mb-2">{t('profile.description')} <a href="#" className="text-blue-600 dark:text-primary-400 hover:underline">resume.richardgarcia.com</a>.</p>
+        <p className="text-gray-700 dark:text-gray-300 mb-2">
+          {t('profile.description')} <a href="/curriculum" className="text-blue-600 dark:text-primary-400 hover:underline">{t('nav.resume')}</a>.
+        </p>
         <p className="text-gray-700 dark:text-gray-300 text-sm">{t('profile.experience')}</p>
       </div>
 
@@ -190,7 +203,7 @@ export default function IntegratedChat() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={handleKeyPress}
-              placeholder="Pregúntame sobre mi experiencia, proyectos o tecnologías..."
+              placeholder={t('chat.input_placeholder')}
               className="w-full bg-gray-100 dark:bg-dark-700 border border-gray-300 dark:border-dark-600 rounded-lg px-4 py-3 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-primary-500 focus:border-transparent transition-all"
               disabled={isLoading}
             />
@@ -205,10 +218,10 @@ export default function IntegratedChat() {
         </form>
         
         <div className="flex items-center justify-between mt-3 text-xs text-gray-500 dark:text-gray-500">
-          <span>Presiona Enter para enviar, Shift + Enter para nueva línea</span>
+          <span>{t('chat.enter_hint')}</span>
           <span className="flex items-center gap-1">
             <div className="w-2 h-2 bg-green-500 dark:bg-success-500 rounded-full"></div>
-            En línea
+            {t('chat.status_online')}
           </span>
         </div>
       </div>

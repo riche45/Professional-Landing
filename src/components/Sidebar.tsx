@@ -6,6 +6,7 @@ import { cn } from '../utils/cn';
 import LanguageSwitcher from './LanguageSwitcher';
 import SocialLinks from './SocialLinks';
 import ThemeToggle from './ThemeToggle';
+import Avatar from './profile/Avatar';
 
 interface SidebarProps {
   onClose: () => void;
@@ -15,24 +16,20 @@ export default function Sidebar({ onClose }: SidebarProps) {
   const { t } = useTranslation();
   
   const navItems = [
-    { icon: <Home size={20} />, label: t('nav.home'), path: '/' },
-    { icon: <Archive size={20} />, label: t('nav.archives'), path: '/archives' },
-    { icon: <Search size={20} />, label: 'Búsqueda', path: '/busqueda' },
-    { icon: <Mic size={20} />, label: t('nav.podcast'), path: '/podcast' },
-    { icon: <FileText size={20} />, label: 'Currículum', path: '/curriculum' },
-    { icon: <AtSign size={20} />, label: t('nav.connects'), path: '/connects' },
-    { icon: <BarChart size={20} />, label: t('nav.surveys'), path: '/surveys' },
+    { icon: <Home size={20} />, label: t('nav.home'), path: t('routes.home') },
+    { icon: <Archive size={20} />, label: t('nav.archives'), path: t('routes.archives') },
+    { icon: <Search size={20} />, label: t('nav.search'), path: t('routes.search') },
+    { icon: <Mic size={20} />, label: t('nav.podcast'), path: t('routes.podcast') },
+    { icon: <FileText size={20} />, label: t('nav.resume'), path: t('routes.resume') },
+    { icon: <AtSign size={20} />, label: t('nav.connects'), path: t('routes.connects') },
+    { icon: <BarChart size={20} />, label: t('nav.surveys'), path: t('routes.surveys') },
   ];
 
   return (
     <div className="flex flex-col h-full py-6">
       <div className="px-4 mb-6 flex justify-between items-center">
         <div className="flex items-center">
-          <img 
-            src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" 
-            alt="Profile" 
-            className="w-16 h-16 rounded-full object-cover border-2 border-gray-200 dark:border-dark-600"
-          />
+          <Avatar size="lg" />
           <button className="lg:hidden ml-auto p-1 text-gray-600 dark:text-gray-300" onClick={onClose}>
             <X size={24} />
           </button>

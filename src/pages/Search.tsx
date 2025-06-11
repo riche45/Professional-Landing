@@ -15,7 +15,7 @@ interface SearchResult {
 }
 
 export default function Search() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [query, setQuery] = useState('');
   const [activeFilters, setActiveFilters] = useState<string[]>(['project', 'article', 'profile', 'chat']);
   const [results, setResults] = useState<SearchResult[]>([]);
@@ -26,9 +26,9 @@ export default function Search() {
     {
       id: '1',
       type: 'project',
-      title: 'E-commerce Dashboard',
-      description: 'Sistema de análisis financiero con React y TypeScript',
-      content: 'Dashboard completo para análisis de ventas, inventario y métricas de rendimiento. Implementado con React, TypeScript, y integración con APIs de pago.',
+      title: t('search.mockData.project1.title', 'E-commerce Dashboard'),
+      description: t('search.mockData.project1.description', 'Sistema de análisis financiero con React y TypeScript'),
+      content: t('search.mockData.project1.content', 'Dashboard completo para análisis de ventas, inventario y métricas de rendimiento. Implementado con React, TypeScript, y integración con APIs de pago.'),
       date: '2024-12-15',
       category: 'Web Development',
       url: '/projects/ecommerce-dashboard'
@@ -36,9 +36,9 @@ export default function Search() {
     {
       id: '2',
       type: 'article',
-      title: 'How Developers are Using LLMs',
-      description: 'Exploring the innovative ways developers are leveraging large language models',
-      content: 'Los desarrolladores están adoptando LLMs para automatizar tareas, generar código y mejorar la productividad. Este artículo explora las mejores prácticas.',
+      title: t('search.mockData.article1.title', 'How Developers are Using LLMs'),
+      description: t('search.mockData.article1.description', 'Exploring the innovative ways developers are leveraging large language models'),
+      content: t('search.mockData.article1.content', 'Los desarrolladores están adoptando LLMs para automatizar tareas, generar código y mejorar la productividad. Este artículo explora las mejores prácticas.'),
       date: '2025-03-11',
       category: 'AI/ML',
       url: '/articles/developers-using-llms'
@@ -46,25 +46,25 @@ export default function Search() {
     {
       id: '3',
       type: 'profile',
-      title: 'Experiencia Profesional',
-      description: 'Más de 5 años en desarrollo de software',
-      content: 'Desarrollador full-stack con experiencia en React, TypeScript, Node.js, Python. Especializado en soluciones de AI/ML y desarrollo web moderno.',
+      title: t('search.mockData.profile1.title', 'Experiencia Profesional'),
+      description: t('search.mockData.profile1.description', 'Más de 5 años en desarrollo de software'),
+      content: t('search.mockData.profile1.content', 'Desarrollador full-stack con experiencia en React, TypeScript, Node.js, Python. Especializado en soluciones de AI/ML y desarrollo web moderno.'),
       category: 'About'
     },
     {
       id: '4',
       type: 'chat',
-      title: 'Conversación sobre proyectos',
-      description: 'Discusión sobre desarrollo de aplicaciones móviles',
-      content: 'Usuario preguntó sobre experiencia en React Native y desarrollo móvil. Conversación sobre mejores prácticas y herramientas.',
+      title: t('search.mockData.chat1.title', 'Conversación sobre proyectos'),
+      description: t('search.mockData.chat1.description', 'Discusión sobre desarrollo de aplicaciones móviles'),
+      content: t('search.mockData.chat1.content', 'Usuario preguntó sobre experiencia en React Native y desarrollo móvil. Conversación sobre mejores prácticas y herramientas.'),
       date: '2025-01-15'
     },
     {
       id: '5',
       type: 'project',
-      title: 'Health Monitoring App',
-      description: 'Aplicación móvil para monitoreo de salud',
-      content: 'App desarrollada con React Native para tracking de actividad física, monitoreo de signos vitales y sincronización con dispositivos wearables.',
+      title: t('search.mockData.project2.title', 'Health Monitoring App'),
+      description: t('search.mockData.project2.description', 'Aplicación móvil para monitoreo de salud'),
+      content: t('search.mockData.project2.content', 'App desarrollada con React Native para tracking de actividad física, monitoreo de signos vitales y sincronización con dispositivos wearables.'),
       date: '2024-11-20',
       category: 'Mobile Development',
       url: '/projects/health-app'
@@ -119,10 +119,10 @@ export default function Search() {
 
   const getTypeLabel = (type: string) => {
     switch (type) {
-      case 'project': return 'Proyecto';
-      case 'article': return 'Artículo';
-      case 'profile': return 'Perfil';
-      case 'chat': return 'Chat';
+      case 'project': return t('search.types.project');
+      case 'article': return t('search.types.article');
+      case 'profile': return t('search.types.profile');
+      case 'chat': return t('search.types.chat');
       default: return type;
     }
   };
@@ -130,8 +130,8 @@ export default function Search() {
   return (
     <div className="max-w-4xl mx-auto">
       <div className="mb-8">
-        <h1 className="text-3xl font-medium mb-4">Búsqueda Global</h1>
-        <p className="text-gray-400">Encuentra proyectos, artículos, información del perfil y conversaciones</p>
+        <h1 className="text-3xl font-medium mb-4">{t('search.title')}</h1>
+        <p className="text-gray-400">{t('search.description')}</p>
       </div>
 
       {/* Search Bar */}
@@ -142,19 +142,19 @@ export default function Search() {
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Buscar en todo el contenido..."
+            placeholder={t('search.placeholder')}
             className="w-full bg-dark-700 border border-dark-600 rounded-lg pl-12 pr-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
           />
         </div>
 
         {/* Filters */}
         <div className="flex flex-wrap gap-2">
-          <span className="text-sm text-gray-400 mr-2">Filtros:</span>
+          <span className="text-sm text-gray-400 mr-2">{t('search.filters')}</span>
           {[
-            { key: 'project', label: 'Proyectos', icon: FileText },
-            { key: 'article', label: 'Artículos', icon: FileText },
-            { key: 'profile', label: 'Perfil', icon: User },
-            { key: 'chat', label: 'Conversaciones', icon: MessageSquare }
+            { key: 'project', label: t('search.types.projects'), icon: FileText },
+            { key: 'article', label: t('search.types.articles'), icon: FileText },
+            { key: 'profile', label: t('search.types.profile'), icon: User },
+            { key: 'chat', label: t('search.types.conversations'), icon: MessageSquare }
           ].map(filter => (
             <button
               key={filter.key}
@@ -181,7 +181,13 @@ export default function Search() {
               <div className="w-2 h-2 bg-primary-400 rounded-full animate-bounce delay-100" />
               <div className="w-2 h-2 bg-primary-400 rounded-full animate-bounce delay-200" />
             </div>
-            <p className="text-gray-400 mt-2">Buscando...</p>
+            <p className="text-gray-400 mt-2">{t('search.loading')}</p>
+          </div>
+        )}
+
+        {!isLoading && results.length === 0 && query.trim() !== '' && (
+          <div className="bg-dark-800 rounded-card p-6 text-center">
+            <p className="text-gray-400">{t('search.noResults')}</p>
           </div>
         )}
 
@@ -199,59 +205,31 @@ export default function Search() {
                 <div className="flex-shrink-0 mt-1">
                   {getTypeIcon(result.type)}
                 </div>
-                
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="px-2 py-1 text-xs rounded-full bg-dark-600 text-gray-300">
-                      {getTypeLabel(result.type)}
-                    </span>
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-xs text-gray-400">{getTypeLabel(result.type)}</span>
                     {result.date && (
-                      <div className="flex items-center gap-1 text-xs text-gray-400">
-                        <Calendar size={12} />
-                        {new Date(result.date).toLocaleDateString()}
-                      </div>
-                    )}
-                    {result.category && (
-                      <span className="text-xs text-gray-400">• {result.category}</span>
+                      <>
+                        <span className="text-gray-600">•</span>
+                        <span className="text-xs text-gray-400 flex items-center gap-1">
+                          <Calendar size={12} />
+                          {new Date(result.date).toLocaleDateString(i18n.language === 'es' ? 'es-ES' : 'en-US', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                          })}
+                        </span>
+                      </>
                     )}
                   </div>
-                  
-                  <h3 className="text-lg font-medium text-white mb-2 hover:text-primary-400 transition-colors">
-                    {result.title}
-                  </h3>
-                  
-                  <p className="text-gray-300 mb-3">{result.description}</p>
-                  
-                  <div className="bg-dark-700 rounded-lg p-3">
-                    <p className="text-sm text-gray-400 line-clamp-2">
-                      {result.content}
-                    </p>
-                  </div>
+                  <h3 className="text-lg font-medium text-white mb-1">{result.title}</h3>
+                  <p className="text-gray-400 text-sm mb-2">{result.description}</p>
+                  <p className="text-gray-500 text-sm line-clamp-2">{result.content}</p>
                 </div>
               </div>
             </motion.div>
           ))}
         </AnimatePresence>
-
-        {query && !isLoading && results.length === 0 && (
-          <div className="bg-dark-800 rounded-card p-8 text-center">
-            <SearchIcon size={48} className="mx-auto text-gray-600 mb-4" />
-            <h3 className="text-lg font-medium text-gray-300 mb-2">No se encontraron resultados</h3>
-            <p className="text-gray-400">
-              Intenta con diferentes términos de búsqueda o ajusta los filtros
-            </p>
-          </div>
-        )}
-
-        {!query && (
-          <div className="bg-dark-800 rounded-card p-8 text-center">
-            <SearchIcon size={48} className="mx-auto text-gray-600 mb-4" />
-            <h3 className="text-lg font-medium text-gray-300 mb-2">Comienza a buscar</h3>
-            <p className="text-gray-400">
-              Escribe algo en la barra de búsqueda para encontrar contenido relevante
-            </p>
-          </div>
-        )}
       </div>
     </div>
   );

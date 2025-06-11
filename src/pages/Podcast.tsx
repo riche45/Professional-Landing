@@ -3,6 +3,12 @@ import { useTranslation } from 'react-i18next';
 import { Mic, Send, Bell, ThumbsUp, Clock, Users } from 'lucide-react';
 import { motion } from 'framer-motion';
 
+interface SuggestedTopic {
+  title: string;
+  description: string;
+  category: string;
+}
+
 export default function Podcast() {
   const { t } = useTranslation();
   const [email, setEmail] = useState('');
@@ -10,44 +16,10 @@ export default function Podcast() {
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [suggestionSubmitted, setSuggestionSubmitted] = useState(false);
 
-  const suggestedTopics = [
-    {
-      title: 'Desarrollo Web Moderno',
-      description: 'React, TypeScript, y las últimas tendencias en frontend',
-      votes: 24,
-      category: 'Desarrollo'
-    },
-    {
-      title: 'Desarrollo Móvil con React Native',
-      description: 'Experiencias y mejores prácticas en desarrollo móvil',
-      votes: 18,
-      category: 'Mobile'
-    },
-    {
-      title: 'Emprendimiento en Tech',
-      description: 'Cómo iniciar y escalar startups tecnológicas',
-      votes: 31,
-      category: 'Emprendimiento'
-    },
-    {
-      title: 'Inteligencia Artificial en el Desarrollo',
-      description: 'Cómo la IA está transformando la programación',
-      votes: 42,
-      category: 'AI/ML'
-    },
-    {
-      title: 'Experiencias como Freelancer',
-      description: 'Consejos y lecciones aprendidas trabajando independiente',
-      votes: 15,
-      category: 'Carrera'
-    },
-    {
-      title: 'Innovación y Tendencias Tech',
-      description: 'Las tecnologías emergentes que están cambiando el mundo',
-      votes: 28,
-      category: 'Innovación'
-    }
-  ];
+  const suggestedTopics = (t('podcast.suggestedTopics.topics', { returnObjects: true }) as SuggestedTopic[]).map((topic: SuggestedTopic, index: number) => ({
+    ...topic,
+    votes: Math.floor(Math.random() * 30) + 10 // Simulando votos aleatorios
+  }));
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
@@ -80,15 +52,15 @@ export default function Podcast() {
             <Mic size={48} className="text-white" />
           </div>
           
-          <h1 className="text-4xl font-medium mb-4">Podcast Tech Talks</h1>
+          <h1 className="text-4xl font-medium mb-4">{t('podcast.title')}</h1>
           <p className="text-xl text-gray-300 mb-6">
-            Conversaciones sobre desarrollo, innovación y experiencias en el mundo tech
+            {t('podcast.subtitle')}
           </p>
           
           <div className="bg-gradient-to-r from-primary-600 to-accent-600 rounded-lg p-6 text-white">
-            <h2 className="text-2xl font-medium mb-2">🎙️ Próximamente</h2>
+            <h2 className="text-2xl font-medium mb-2">{t('podcast.comingSoon.title')}</h2>
             <p className="text-lg opacity-90">
-              Estamos preparando contenido increíble para compartir contigo
+              {t('podcast.comingSoon.description')}
             </p>
           </div>
         </div>
@@ -104,20 +76,20 @@ export default function Podcast() {
         >
           <h3 className="text-xl font-medium mb-4 flex items-center gap-2">
             <Send size={20} className="text-primary-400" />
-            Sugiere un Tema
+            {t('podcast.suggestTopic.title')}
           </h3>
           
           <p className="text-gray-400 mb-6">
-            ¿Qué te gustaría escuchar? Comparte tus ideas y ayúdanos a crear contenido relevante.
+            {t('podcast.suggestTopic.description')}
           </p>
           
           <form onSubmit={handleSuggestTopic} className="space-y-4">
             <div>
-              <label className="block text-sm font-medium mb-2">Tu sugerencia</label>
+              <label className="block text-sm font-medium mb-2">{t('podcast.suggestTopic.title')}</label>
               <textarea
                 value={topicSuggestion}
                 onChange={(e) => setTopicSuggestion(e.target.value)}
-                placeholder="Describe el tema que te gustaría que cubramos..."
+                placeholder={t('podcast.suggestTopic.placeholder')}
                 className="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all h-24 resize-none"
                 required
               />
@@ -128,7 +100,7 @@ export default function Podcast() {
               className="w-full bg-primary-600 hover:bg-primary-700 text-white py-3 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
             >
               <Send size={18} />
-              Enviar Sugerencia
+              {t('podcast.suggestTopic.submitButton')}
             </button>
           </form>
           
@@ -138,7 +110,7 @@ export default function Podcast() {
               animate={{ opacity: 1, y: 0 }}
               className="mt-4 p-3 bg-success-600/20 border border-success-600/30 rounded-lg text-success-400 text-sm"
             >
-              ¡Gracias por tu sugerencia! La revisaremos pronto.
+              {t('podcast.suggestTopic.successMessage')}
             </motion.div>
           )}
         </motion.div>
@@ -152,22 +124,22 @@ export default function Podcast() {
         >
           <h3 className="text-xl font-medium mb-4 flex items-center gap-2">
             <Bell size={20} className="text-accent-400" />
-            Notificaciones
+            {t('podcast.notifications.title')}
           </h3>
           
           <p className="text-gray-400 mb-6">
-            Sé el primero en saber cuando lancemos el podcast y recibe actualizaciones exclusivas.
+            {t('podcast.notifications.description')}
           </p>
           
           {!isSubscribed ? (
             <form onSubmit={handleSubscribe} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium mb-2">Correo electrónico</label>
+                <label className="block text-sm font-medium mb-2">Email</label>
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="tu@email.com"
+                  placeholder={t('podcast.notifications.emailPlaceholder')}
                   className="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
                   required
                 />
@@ -178,7 +150,7 @@ export default function Podcast() {
                 className="w-full bg-accent-600 hover:bg-accent-700 text-white py-3 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
               >
                 <Bell size={18} />
-                Suscribirse
+                {t('podcast.notifications.subscribeButton')}
               </button>
             </form>
           ) : (
@@ -190,8 +162,8 @@ export default function Podcast() {
               <div className="w-16 h-16 bg-success-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Bell size={24} className="text-white" />
               </div>
-              <h4 className="text-lg font-medium text-success-400 mb-2">¡Suscrito!</h4>
-              <p className="text-gray-400">Te notificaremos cuando el podcast esté disponible.</p>
+              <h4 className="text-lg font-medium text-success-400 mb-2">{t('podcast.notifications.successTitle')}</h4>
+              <p className="text-gray-400">{t('podcast.notifications.successMessage')}</p>
             </motion.div>
           )}
         </motion.div>
@@ -206,7 +178,7 @@ export default function Podcast() {
       >
         <h3 className="text-xl font-medium mb-6 flex items-center gap-2">
           <Users size={20} className="text-primary-400" />
-          Temas Propuestos por la Comunidad
+          {t('podcast.suggestedTopics.title')}
         </h3>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -237,7 +209,7 @@ export default function Podcast() {
         <div className="mt-6 p-4 bg-dark-700 rounded-lg">
           <div className="flex items-center gap-2 text-sm text-gray-400">
             <Clock size={16} />
-            <span>Los temas más votados serán priorizados para los primeros episodios</span>
+            <span>{t('podcast.suggestedTopics.votingInfo')}</span>
           </div>
         </div>
       </motion.div>
