@@ -2,6 +2,8 @@ import { useState, useRef, useEffect } from 'react';
 import { Send, Bot, User } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { generateChatResponse } from '../services/openai';
+import { Link } from 'react-router-dom';
 
 export interface Message {
   id: string;
@@ -9,6 +11,54 @@ export interface Message {
   content: string;
   timestamp: Date;
 }
+
+// Función para convertir texto con formato markdown a JSX
+const parseMessage = (content: string) => {
+  const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  const parts = [];
+  let lastIndex = 0;
+  let match;
+
+  while ((match = linkRegex.exec(content)) !== null) {
+    // Agregar el texto antes del enlace
+    if (match.index > lastIndex) {
+      parts.push(content.slice(lastIndex, match.index));
+    }
+
+    // Agregar el enlace como componente Link
+    const [, text, url] = match;
+    parts.push(
+      <Link
+        key={match.index}
+        to={url}
+        className="text-blue-500 hover:text-blue-700 dark:text-primary-400 dark:hover:text-primary-300 underline"
+      >
+        {text}
+      </Link>
+    );
+
+    lastIndex = match.index + match[0].length;
+  }
+
+  // Agregar el texto restante después del último enlace
+  if (lastIndex < content.length) {
+    parts.push(content.slice(lastIndex));
+  }
+
+  // Manejar saltos de línea
+  return parts.map((part, index) => 
+    typeof part === 'string' ? (
+      <span key={index}>
+        {part.split('\\n').map((line, i) => (
+          <span key={i}>
+            {line}
+            {i < part.split('\\n').length - 1 && <br />}
+          </span>
+        ))}
+      </span>
+    ) : part
+  );
+};
 
 export default function IntegratedChat() {
   const { t, i18n } = useTranslation();
@@ -22,6 +72,7 @@ export default function IntegratedChat() {
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -44,36 +95,6 @@ export default function IntegratedChat() {
     scrollToBottom();
   }, [messages]);
 
-  const generateResponse = (userMessage: string): string => {
-    const lowerMessage = userMessage.toLowerCase();
-    
-    if (lowerMessage.includes('experiencia') || lowerMessage.includes('experience')) {
-      return t('chat.responses.experience');
-    }
-    
-    if (lowerMessage.includes('proyecto') || lowerMessage.includes('project')) {
-      return t('chat.responses.projects');
-    }
-    
-    if (lowerMessage.includes('tecnología') || lowerMessage.includes('technology') || lowerMessage.includes('stack')) {
-      return t('chat.responses.tech');
-    }
-    
-    if (lowerMessage.includes('colabora') || lowerMessage.includes('trabajo') || lowerMessage.includes('hire')) {
-      return t('chat.responses.collaboration');
-    }
-    
-    if (lowerMessage.includes('artículo') || lowerMessage.includes('blog') || lowerMessage.includes('escribes')) {
-      return t('chat.responses.articles');
-    }
-    
-    if (lowerMessage.includes('hola') || lowerMessage.includes('hello') || lowerMessage.includes('hi')) {
-      return t('chat.responses.greeting');
-    }
-    
-    return t('chat.responses.default');
-  };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim() || isLoading) return;
@@ -88,19 +109,25 @@ export default function IntegratedChat() {
     setMessages(prev => [...prev, userMessage]);
     setInput('');
     setIsLoading(true);
+    setError(null);
 
-    // Simulate API delay
-    setTimeout(() => {
+    try {
+      const response = await generateChatResponse(userMessage.content, i18n.language);
+      
       const assistantMessage: Message = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
-        content: generateResponse(userMessage.content),
+        content: response,
         timestamp: new Date()
       };
 
       setMessages(prev => [...prev, assistantMessage]);
+    } catch (err) {
+      setError(t('chat.error_message'));
+      console.error('Error en el chat:', err);
+    } finally {
       setIsLoading(false);
-    }, 1000 + Math.random() * 1000);
+    }
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -155,7 +182,9 @@ export default function IntegratedChat() {
                       : 'bg-white dark:bg-dark-700 text-gray-900 dark:text-gray-100 border border-gray-200 dark:border-transparent'
                   }`}
                 >
-                  <p className="text-sm leading-relaxed">{message.content}</p>
+                  <p className="text-sm leading-relaxed">
+                    {parseMessage(message.content)}
+                  </p>
                 </div>
                 <p className="text-xs text-gray-500 dark:text-gray-500 mt-1 px-1">
                   {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
@@ -189,6 +218,16 @@ export default function IntegratedChat() {
             </div>
           </motion.div>
         )}
+
+        {error && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 p-3 rounded-lg text-red-600 dark:text-red-400 text-sm"
+          >
+            {error}
+          </motion.div>
+        )}
         
         <div ref={messagesEndRef} />
       </div>
@@ -204,26 +243,18 @@ export default function IntegratedChat() {
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={handleKeyPress}
               placeholder={t('chat.input_placeholder')}
-              className="w-full bg-gray-100 dark:bg-dark-700 border border-gray-300 dark:border-dark-600 rounded-lg px-4 py-3 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-primary-500 focus:border-transparent transition-all"
+              className="w-full px-4 py-2 rounded-lg bg-gray-100 dark:bg-dark-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-primary-500"
               disabled={isLoading}
             />
           </div>
           <button
             type="submit"
             disabled={isLoading || !input.trim()}
-            className="px-4 py-3 bg-blue-600 dark:bg-primary-600 text-white rounded-lg hover:bg-blue-700 dark:hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center min-w-[48px]"
+            className="px-4 py-2 bg-blue-600 dark:bg-primary-600 text-white rounded-lg hover:bg-blue-700 dark:hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-primary-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
           >
-            <Send size={18} />
+            <Send size={20} />
           </button>
         </form>
-        
-        <div className="flex items-center justify-between mt-3 text-xs text-gray-500 dark:text-gray-500">
-          <span>{t('chat.enter_hint')}</span>
-          <span className="flex items-center gap-1">
-            <div className="w-2 h-2 bg-green-500 dark:bg-success-500 rounded-full"></div>
-            {t('chat.status_online')}
-          </span>
-        </div>
       </div>
     </div>
   );
