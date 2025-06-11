@@ -1,7 +1,6 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { X, Home, Archive, Search, Link, Mic, FileText, User, AtSign, BarChart } from 'lucide-react';
+import { X, Home, Archive, Search, Mic, FileText, AtSign, BarChart } from 'lucide-react';
 import { cn } from '../utils/cn';
 import LanguageSwitcher from './LanguageSwitcher';
 import SocialLinks from './SocialLinks';

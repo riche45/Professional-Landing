@@ -9,7 +9,7 @@ import './index.css';
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ThemeProvider>
-      <BrowserRouter basename="/Professional-Landing">
+      <BrowserRouter>
         <App />
       </BrowserRouter>
     </ThemeProvider>

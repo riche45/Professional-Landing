@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Download, Mail, Building, FileText, Send, CheckCircle } from 'lucide-react';
+import { Download, Send, CheckCircle } from 'lucide-react';
+
 import { motion } from 'framer-motion';
 
 export default function Resume() {
