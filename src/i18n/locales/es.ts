@@ -14,7 +14,7 @@ export default {
   },
   routes: {
     home: '/',
-    archives: '/archivos',
+    archives: '/articulos',
     search: '/busqueda',
     podcast: '/podcast',
     resume: '/curriculum',
@@ -24,9 +24,10 @@ export default {
   categories: {
     articles: 'Artículos',
     howTos: 'Tutoriales',
-    humor: 'Humor',
+    humor: 'Memes',
     podcast: 'Podcast Into the Hopper',
     links: 'Enlaces',
+    portfolio: 'Portafolio',
   },
   search: {
     title: 'Búsqueda Global',
@@ -200,28 +201,66 @@ export default {
         imageSrc: 'https://images.pexels.com/photos/2004161/pexels-photo-2004161.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
       },
       {
-        title: 'Cómo los Desarrolladores están Usando LLMs',
-        description: 'Explorando las formas innovadoras en que los desarrolladores aprovechan los modelos de lenguaje en sus flujos de trabajo y aplicaciones.',
-        date: '11 Mar 2025',
+        title: 'Agentes de IA: El año en que cambiaron nuestra vida profesional',
+        description: '2025 es el año de los agentes de IA. Descubre cómo estos asistentes inteligentes están revolucionando la productividad, la creatividad y la toma de decisiones en el trabajo y la vida diaria.',
+        date: '2025-06-04',
         category: 'Artículos',
-        slug: 'how-developers-using-llms',
+        slug: 'agentes-ia-impacto-2025',
         imageSrc: 'https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
       },
       {
-        title: 'Escribiendo un Libro de Matemáticas con Claude',
-        description: 'Mi experiencia colaborando con IA para escribir un libro de matemáticas completo para estudiantes.',
+        title: 'Tesla: ¿Modelos feos pero con futuro brillante?',
+        description: 'Un repaso irónico a los diseños de Tesla: poco atractivos, pero con un potencial energético que podría revolucionar la industria. ¿Veremos algún día un Tesla realmente bonito?',
+        date: '2024-07-01',
+        category: 'Reseñas',
+        slug: 'tesla-feos-potencial',
+        imageSrc: 'https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+      },
+      {
+        title: 'DeepSeek: ¿El nuevo jugador que cambiará la guerra de la IA?',
+        description: 'La llegada de DeepSeek (open source) sacude el tablero global de la inteligencia artificial. ¿China o EEUU? ¿OpenAI, Claude, Google o DeepSeek? Analizamos el impacto y el futuro del dominio tecnológico.',
+        date: '2025-02-10',
+        category: 'Artículos',
+        slug: 'deepseek-guerra-ia',
+        imageSrc: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+      },
+      {
+        title: '¿Founder o emprendedor? El dilema existencial de la startup',
+        description: '¿Para fundar una startup primero hay que ser emprendedor, o basta con tener LinkedIn y una idea? El eterno dilema del huevo y la gallina, versión tech.',
+        date: '2025-06-17',
+        category: 'Artículos',
+        slug: 'founder-vs-emprendedor',
+        imageSrc: 'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+      }
+    ]
+  },
+  tutorials: {
+    title: 'Tutoriales',
+    description: 'Guías prácticas y tutoriales paso a paso para desarrolladores.',
+    featured: [
+      {
+        title: 'Escribiendo un Libro de Prompts con Claude',
+        description: 'Mi experiencia colaborando con IA para crear una guía de prompts que cualquier persona pueda usar, desde recetas de cocina hasta soluciones para errores críticos en el backend.',
         date: '18 Ene 2025',
         category: 'Tutoriales',
-        slug: 'writing-math-textbook-claude',
+        slug: 'writing-prompts-book-claude',
         imageSrc: 'https://images.pexels.com/photos/6238297/pexels-photo-6238297.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
       },
       {
-        title: 'El Sony A7 III después de 5 años',
-        description: 'Una revisión a largo plazo de la cámara mirrorless Sony A7 III después de usarla profesionalmente durante cinco años.',
-        date: '12 Ene 2025',
-        category: 'Reseñas',
-        slug: 'sony-a7-iii-after-5-years',
-        imageSrc: 'https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+        title: 'Automatiza tu vida: Cómo crear tu primer bot personal con IA',
+        description: 'Aprende paso a paso a crear un bot personal con IA que te ayude a organizar tareas, enviar recordatorios y hasta responder mensajes. ¡Ideal para quienes quieren dar el salto a la automatización sin ser expertos!',
+        date: '2025-04-10',
+        category: 'Tutoriales',
+        slug: 'crear-bot-personal-ia',
+        imageSrc: 'https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+      },
+      {
+        title: 'De la idea al MVP: Cómo lanzar tu propia startup con intención',
+        description: 'Descubre los pasos clave para pasar de una simple hipótesis a un producto mínimo viable (MVP). Aprende a validar tu idea, construir rápido y lanzar como un founder intencional.',
+        date: '2025-05-01',
+        category: 'Tutoriales',
+        slug: 'lanzar-startup-intencional',
+        imageSrc: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
       }
     ]
   },
@@ -461,5 +500,61 @@ export default {
     success: '🎉 ¡Suscripción exitosa! Revisa tu email para la confirmación.',
     error: '❌ ¡Ups! Algo salió mal. Por favor, inténtalo de nuevo.',
     legal: 'Al suscribirte, aceptas recibir emails de newsletter. Puedes darte de baja en cualquier momento.'
+  },
+  humor: {
+    title: 'Memes',
+    description: 'Memes, ironía y risas tech para sobrevivir al mundo dev y startups.',
+    featured: [
+      {
+        title: 'El ingenio del dev escaso de recursos',
+        description: 'Cuando el presupuesto es mínimo y el deadline es ayer, la creatividad se convierte en tu mejor framework. ¿Diluir el último sprint con "agua"? ¡Aún queda MVP! 😂',
+        date: '2025-05-02',
+        category: 'Memes',
+        slug: 'ingenio-dev-meme',
+        imageSrc: '/memes/ingenio-dev-meme.jpg'
+      },
+      {
+        title: '¿Privacidad? El dilema ético de los gigantes tech',
+        description: 'Microsoft, Google, Apple y Linux en el banquillo: ¿quién espía más? Un meme para reflexionar (y reír) sobre la privacidad, la ética y el manejo de nuestros datos en la era digital.',
+        date: '2025-07-10',
+        category: 'Memes',
+        slug: 'privacidad-etica-gigantes',
+        imageSrc: '/memes/privacidad-etica-gigantes.jpg'
+      },
+      {
+        title: 'Cliente exigente, presupuesto mini: la paradoja dev',
+        description: 'Cuando el cliente pide un Jaguar pero el presupuesto da para un Fiat con perro. Un meme sobre las expectativas, la realidad y el arte de sobrevivir a los proyectos tech con humor.',
+        date: '2025-05-11',
+        category: 'Memes',
+        slug: 'cliente-exigente-presupuesto',
+        imageSrc: '/memes/cliente-exigente-presupuesto.jpg'
+      }
+    ]
+  },
+  portfolio: {
+    netflix: {
+      title: 'Clon de Netflix con Django',
+      description: 'Desarrollé una plataforma funcional tipo Netflix que permite a los usuarios registrarse, iniciar sesión, explorar un catálogo de películas por categoría y simular la reproducción de contenido en streaming. Incluye panel de administración, Docker y buenas prácticas de desarrollo.'
+    },
+    ethereum: {
+      title: 'Panel de control de ETHEREUM',
+      description: 'Desarrollé un panel de control para gestionar cuentas y transacciones en la red Ethereum, Utilicé Web3.js para interactuar con el nodo de la blockchain y proporcionar información valiosa, con interfaz intuitiva y visualización de datos en tiempo real.'
+    },
+    blockchain: {
+      title: 'Investigación y desarrollo en interoperabilidad de blockchain',
+      description: 'Realicé investigación técnica e implementación de conceptos avanzados en el desarrollo de contratos inteligentes e interoperabilidad blockchain. Implemente modelos de machine learning para la obtencion de datos valiosos, El trabajo incluyó el diseño y la prueba de soluciones entre cadenas, la ejecución de simulaciones en nodos locales y el análisis de datos de eventos de bajo nivel y redes basadas en firmas. Este proyecto mejoró mi experiencia en arquitectura de contratos inteligentes e infraestructura blockchain multicadena.'
+    },
+    solana: {
+      title: 'Bot predictor de tokens Solana (bot de Telegram)',
+      description: 'Desarrollé un bot funcional de Telegram que analiza las direcciones de tokens en la red Solana. Los usuarios pueden enviar el comando /predict con una dirección de token, y el bot recupera datos en cadena para estimar la actividad temprana y el nivel de riesgo. El bot gestiona las direcciones no válidas y proporciona información dinámica basada en el historial de transacciones. Automatiza un proceso de análisis de blockchain que normalmente es manual y proporciona información en tiempo real a los usuarios que monitorean los nuevos tokens de Solana.'
+    },
+    environment: {
+      title: 'Pronóstico de la contaminación ambiental',
+      description: 'Desarrollé un proceso completo de ciencia de datos para pronosticar los niveles de dióxido de azufre (SO₂) en diferentes estaciones de monitoreo. El proyecto incluyó la limpieza de datos, el análisis exploratorio, la ingeniería de variables y el modelado predictivo mediante aprendizaje profundo con PyTorch. Los resultados se visualizaron para evaluar la precisión del modelo y el comportamiento de los contaminantes a lo largo del tiempo. Este proyecto demuestra mi capacidad para aplicar la ciencia de datos a los desafíos reales de monitoreo y pronóstico ambiental.'
+    },
+    DeepLearning: {
+      title: 'DeepLearning Clasificacion de Frutas',
+      description: 'Diseñé e implementé modelos de redes neuronales desde cero utilizando las API de PyTorch de bajo nivel para comprender a fondo cada paso del entrenamiento. Esto incluye pases hacia adelante, cálculo de errores, retropropagación y actualizaciones de pesos. Esta experiencia práctica me proporciona bases sólidas para adaptar arquitecturas de aprendizaje profundo a problemas específicos y optimizar los modelos eficazmente para su uso en producción. Conceptos aplicados: funciones de activación, retropropagación, descenso de gradiente, cálculo de pérdidas, redes multicapa.'
+    },
   },
 };

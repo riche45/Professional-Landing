@@ -9,6 +9,9 @@ import Connects from './pages/Connects';
 import Search from './pages/Search';
 import Podcast from './pages/Podcast';
 import Resume from './pages/Resume';
+import Tutorials from './pages/Tutorials';
+import Memes from './pages/Memes';
+import Portfolio from './pages/Portfolio';
 
 function App() {
   const { t } = useTranslation();
@@ -31,6 +34,9 @@ function App() {
           <Route path="conexiones" element={<Connects />} />
           <Route path="surveys" element={<Surveys />} />
           <Route path="encuestas" element={<Surveys />} />
+          <Route path="tutorials" element={<Tutorials />} />
+          <Route path="memes" element={<Memes />} />
+          <Route path="portfolio" element={<Portfolio />} />
           <Route path="*" element={<div className="p-12 text-center"><h1 className="text-2xl">{t('errors.pageNotFound')}</h1></div>} />
         </Route>
       </Routes>

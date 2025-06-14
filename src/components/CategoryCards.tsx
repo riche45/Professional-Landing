@@ -50,16 +50,22 @@ export default function CategoryCards() {
       to: '/articles', 
       color: 'bg-amber-500/10' 
     },
+    {
+      title: t('categories.portfolio'),
+      imageSrc: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      to: '/portfolio',
+      color: 'bg-green-500/10'
+    },
     { 
       title: t('categories.howTos'), 
       imageSrc: 'https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 
-      to: '/how-tos', 
+      to: '/tutorials', 
       color: 'bg-rose-500/10' 
     },
     { 
       title: t('categories.humor'), 
       imageSrc: 'https://images.pexels.com/photos/1616403/pexels-photo-1616403.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 
-      to: '/humor', 
+      to: '/memes', 
       color: 'bg-pink-500/10' 
     },
     { 

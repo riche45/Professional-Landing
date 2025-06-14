@@ -35,7 +35,8 @@ export default function ArticleCard({ title, description, date, category, slug, 
             <img
               src={imageSrc}
               alt={title}
-              className="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+              className="w-full h-48 md:h-64 object-contain bg-dark-900"
+              style={{ maxHeight: '256px', minHeight: '192px', background: '#18181b' }}
             />
             <div className="absolute top-4 left-4">
               <span className="px-3 py-1 bg-primary-600/90 text-white text-sm rounded-full">

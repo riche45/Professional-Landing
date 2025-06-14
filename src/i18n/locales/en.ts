@@ -14,7 +14,7 @@ export default {
   },
   routes: {
     home: '/',
-    archives: '/archives',
+    archives: '/articles',
     search: '/search',
     podcast: '/podcast',
     resume: '/resume',
@@ -24,9 +24,10 @@ export default {
   categories: {
     articles: 'Articles',
     howTos: 'How Tos',
-    humor: 'Humor',
+    humor: 'Memes',
     podcast: 'Into the Hopper Podcast',
     links: 'Links',
+    portfolio: 'Portfolio',
   },
   search: {
     title: 'Global Search',
@@ -201,28 +202,82 @@ export default {
         imageSrc: 'https://images.pexels.com/photos/2004161/pexels-photo-2004161.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
       },
       {
-        title: 'How Developers are Using LLMs',
-        description: 'Exploring the innovative ways developers are leveraging large language models in their workflows and applications.',
-        date: 'Mar 11, 2025',
+        title: 'AI Agents: The Year They Changed Our Professional Lives',
+        description: '2025 is the year of AI agents. Discover how these intelligent assistants are revolutionizing productivity, creativity, and decision-making in work and daily life.',
+        date: '2025-06-04',
         category: 'Articles',
-        slug: 'how-developers-using-llms',
+        slug: 'ai-agents-impact-2025',
         imageSrc: 'https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
       },
       {
-        title: 'Writing a Math Textbook with Claude',
-        description: 'My experience collaborating with AI to write a comprehensive mathematics textbook for students.',
+        title: 'Tesla: Ugly Models, Bright Future?',
+        description: "An ironic look at Tesla's design choices: not the prettiest, but with energy potential that could revolutionize the industry. Will we ever see a truly beautiful Tesla?",
+        date: '2024-07-01',
+        category: 'Reviews',
+        slug: 'tesla-ugly-potential',
+        imageSrc: 'https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+      },
+      {
+        title: 'DeepSeek: The New Player in the AI War?',
+        description: 'The arrival of DeepSeek (open source) shakes up the global AI landscape. China or the US? OpenAI, Claude, Google, or DeepSeek? We analyze the impact and the future of technological dominance.',
+        date: '2025-02-10',
+        category: 'Articles',
+        slug: 'deepseek-ai-war',
+        imageSrc: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+      },
+      {
+        title: 'Founder or Entrepreneur? The Startup Paradox',
+        description: "To start a startup, do you have to be an entrepreneur first, or is a LinkedIn profile and an idea enough? The classic chicken or egg dilemma, tech edition.",
+        date: '2025-06-17',
+        category: 'Articles',
+        slug: 'founder-vs-entrepreneur',
+        imageSrc: 'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+      },
+      {
+        title: 'Automate Your Life: How to Build Your First Personal AI Bot',
+        description: 'Learn step by step how to build a personal AI bot to help you organize tasks, send reminders, and even reply to messages. Perfect for anyone wanting to dive into automation without being an expert!',
+        date: '2025-04-10',
+        category: 'How Tos',
+        slug: 'build-personal-ai-bot',
+        imageSrc: 'https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+      },
+      {
+        title: 'From Idea to MVP: How to Intentionally Launch Your Own Startup',
+        description: 'Discover the key steps to go from a simple hypothesis to a minimum viable product (MVP). Learn how to validate your idea, build fast, and launch like an intentional founder.',
+        date: '2025-05-01',
+        category: 'How Tos',
+        slug: 'launch-intentional-startup',
+        imageSrc: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+      }
+    ]
+  },
+  tutorials: {
+    title: 'How Tos',
+    description: 'Step-by-step guides and practical tutorials for developers.',
+    featured: [
+      {
+        title: 'Writing a Prompts Book with Claude',
+        description: 'My experience collaborating with AI to create a prompts guide that anyone can use, from cooking recipes to solving critical backend errors.',
         date: 'Jan 18, 2025',
         category: 'How Tos',
-        slug: 'writing-math-textbook-claude',
+        slug: 'writing-prompts-book-claude',
         imageSrc: 'https://images.pexels.com/photos/6238297/pexels-photo-6238297.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
       },
       {
-        title: 'The Sony A7 III after 5 years',
-        description: 'A long-term review of the Sony A7 III mirrorless camera after using it professionally for five years.',
-        date: 'Jan 12, 2025',
-        category: 'Reviews',
-        slug: 'sony-a7-iii-after-5-years',
-        imageSrc: 'https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+        title: 'Automate Your Life: How to Build Your First Personal AI Bot',
+        description: 'Learn step by step how to build a personal AI bot to help you organize tasks, send reminders, and even reply to messages. Perfect for anyone wanting to dive into automation without being an expert!',
+        date: '2025-04-10',
+        category: 'How Tos',
+        slug: 'build-personal-ai-bot',
+        imageSrc: 'https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+      },
+      {
+        title: 'From Idea to MVP: How to Intentionally Launch Your Own Startup',
+        description: 'Discover the key steps to go from a simple hypothesis to a minimum viable product (MVP). Learn how to validate your idea, build fast, and launch like an intentional founder.',
+        date: '2025-05-01',
+        category: 'How Tos',
+        slug: 'launch-intentional-startup',
+        imageSrc: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
       }
     ]
   },
@@ -462,5 +517,61 @@ export default {
     success: '🎉 Successfully subscribed! Check your email for confirmation.',
     error: '❌ Oops! Something went wrong. Please try again.',
     legal: 'By subscribing, you agree to receive newsletter emails. You can unsubscribe at any time.'
+  },
+  humor: {
+    title: 'Memes',
+    description: 'Tech memes, irony and laughs to survive dev and startup life.',
+    featured: [
+      {
+        title: 'The Resourceful Dev: Startup Edition',
+        description: 'When the budget is gone and the deadline was yesterday, creativity becomes your best framework. Diluting the last sprint with "water"? There\'s still MVP left! 😂',
+        date: '2025-05-02',
+        category: 'Memes',
+        slug: 'resourceful-dev-meme',
+        imageSrc: '/memes/ingenio-dev-meme.jpg'
+      },
+      {
+        title: 'Privacy? The Ethical Dilemma of Tech Giants',
+        description: 'Microsoft, Google, Apple, and Linux on the stand: who spies the most? A meme to reflect (and laugh) about privacy, ethics, and how our data is handled in the digital age.',
+        date: '2025-07-10',
+        category: 'Memes',
+        slug: 'privacy-ethics-giants',
+        imageSrc: '/memes/privacidad-etica-gigantes.jpg'
+      },
+      {
+        title: 'Demanding Client, Tiny Budget: The Dev Paradox',
+        description: 'When the client wants a Jaguar but the budget is for a Fiat with a dog. A meme about expectations, reality, and the art of surviving tech projects with humor.',
+        date: '2025-05-11',
+        category: 'Memes',
+        slug: 'demanding-client-budget',
+        imageSrc: '/memes/cliente-exigente-presupuesto.jpg'
+      }
+    ]
+  },
+  portfolio: {
+    netflix: {
+      title: 'Netflix Clone with Django',
+      description: 'I developed a functional Netflix-like platform allowing users to register, log in, browse a movie catalog by category, and simulate streaming. Includes admin panel, Docker packaging, and best development practices.'
+    },
+    ethereum: {
+      title: 'ETHEREUM Dashboard',
+      description: 'I developed a dashboard to manage accounts and transactions on the Ethereum network. I used Web3.js to interact with the blockchain node and provide valuable information, with an intuitive interface and real-time data visualization.'
+    },
+    blockchain: {
+      title: 'Blockchain Interoperability Research & Development',
+      description: 'I conducted technical research and implemented advanced concepts in smart contract development and blockchain interoperability. I deployed machine learning models to extract valuable data. This work included designing and testing cross-chain solutions, running simulations on local nodes, and analyzing low-level event data and signature-based networks. This project enhanced my expertise in smart contract architecture and multi-chain blockchain infrastructure.'
+    },
+    solana: {
+      title: 'Solana Token Predictor Bot (Telegram bot)',
+      description: 'I developed a functional Telegram bot that analyzes token addresses on the Solana network. Users can send the /predict command with a token address, and the bot retrieves on-chain data to estimate early activity and risk levels. The bot handles invalid addresses and provides dynamic insights based on transaction history. It automates a normally manual blockchain analysis process and provides real-time insights to users monitoring new Solana tokens.'
+    },
+    environment: {
+      title: 'Environmental Pollution Forecast',
+      description: 'I built a full data science pipeline to forecast sulfur dioxide (SO₂) levels across different monitoring stations. The project included data cleaning, exploratory analysis, variable engineering, and predictive modeling using deep learning with PyTorch. Results were visualized to assess model accuracy and pollutant behavior over time. This project demonstrates my ability to apply data science to real-world environmental monitoring and forecasting challenges.'
+    },
+    DeepLearning: {
+      title: 'DeepLearning Classification of Fruits',
+      description: 'I designed and implemented neural network models from scratch using low-level PyTorch APIs to fully understand each step of the training process. This includes forward passes, error calculation, backpropagation, and weight updates. This practical experience provides a solid foundation for adapting deep learning architectures to specific problems and optimizing models effectively for production use. Applied concepts: activation functions, backpropagation, gradient descent, loss calculation, multi-layer networks.'
+    },
   },
 };

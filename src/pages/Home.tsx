@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import CategoryCards from '../components/CategoryCards';
 import ArticleCard from '../components/ArticleCard';
 import IntegratedChat from '../components/IntegratedChat';
+import Newsletter from '../components/Newsletter';
 
 interface Article {
   title: string;
@@ -27,7 +28,10 @@ export default function Home() {
     }
   };
 
-  const articles = (t('articles.featured', { returnObjects: true }) as Article[]).slice(0, 3);
+  const articles = (t('articles.featured', { returnObjects: true }) as Article[])
+    .slice()
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 3);
 
   return (
     <div className="max-w-4xl mx-auto">
@@ -68,6 +72,8 @@ export default function Home() {
           ))}
         </div>
       </motion.div>
+      {/* Newsletter */}
+      <Newsletter />
     </div>
   );
 }

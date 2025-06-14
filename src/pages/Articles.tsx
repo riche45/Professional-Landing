@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Filter } from 'lucide-react';
 import ArticleCard from '../components/ArticleCard';
+import Newsletter from '../components/Newsletter';
 
 interface Article {
   title: string;
@@ -17,7 +18,9 @@ export default function Articles() {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [activeFilter, setActiveFilter] = useState('all');
   
-  const articles = (t('articles.featured', { returnObjects: true }) as Article[]);
+  const articles = (t('articles.featured', { returnObjects: true }) as Article[])
+    .slice()
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   const filters = [
     { id: 'all', label: t('articles.filters.all') },
@@ -78,6 +81,8 @@ export default function Articles() {
           />
         ))}
       </div>
+      {/* Newsletter */}
+      <Newsletter />
     </div>
   );
 }
