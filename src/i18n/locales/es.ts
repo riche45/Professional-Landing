@@ -181,16 +181,24 @@ export default {
     }
   },
   articles: {
-    title: 'Artículos y Recursos',
-    description: 'Explora mis artículos sobre desarrollo, tecnología y experiencias profesionales',
+    title: 'Artículos',
+    description: 'Explorando ideas, compartiendo conocimiento y discutiendo tecnología.',
     filters: {
-      title: 'Filtros',
+      title: 'Filtrar por categoría',
       all: 'Todos',
       articles: 'Artículos',
       howTos: 'Tutoriales',
-      reviews: 'Reseñas'
+      reviews: 'Reviews'
     },
     featured: [
+      {
+        title: '¿Cómo los LLMs están (literalmente) salvando mi vida como dev? 🤖',
+        description: 'Un vistazo honesto y algo irónico a cómo los modelos de lenguaje están cambiando la forma en que programamos. Spoiler: ya no memorizo documentación 😅',
+        date: '2024-03-15',
+        category: 'Artículos',
+        slug: 'llms-dev-life-savior',
+        imageSrc: 'https://images.pexels.com/photos/2004161/pexels-photo-2004161.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+      },
       {
         title: 'Cómo los Desarrolladores están Usando LLMs',
         description: 'Explorando las formas innovadoras en que los desarrolladores aprovechan los modelos de lenguaje en sus flujos de trabajo y aplicaciones.',
@@ -443,5 +451,15 @@ export default {
       message: "Gracias por tu interés. Recibirás el CV en breve en tu correo electrónico.",
       note: "Por favor, revisa tu carpeta de spam si no ves el correo en tu bandeja de entrada."
     }
+  },
+  newsletter: {
+    title: '📬 ¡Mantente Actualizado!',
+    description: 'Suscríbete para recibir los últimos artículos, tutoriales y conocimientos tecnológicos directamente en tu bandeja de entrada.',
+    emailPlaceholder: 'Tu dirección de email',
+    sending: 'Suscribiendo...',
+    subscribeButton: 'Suscribirse',
+    success: '🎉 ¡Suscripción exitosa! Revisa tu email para la confirmación.',
+    error: '❌ ¡Ups! Algo salió mal. Por favor, inténtalo de nuevo.',
+    legal: 'Al suscribirte, aceptas recibir emails de newsletter. Puedes darte de baja en cualquier momento.'
   },
 };

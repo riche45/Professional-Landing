@@ -182,16 +182,24 @@ export default {
     }
   },
   articles: {
-    title: 'Articles & Resources',
-    description: 'Explore my articles about development, technology and professional experiences',
+    title: 'Articles',
+    description: 'Exploring ideas, sharing knowledge, and discussing technology.',
     filters: {
-      title: 'Filters',
+      title: 'Filter by category',
       all: 'All',
       articles: 'Articles',
-      howTos: 'How Tos',
+      howTos: 'How-Tos',
       reviews: 'Reviews'
     },
     featured: [
+      {
+        title: 'How LLMs are (Literally) Saving my Dev Life? 🤖',
+        description: 'An honest and slightly ironic look at how language models are changing the way we code. Spoiler: I no longer memorize documentation 😅',
+        date: '2024-03-15',
+        category: 'Articles',
+        slug: 'llms-dev-life-savior',
+        imageSrc: 'https://images.pexels.com/photos/2004161/pexels-photo-2004161.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+      },
       {
         title: 'How Developers are Using LLMs',
         description: 'Exploring the innovative ways developers are leveraging large language models in their workflows and applications.',
@@ -444,5 +452,15 @@ export default {
       message: "Thank you for your interest. You will receive the CV shortly in your email.",
       note: "Please check your spam folder if you don't see the email in your inbox."
     }
+  },
+  newsletter: {
+    title: '📬 Stay Updated!',
+    description: 'Subscribe to get the latest articles, tutorials, and tech insights directly in your inbox.',
+    emailPlaceholder: 'Your email address',
+    sending: 'Subscribing...',
+    subscribeButton: 'Subscribe',
+    success: '🎉 Successfully subscribed! Check your email for confirmation.',
+    error: '❌ Oops! Something went wrong. Please try again.',
+    legal: 'By subscribing, you agree to receive newsletter emails. You can unsubscribe at any time.'
   },
 };

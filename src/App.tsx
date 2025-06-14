@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import MainLayout from './layouts/MainLayout';
 import Home from './pages/Home';
 import Articles from './pages/Articles';
+import ArticlePage from './pages/ArticlePage';
 import Surveys from './pages/Surveys';
 import Connects from './pages/Connects';
 import Search from './pages/Search';
@@ -17,8 +18,10 @@ function App() {
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
-          <Route path="archives" element={<Articles />} />
-          <Route path="archivos" element={<Articles />} />
+          <Route path="articles" element={<Articles />} />
+          <Route path="articles/:slug" element={<ArticlePage />} />
+          <Route path="articulos" element={<Articles />} />
+          <Route path="articulos/:slug" element={<ArticlePage />} />
           <Route path="busqueda" element={<Search />} />
           <Route path="search" element={<Search />} />
           <Route path="podcast" element={<Podcast />} />

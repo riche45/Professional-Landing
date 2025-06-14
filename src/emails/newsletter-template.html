@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Bienvenido al Newsletter!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #0ea5e9;
+            color: white;
+        }
+        .content {
+            padding: 20px;
+            color: #333333;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666666;
+            font-size: 12px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0ea5e9;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>¡Bienvenido al Newsletter!</h1>
+        </div>
+        <div class="content">
+            <h2>¡Gracias por suscribirte!</h2>
+            <p>Hola,</p>
+            <p>¡Me alegra mucho que te hayas unido a mi newsletter! A partir de ahora recibirás:</p>
+            <ul>
+                <li>Artículos sobre desarrollo de software y tecnología</li>
+                <li>Tutoriales y guías prácticas</li>
+                <li>Consejos y mejores prácticas</li>
+                <li>Novedades del mundo tech</li>
+            </ul>
+            <p>Tu email de suscripción es: <strong>{{email}}</strong></p>
+            <p>Idioma preferido: <strong>{{language}}</strong></p>
+            
+            <div style="text-align: center;">
+                <a href="https://richardgarcia.dev" class="button">Visitar el Blog</a>
+            </div>
+            
+            <p>¡Nos vemos pronto con contenido interesante!</p>
+            <p>Saludos,<br>Richard García</p>
+        </div>
+        <div class="footer">
+            <p>© 2025 Richard García. Todos los derechos reservados.</p>
+            <p>Si no deseas recibir más emails, puedes <a href="{{unsubscribe}}">darte de baja aquí</a>.</p>
+        </div>
+    </div>
+</body>
+</html> 

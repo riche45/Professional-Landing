@@ -1,3 +1,4 @@
+import { ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Calendar } from 'lucide-react';
@@ -25,35 +26,43 @@ export default function ArticleCard({ title, description, date, category, slug, 
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className="bg-dark-800 rounded-card overflow-hidden hover:bg-dark-700 transition-colors"
+      className="group block bg-dark-800 rounded-card overflow-hidden hover:bg-dark-700 transition-all duration-300"
     >
       <Link to={`/articles/${slug}`} className="block">
-        <div className="relative h-48 overflow-hidden">
-          <img
-            src={imageSrc}
-            alt={title}
-            className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
-          />
-          <div className="absolute top-4 left-4">
-            <span className="px-3 py-1 bg-dark-800/90 text-primary-400 rounded-full text-sm">
-              {category}
-            </span>
+        <div className="flex flex-col md:flex-row">
+          {/* Imagen */}
+          <div className="md:w-1/3 relative overflow-hidden">
+            <img
+              src={imageSrc}
+              alt={title}
+              className="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+            />
+            <div className="absolute top-4 left-4">
+              <span className="px-3 py-1 bg-primary-600/90 text-white text-sm rounded-full">
+                {category}
+              </span>
+            </div>
           </div>
-        </div>
-        
-        <div className="p-6">
-          <div className="flex items-center gap-2 text-sm text-gray-400 mb-3">
-            <Calendar size={14} />
-            <time dateTime={date}>{formattedDate}</time>
+
+          {/* Contenido */}
+          <div className="md:w-2/3 p-6 flex flex-col justify-between">
+            <div>
+              <h3 className="text-xl font-medium mb-2 group-hover:text-primary-400 transition-colors">
+                {title}
+              </h3>
+              <p className="text-gray-400 mb-4 line-clamp-2">
+                {description}
+              </p>
+            </div>
+            
+            <div className="flex items-center justify-between mt-4">
+              <span className="text-sm text-gray-500">{formattedDate}</span>
+              <ArrowUpRight 
+                size={20} 
+                className="text-primary-400 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
+              />
+            </div>
           </div>
-          
-          <h2 className="text-xl font-medium mb-2 text-white hover:text-primary-400 transition-colors">
-            {title}
-          </h2>
-          
-          <p className="text-gray-400 text-sm line-clamp-2">
-            {description}
-          </p>
         </div>
       </Link>
     </motion.article>
