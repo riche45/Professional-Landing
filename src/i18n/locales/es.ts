@@ -20,6 +20,10 @@ export default {
     resume: '/curriculum',
     connects: '/conexiones',
     surveys: '/encuestas',
+    about: '/about',
+    projects: '/portfolio',
+    articles: '/articulos',
+    conversations: '/chat',
   },
   categories: {
     articles: 'Artículos',
@@ -88,7 +92,7 @@ export default {
   },
   profile: {
     greeting: '¡Hola, soy Richard García!',
-    description: 'Soy un desarrollador de software y diseñador con experiencia. Puedes ver',
+    description: 'emprendedor,\n diseñador,\ncreador,\ndev software.',
     experience: 'Durante más de 5 años, he ayudado a empresas a resolver problemas de negocio con soluciones innovadoras en dominios como finanzas, tecnología, salud y educación.',
   },
   chat: {
@@ -564,5 +568,21 @@ export default {
       title: 'Gestión Financiera con IA',
       description: 'Modelo de gestión de activos implementado en Python utilizando TensorFlow, scikit-learn y cifrado AES. Permite la toma de decisiones financieras mediante técnicas de aprendizaje automático para clasificar el riesgo de activos. Incluye carga y preprocesamiento de datos, entrenamiento de redes neuronales, evaluación de precisión, visualización de activos y cifrado de datos.'
     },
+  },
+  about: {
+    intro: 'Soy desarrollador full stack, emprendedor, diseñador y creador digital. Puedes consultar mi currículum',
+    introExtra: 'Durante más de 5 años he ayudado a empresas y startups a resolver problemas de negocio con tecnología moderna: React, TypeScript, Python, IA, blockchain y automatización. Me apasiona crear productos útiles, escalables y con un diseño minimalista.\n\nMe especializo en productividad para desarrolladores, automatización y herramientas de IA. He creado desde portafolios profesionales, bots, paneles de control, hasta modelos de gestión financiera con IA.',
+    articles: {
+      llms: 'Cómo los LLMs están cambiando el desarrollo',
+      automation: 'Automatiza tu vida con IA',
+      prompts: 'Guía práctica de prompts para Claude y GPT'
+    },
+    projects: {
+      portfolio: 'Portafolio Personal 2025: Este sitio, con chat personalizado, newsletter, internacionalización y secciones de freelance/colaboraciones.',
+      gestionai: 'Gestión Financiera con IA: Modelo de activos con Python, TensorFlow y cifrado AES.',
+      bots: 'Bots y automatizaciones: Desde Telegram hasta integraciones con APIs y plataformas no-code.'
+    },
+    opensource: 'Contribuyo a proyectos open source y comparto código en',
+    talks: 'Estoy abierto a colaborar y dar charlas sobre IA, emprendimiento tech, productividad, desarrollo web, y eventos online. ¿Quieres invitarme a dar una charla? Contáctame.'
   },
 };

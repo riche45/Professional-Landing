@@ -20,6 +20,10 @@ export default {
     resume: '/resume',
     connects: '/connects',
     surveys: '/surveys',
+    about: '/about',
+    projects: '/portfolio',
+    articles: '/articles',
+    conversations: '/chat',
   },
   categories: {
     articles: 'Articles',
@@ -87,9 +91,9 @@ export default {
     designedBy: 'designed by',
   },
   profile: {
-    greeting: 'Hey, I\'m Richard García!',
-    description: 'I\'m an experienced software developer and designer. You can see',
-    experience: 'For over 5 years, I\'ve helped companies solve business problems with innovative solutions in domains such as finance, technology, healthcare, and education.',
+    greeting: "Hey, I'm Richard García!",
+    description: 'entrepreneur,\n designer,\ncreator,\nsoftware dev.',
+    experience: "For over 5 years, I've helped companies solve business problems with innovative solutions in domains such as finance, technology, healthcare, and education.",
   },
   chat: {
     welcome: "Hi! 👋 I'm Richard's personal assistant. I can tell you about:\n\n📊 Experience and completed projects\n💻 Technologies and skills\n💰 Hourly rates (starting at $20 for freelance projects)\n📝 Articles and content\n\nYou can ask me about any of these topics or type 'prices' to see detailed rates. How can I help you?",
@@ -581,5 +585,21 @@ export default {
       title: 'Financial Management with AI',
       description: 'Asset management model implemented in Python using TensorFlow, scikit-learn, and AES encryption. Enables financial decision-making through machine learning techniques to classify asset risk. Includes data loading and preprocessing, neural network training, accuracy evaluation, asset value visualization, and data encryption.'
     },
+  },
+  about: {
+    intro: "I'm a full stack developer, entrepreneur, designer, and digital creator. You can check out my résumé",
+    introExtra: "For over 5 years, I've helped companies and startups solve business problems with modern technology: React, TypeScript, Python, AI, blockchain, and automation. I'm passionate about building useful, scalable products with a minimalist design.\n\nI specialize in developer productivity, automation, and AI tools. I've built everything from professional portfolios, bots, dashboards, to financial management models with AI.",
+    articles: {
+      llms: 'How LLMs are changing development',
+      automation: 'Automate your life with AI',
+      prompts: 'Practical prompt guide for Claude and GPT'
+    },
+    projects: {
+      portfolio: 'Personal Portfolio 2025: This site, with custom chat, newsletter, internationalization, and freelance/collaboration sections.',
+      gestionai: 'Financial Management with AI: Asset model with Python, TensorFlow, and AES encryption.',
+      bots: 'Bots & automations: From Telegram to API integrations and no-code platforms.'
+    },
+    opensource: 'I contribute to open source projects and share code on',
+    talks: "I'm open to collaborating and giving talks on AI, tech entrepreneurship, productivity, web development, and online events. Want to invite me to speak? Contact me."
   },
 };

@@ -12,6 +12,7 @@ import Resume from './pages/Resume';
 import Tutorials from './pages/Tutorials';
 import Memes from './pages/Memes';
 import Portfolio from './pages/Portfolio';
+import About from './pages/About';
 
 function App() {
   const { t } = useTranslation();
@@ -37,6 +38,7 @@ function App() {
           <Route path="tutorials" element={<Tutorials />} />
           <Route path="memes" element={<Memes />} />
           <Route path="portfolio" element={<Portfolio />} />
+          <Route path="about" element={<About />} />
           <Route path="*" element={<div className="p-12 text-center"><h1 className="text-2xl">{t('errors.pageNotFound')}</h1></div>} />
         </Route>
       </Routes>

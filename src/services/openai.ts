@@ -9,28 +9,52 @@ export interface BotResponse {
 // Sistema de respuestas del bot
 const botResponses: BotResponse[] = [
   {
-    content: "¡Hola! 👋 Soy el asistente personal de Richard. Puedo informarte sobre:\n\n📊 Experiencia y proyectos realizados\n💻 Tecnologías y habilidades\n💰 Tarifas por hora (desde $20 para proyectos freelance)\n📝 Artículos y contenido\n\nPuedes preguntarme sobre cualquiera de estos temas o escribir 'precios' para ver las tarifas detalladas. ¿En qué puedo ayudarte?",
-    content_en: "Hi! 👋 I'm Richard's personal assistant. I can tell you about:\n\n📊 Experience and completed projects\n💻 Technologies and skills\n💰 Hourly rates (starting at $20 for freelance projects)\n📝 Articles and content\n\nYou can ask me about any of these topics or type 'prices' to see detailed rates. How can I help you?",
+    content: `¡Hola! 👋 Soy el asistente personal de Richard. Puedo informarte sobre:
+
+📊 Experiencia y proyectos destacados (incluyendo este portafolio profesional desarrollado con React, Vite, TypeScript, Tailwind CSS, Supabase, chat personalizado, newsletter, internacionalización y más).
+💻 Tecnologías y habilidades modernas (Full Stack, IA, blockchain, automatización, etc.).
+🤝 Colaboraciones, proyectos freelance y oportunidades de conexión.
+📝 Artículos, tutoriales y recursos personalizados.
+
+Pregunta por cualquier proyecto, tecnología, sección o servicio. ¿En qué puedo ayudarte?`,
+    content_en: `Hi! 👋 I'm Richard's personal assistant. I can tell you about:
+
+📊 Experience and featured projects (including this professional portfolio built with React, Vite, TypeScript, Tailwind CSS, Supabase, custom chat, newsletter, internationalization, and more).
+💻 Modern technologies and skills (Full Stack, AI, blockchain, automation, etc.).
+🤝 Collaborations, freelance projects, and connection opportunities.
+📝 Articles, tutorials, and personalized resources.
+
+Ask me about any project, technology, section, or service. How can I help you?`,
     category: "greeting",
     keywords: ["hola", "hey", "saludos", "buenos días", "buenas tardes", "buenas noches", "hi", "hello", "ey", "hello", "good morning", "good afternoon", "good evening", "greetings"]
   },
   {
-    content: "Mi experiencia incluye más de 5 años en desarrollo de software, trabajando en diversos sectores como finanzas, tecnología, salud y educación. Me especializo en desarrollo web moderno con React, TypeScript y otras tecnologías avanzadas.",
-    content_en: "My experience includes over 5 years in software development, working across various sectors such as finance, technology, healthcare, and education. I specialize in modern web development with React, TypeScript, and other advanced technologies.",
-    category: "experience",
-    keywords: ["experiencia", "años", "trabajado", "trabajo", "desarrollador", "desarrollo", "experiencias", "trabajos", "carrera", "experience", "years", "worked", "work", "developer", "development", "career", "background"]
+    content: `He trabajado en proyectos como:
+- Portafolio Personal 2025 (este sitio): Full Stack, moderno, internacionalizado, con chat y newsletter.
+- Gestión Financiera con IA: modelo de activos con Python, TensorFlow, scikit-learn, cifrado AES.
+- Bots, paneles de control, blockchain, automatización y más.
+
+¿Te gustaría saber más sobre algún proyecto específico o tecnología?`,
+    content_en: `I've worked on projects such as:
+- Personal Portfolio 2025 (this site): Full Stack, modern, internationalized, with chat and newsletter.
+- Financial Management with AI: asset model with Python, TensorFlow, scikit-learn, AES encryption.
+- Bots, dashboards, blockchain, automation, and more.
+
+Would you like to know more about a specific project or technology?`,
+    category: "projects",
+    keywords: ["proyectos", "trabajos", "portfolio", "aplicaciones", "sistemas", "proyecto", "portafolio", "apps", "aplicación", "projects", "works", "applications", "systems", "apps", "portfolio"]
   },
   {
-    content: "Mi stack tecnológico principal incluye React, TypeScript, Node.js, Python, PostgreSQL, MongoDB y herramientas de AI/ML. También trabajo con tecnologías blockchain y cloud como AWS y Docker.",
-    content_en: "My main tech stack includes React, TypeScript, Node.js, Python, PostgreSQL, MongoDB, and AI/ML tools. I also work with blockchain and cloud technologies like AWS and Docker.",
+    content: `Mi stack incluye: React, React Native, Vite, TypeScript, Tailwind CSS, Supabase, OpenAI, Python, Django, Node.js, blockchain, IA/ML, i18n, y más. Experiencia en desarrollo web y móvil, automatización, y soluciones personalizadas.`,
+    content_en: `My stack includes: React, React Native, Vite, TypeScript, Tailwind CSS, Supabase, OpenAI, Python, Django, Node.js, blockchain, AI/ML, i18n, and more. Experience in web and mobile development, automation, and custom solutions.`,
     category: "skills",
     keywords: ["tecnologías", "stack", "herramientas", "react", "typescript", "python", "node", "blockchain", "tecnología", "programación", "lenguajes", "frameworks", "technologies", "tools", "programming", "languages", "skills", "tech stack"]
   },
   {
-    content: "He trabajado en varios proyectos interesantes, incluyendo dashboards empresariales, aplicaciones móviles de salud, sistemas de e-learning y plataformas de análisis financiero. ¿Te gustaría conocer más sobre algún proyecto específico?",
-    content_en: "I've worked on several interesting projects, including enterprise dashboards, healthcare mobile apps, e-learning systems, and financial analysis platforms. Would you like to know more about any specific project?",
-    category: "projects",
-    keywords: ["proyectos", "trabajos", "portfolio", "aplicaciones", "sistemas", "proyecto", "portafolio", "apps", "aplicación", "projects", "works", "applications", "systems", "apps", "portfolio"]
+    content: `Este portafolio está completamente internacionalizado (español/inglés), con diseño moderno, secciones personalizadas (memes, podcast, links, portfolio, freelance, colaboraciones) y funcionalidades avanzadas como chat y newsletter.`,
+    content_en: `This portfolio is fully internationalized (Spanish/English), with modern design, custom sections (memes, podcast, links, portfolio, freelance, collaborations), and advanced features like chat and newsletter.`,
+    category: "about_portfolio",
+    keywords: ["internacionalización", "personalización", "idiomas", "secciones", "portfolio", "about", "internationalization", "custom", "languages", "sections"]
   },
   {
     content: "Estoy disponible para proyectos freelance, consultoría técnica y colaboraciones. Puedes encontrar más información en la sección de 'Conexiones'.",

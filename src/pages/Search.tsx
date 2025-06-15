@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Search as SearchIcon, Filter, Calendar, User, MessageSquare, FileText } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 interface SearchResult {
   id: string;
@@ -12,10 +13,12 @@ interface SearchResult {
   date?: string;
   category?: string;
   url?: string;
+  slug?: string;
 }
 
 export default function Search() {
   const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
   const [query, setQuery] = useState('');
   const [activeFilters, setActiveFilters] = useState<string[]>(['project', 'article', 'profile', 'chat']);
   const [results, setResults] = useState<SearchResult[]>([]);
@@ -31,7 +34,7 @@ export default function Search() {
       content: t('search.mockData.project1.content', 'Dashboard completo para análisis de ventas, inventario y métricas de rendimiento. Implementado con React, TypeScript, y integración con APIs de pago.'),
       date: '2024-12-15',
       category: 'Web Development',
-      url: '/projects/ecommerce-dashboard'
+      slug: 'ecommerce-dashboard',
     },
     {
       id: '2',
@@ -41,7 +44,7 @@ export default function Search() {
       content: t('search.mockData.article1.content', 'Los desarrolladores están adoptando LLMs para automatizar tareas, generar código y mejorar la productividad. Este artículo explora las mejores prácticas.'),
       date: '2025-03-11',
       category: 'AI/ML',
-      url: '/articles/developers-using-llms'
+      slug: 'developers-using-llms',
     },
     {
       id: '3',
@@ -67,36 +70,24 @@ export default function Search() {
       content: t('search.mockData.project2.content', 'App desarrollada con React Native para tracking de actividad física, monitoreo de signos vitales y sincronización con dispositivos wearables.'),
       date: '2024-11-20',
       category: 'Mobile Development',
-      url: '/projects/health-app'
+      slug: 'health-app',
     }
   ];
 
   useEffect(() => {
-    if (query.trim() === '') {
-      setResults([]);
-      return;
-    }
-
-    setIsLoading(true);
-    
-    // Simulate API delay
-    const timer = setTimeout(() => {
-      const filteredResults = mockData.filter(item => {
-        const matchesQuery = 
-          item.title.toLowerCase().includes(query.toLowerCase()) ||
-          item.description.toLowerCase().includes(query.toLowerCase()) ||
-          item.content.toLowerCase().includes(query.toLowerCase());
-        
-        const matchesFilter = activeFilters.includes(item.type);
-        
-        return matchesQuery && matchesFilter;
-      });
-      
-      setResults(filteredResults);
-      setIsLoading(false);
-    }, 300);
-
-    return () => clearTimeout(timer);
+    // Nuevo filtrado: siempre filtra por tipo, y por query si hay texto
+    let filteredResults = mockData.filter(item => {
+      const matchesFilter = activeFilters.includes(item.type);
+      if (!matchesFilter) return false;
+      if (query.trim() === '') return true;
+      const matchesQuery =
+        item.title.toLowerCase().includes(query.toLowerCase()) ||
+        item.description.toLowerCase().includes(query.toLowerCase()) ||
+        item.content.toLowerCase().includes(query.toLowerCase());
+      return matchesQuery;
+    });
+    setResults(filteredResults);
+    setIsLoading(false);
   }, [query, activeFilters]);
 
   const toggleFilter = (filter: string) => {
@@ -192,43 +183,70 @@ export default function Search() {
         )}
 
         <AnimatePresence>
-          {results.map((result) => (
-            <motion.div
-              key={result.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-              className="bg-dark-800 rounded-card p-6 hover:bg-dark-700 transition-colors cursor-pointer"
-            >
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 mt-1">
-                  {getTypeIcon(result.type)}
-                </div>
-                <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="text-xs text-gray-400">{getTypeLabel(result.type)}</span>
-                    {result.date && (
-                      <>
-                        <span className="text-gray-600">•</span>
-                        <span className="text-xs text-gray-400 flex items-center gap-1">
-                          <Calendar size={12} />
-                          {new Date(result.date).toLocaleDateString(i18n.language === 'es' ? 'es-ES' : 'en-US', {
-                            year: 'numeric',
-                            month: 'long',
-                            day: 'numeric'
-                          })}
-                        </span>
-                      </>
-                    )}
+          {results.map((result) => {
+            // Solo artículos y perfil son clicables si tienen página real
+            let to: string | undefined = undefined;
+            let isClickable = false;
+            if (result.type === 'article' && result.slug) {
+              to = `${t('routes.articles')}/${result.slug}`;
+              isClickable = true;
+            } else if (result.type === 'profile') {
+              to = t('routes.about');
+              isClickable = true;
+            }
+            // Los proyectos del portafolio y chat NO serán clicables hasta que exista la ruta/página real
+            return (
+              <motion.div
+                key={result.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+                className={`bg-dark-800 rounded-card p-6 hover:bg-dark-700 transition-colors ${isClickable ? 'cursor-pointer' : 'opacity-70'} focus:outline-none`}
+                role={isClickable ? 'button' : undefined}
+                tabIndex={isClickable ? 0 : -1}
+                onClick={() => {
+                  if (isClickable && to) {
+                    navigate(to);
+                  }
+                }}
+                onKeyDown={e => {
+                  if (isClickable && (e.key === 'Enter' || e.key === ' ')) {
+                    e.preventDefault();
+                    navigate(to!);
+                  }
+                }}
+                aria-label={isClickable ? result.title : undefined}
+              >
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 mt-1">
+                    {getTypeIcon(result.type)}
                   </div>
-                  <h3 className="text-lg font-medium text-white mb-1">{result.title}</h3>
-                  <p className="text-gray-400 text-sm mb-2">{result.description}</p>
-                  <p className="text-gray-500 text-sm line-clamp-2">{result.content}</p>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="text-xs text-gray-400">{getTypeLabel(result.type)}</span>
+                      {result.date && (
+                        <>
+                          <span className="text-gray-600">•</span>
+                          <span className="text-xs text-gray-400 flex items-center gap-1">
+                            <Calendar size={12} />
+                            {new Date(result.date).toLocaleDateString(i18n.language === 'es' ? 'es-ES' : 'en-US', {
+                              year: 'numeric',
+                              month: 'long',
+                              day: 'numeric'
+                            })}
+                          </span>
+                        </>
+                      )}
+                    </div>
+                    <h3 className="text-lg font-medium text-white mb-1">{result.title}</h3>
+                    <p className="text-gray-400 text-sm mb-2">{result.description}</p>
+                    <p className="text-gray-500 text-sm line-clamp-2">{result.content}</p>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </AnimatePresence>
       </div>
     </div>

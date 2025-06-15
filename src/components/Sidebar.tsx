@@ -36,8 +36,10 @@ export default function Sidebar({ onClose }: SidebarProps) {
       </div>
       
       <div className="px-6">
-        <h1 className="text-xl font-medium text-gray-900 dark:text-white">Richard Garcia.</h1>
-        <p className="text-sm text-gray-600 dark:text-gray-400">Software Engineer. Designer. Creator.</p>
+        <NavLink to="/about" className="block" onClick={onClose}>
+          <h1 className="text-xl font-medium text-gray-900 dark:text-white hover:text-primary-400 transition-colors">Richard Garcia.</h1>
+        </NavLink>
+        <p className="text-sm text-gray-600 dark:text-gray-400 whitespace-pre-line">{t('profile.description')}</p>
       </div>
       
       <SocialLinks className="mt-4 px-6" />
