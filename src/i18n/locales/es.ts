@@ -556,5 +556,13 @@ export default {
       title: 'DeepLearning Clasificacion de Frutas',
       description: 'Diseñé e implementé modelos de redes neuronales desde cero utilizando las API de PyTorch de bajo nivel para comprender a fondo cada paso del entrenamiento. Esto incluye pases hacia adelante, cálculo de errores, retropropagación y actualizaciones de pesos. Esta experiencia práctica me proporciona bases sólidas para adaptar arquitecturas de aprendizaje profundo a problemas específicos y optimizar los modelos eficazmente para su uso en producción. Conceptos aplicados: funciones de activación, retropropagación, descenso de gradiente, cálculo de pérdidas, redes multicapa.'
     },
+    portfolio2025: {
+      title: 'Portafolio Personal 2025 (este sitio)',
+      description: 'Desarrollo de portafolio profesional con React (Native), Vite, TypeScript, Tailwind CSS y Supabase. Incluye suscripción a newsletter, chat personalizado y entrenado para OpenAI, diseño moderno y minimalista, internacionalización, secciones de freelance, colaboraciones y conexiones. Alto grado de personalización y enfoque full stack para mostrar capacidades en desarrollo web moderno.'
+    },
+    gestionai: {
+      title: 'Gestión Financiera con IA',
+      description: 'Modelo de gestión de activos implementado en Python utilizando TensorFlow, scikit-learn y cifrado AES. Permite la toma de decisiones financieras mediante técnicas de aprendizaje automático para clasificar el riesgo de activos. Incluye carga y preprocesamiento de datos, entrenamiento de redes neuronales, evaluación de precisión, visualización de activos y cifrado de datos.'
+    },
   },
 };

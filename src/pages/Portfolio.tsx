@@ -25,6 +25,9 @@ export default function Portfolio() {
   };
   const closeModal = () => setSelected(null);
 
+  // Ordenar proyectos por fecha (más reciente primero)
+  const sortedProjects = portfolioProjects.slice().sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
   return (
     <div className="max-w-4xl mx-auto">
       <div className="mb-8">
@@ -32,7 +35,7 @@ export default function Portfolio() {
         <p className="text-gray-400 mb-2">{t('portfolio.intro', 'Algunos de mis proyectos destacados, desarrollados con pasión y tecnología moderna.')}</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {portfolioProjects.map((project) => (
+        {sortedProjects.map((project) => (
           <motion.div
             key={project.id}
             whileHover={{ y: -4 }}

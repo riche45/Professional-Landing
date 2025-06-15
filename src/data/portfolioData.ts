@@ -76,7 +76,35 @@ export const portfolioProjects = [
     titleKey: 'portfolio.DeepLearning.title',
     descriptionKey: 'portfolio.DeepLearning.description',
     githubUrl: 'https://github.com/riche45/DeepLearning_pytorch',
-    date: '2024-04-06',
+    date: '2025-04-06',
     technologies: ['Python', 'Data Science', 'PyTorch', 'Deep Learning', 'Neural Networks', 'AI Model Training']
+  },
+  {
+    id: 7,
+    slug: 'personal-portfolio-2025',
+    imageSrcs: [
+      '/portfolio/portfolio-2025-1.png'
+    ],
+    titleKey: 'portfolio.portfolio2025.title',
+    descriptionKey: 'portfolio.portfolio2025.description',
+    githubUrl: 'https://github.com/riche45/Professional-Landing',
+    date: '2025-06-12',
+    technologies: [
+      'React', 'React Native', 'Vite', 'TypeScript', 'Tailwind CSS', 'Supabase', 'OpenAI', 'i18n', 'Full Stack', 'Modern UI', 'Custom Chat', 'Newsletter', 'Freelance', 'Collaborations'
+    ]
+  },
+  {
+    id: 8,
+    slug: 'gestion-financiera-ia',
+    imageSrcs: [
+      '/portfolio/gestionai-1.jpg'
+    ],
+    titleKey: 'portfolio.gestionai.title',
+    descriptionKey: 'portfolio.gestionai.description',
+    githubUrl: 'https://github.com/riche45/GestionAI',
+    date: '2023-06-03',
+    technologies: [
+      'Python', 'TensorFlow', 'scikit-learn', 'AES', 'Machine Learning', 'Finance', 'pandas', 'matplotlib', 'pycryptodome'
+    ]
   }
 ]; 

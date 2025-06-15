@@ -573,5 +573,13 @@ export default {
       title: 'DeepLearning Classification of Fruits',
       description: 'I designed and implemented neural network models from scratch using low-level PyTorch APIs to fully understand each step of the training process. This includes forward passes, error calculation, backpropagation, and weight updates. This practical experience provides a solid foundation for adapting deep learning architectures to specific problems and optimizing models effectively for production use. Applied concepts: activation functions, backpropagation, gradient descent, loss calculation, multi-layer networks.'
     },
+    portfolio2025: {
+      title: 'Personal Portfolio 2025 (this site)',
+      description: 'Professional portfolio developed with React (Native), Vite, TypeScript, Tailwind CSS, and Supabase. Includes newsletter subscription, custom chat trained for OpenAI, modern and minimal design, internationalization, freelance, collaborations, and connects sections. High degree of customization and full stack focus to showcase modern web development skills.'
+    },
+    gestionai: {
+      title: 'Financial Management with AI',
+      description: 'Asset management model implemented in Python using TensorFlow, scikit-learn, and AES encryption. Enables financial decision-making through machine learning techniques to classify asset risk. Includes data loading and preprocessing, neural network training, accuracy evaluation, asset value visualization, and data encryption.'
+    },
   },
 };
