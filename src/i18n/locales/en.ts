@@ -293,7 +293,8 @@ export default {
       buttons: {
         connectGlobally: 'Connect Globally',
         scheduleMeeting: 'Schedule a Meeting',
-        joinCommunity: 'Join Community'
+        joinCommunity: 'Join Community',
+        proposeCollab: 'Propose a Collaboration'
       }
     },
     availableFor: {
@@ -311,58 +312,89 @@ export default {
       connect: 'Connect'
     },
     opportunities: {
-      title: 'Current Opportunities',
+      title: 'Solutions I Offer',
+      description: 'Here are some of the services and solutions I can develop for your business. If you have a different need, you can also request a custom quote.',
       labels: {
         new: 'New',
         featured: 'Featured',
         timeAgo: '1 week ago',
         budget: 'Budget:',
-        applyNow: 'Apply Now'
+        applyNow: 'Request Now',
+        requestBudget: 'Request a Quote'
       },
       projects: {
+        automationAI: {
+          title: 'Process Automation & AI Agents',
+          description: 'I implement intelligent agents and automation solutions to optimize processes in small and large companies. Improve efficiency, reduce errors, and free up time for strategic tasks.'
+        },
         websiteRedesign: {
-          title: 'Website Redesign Project',
-          description: 'Looking for an experienced front-end developer to redesign a corporate website with React and modern design principles.',
-          skills: ['React', 'UI/UX', 'Responsive']
+          title: 'Corporate Website Redesign',
+          description: 'I modernize and optimize corporate websites with professional, responsive design focused on conversion.'
         },
         aiIntegration: {
           title: 'AI Integration for E-commerce',
-          description: 'Seeking an AI specialist to implement intelligent product recommendations and search functionality for an e-commerce platform.',
-          skills: ['Python', 'AI/ML', 'API']
+          description: 'Artificial intelligence solutions for product recommendations, smart search, and personalization in online stores.'
         },
         mobileApp: {
           title: 'Mobile App Development',
-          description: 'Looking for a mobile developer to create a cross-platform fitness tracking application with React Native.',
-          skills: ['React Native', 'Mobile', 'Firebase']
+          description: 'I develop cross-platform mobile applications for Android and iOS, integrating modern features and advanced user experience.'
         }
       }
     },
     clients: {
-      title: 'Past Clients',
+      title: 'Clients & Partners',
       companies: {
-        techCorp: {
-          name: 'TechCorp Inc.',
-          description: 'Enterprise dashboard redesign'
+        vya: {
+          name: 'Vya Projects',
+          description: 'Development of NFC card reader system with Python for entertainment and access control services. Málaga, Spain.'
         },
-        healthTrack: {
-          name: 'HealthTrack',
-          description: 'Mobile health monitoring app'
+        educapro: {
+          name: 'EducaPro',
+          description: 'Collaboration in the Implementation of a custom e-learning platform for universities and educational centers.'
         },
-        eduLearn: {
-          name: 'EduLearn Platform',
-          description: 'E-learning system development'
+        finagil: {
+          name: 'Finanzas Ágiles',
+          description: 'Development of a financial dashboard and automated reporting for SMEs.'
         },
-        finTrack: {
-          name: 'FinTrack Solutions',
-          description: 'Financial analytics dashboard'
+        innovatek: {
+          name: 'Innovatek Solutions',
+          description: 'Consulting and development of custom tech solutions for IT sector companies.'
         }
       },
       testimonials: {
         title: 'Testimonials',
         sarah: {
-          name: 'Sarah Johnson',
-          role: 'CTO, TechCorp Inc.'
+          name: 'Sara Serrano',
+          role: 'CTO, TechSolutions SL.',
+          testimonial: 'Working with Richard was a fantastic experience. He quickly understood our technical needs and delivered innovative solutions that exceeded our expectations.',
+          photo: '/images/clients/sarah.jpg'
         }
+      },
+      submitButton: 'Send Request'
+    },
+    budget: {
+      title: 'Request a Quote',
+      description: 'Have a project in mind? Give me some details and I\'ll get back to you with a quote.',
+      form: {
+        budgetType: 'Rate Type',
+        budgetTypeOptions: {
+          project: 'Project-Based',
+          hourly: 'Hourly',
+          retainer: 'Monthly Retainer'
+        },
+        budgetAmount: 'Budget / Rate',
+        budgetAmountPlaceholder: 'e.g., $5000 project, $75/hour, 20 hours/month',
+        timeline: 'Estimated Timeline',
+        submitButton: 'Send Quote Request'
+      }
+    },
+    collab: {
+      title: 'Propose a Collaboration',
+      description: 'Got an idea for a project, a talk, or want to create content together? I\'m open to suggestions!',
+      form: {
+        role: 'Your Role / Company',
+        ideaPlaceholder: 'Briefly describe your collaboration idea...',
+        submitButton: 'Send Collaboration Proposal'
       }
     },
     contact: {
@@ -423,6 +455,15 @@ export default {
       jobRole: {
         label: "Job Role",
         placeholder: "e.g. Software Developer, Designer, Product Manager"
+      },
+      startupFounder: {
+        label: 'What is your main profile?',
+        options: {
+          founder: 'Startup Founder',
+          entrepreneur: 'Entrepreneur',
+          technical: 'Technical only',
+          other: 'Other'
+        }
       }
     },
     technicalSkills: {
@@ -478,6 +519,126 @@ export default {
       next: "Next",
       previous: "Previous",
       submit: "Submit Survey"
+    },
+    feedback: {
+      success: 'Survey sent successfully!',
+      error: 'An error occurred while sending the survey. Please try again.',
+      required: 'Please complete all required fields.',
+      consent: 'You must accept the privacy policy to submit the survey.'
+    },
+    consent: {
+      label: 'I have read and accept the privacy policy.',
+      link: 'View privacy policy'
+    },
+    otherSurveys: {
+      title: 'Other Surveys',
+      surveys: [
+        {
+          title: 'English Barrier Survey',
+          description: 'Has English held you back in your tech career? Help us validate an innovative solution.'
+        },
+        {
+          title: 'Professional Experience Survey',
+          description: 'Please share your professional experience to help us understand our audience better.'
+        }
+        // Las siguientes encuestas están comentadas porque no tienen lógica implementada:
+        // {
+        //   title: 'Developer Tools Survey 2025',
+        //   description: 'Help shape the future of developer tools by sharing your preferences.'
+        // },
+        // {
+        //   title: 'AI Ethics Questionnaire',
+        //   description: 'Share your thoughts on the ethical considerations of AI development.'
+        // },
+        // {
+        //   title: 'Conference Topic Suggestions',
+        //   description: 'What topics would you like to see covered at upcoming tech conferences?'
+        // },
+        // {
+        //   title: 'Use of AI agents',
+        //   description: 'Help us identify the three most costly and repetitive use cases in your work to prototype AI agents useful for your industry.'
+        // }
+      ]
+    },
+    aiAgents: {
+      title: 'Survey: Use of AI Agents',
+      description: 'Identify the three most costly and repetitive use cases in your work. We are looking to prototype AI agents that will truly help you.',
+      role: 'Professional Role',
+      industry: 'Industry',
+      experience: 'Years of Experience',
+      painPoint1: '1st most costly/repetitive point',
+      painPoint2: '2nd most costly/repetitive point',
+      painPoint3: '3rd most costly/repetitive point',
+      repetitiveTasks: 'What repetitive tasks do you often perform?',
+      aiAgentInterest: 'Would you be interested in an AI agent to automate any of these tasks?',
+      keyFunctionality: 'What functionality would be key for you?',
+      contact: 'Would you like to be contacted for a free demo or consultation? (email or LinkedIn, optional)',
+      country: 'Country',
+      consent: 'I have read and accept the privacy policy.',
+      submit: 'Submit Survey',
+      feedback: {
+        success: 'Survey sent successfully!',
+        error: 'An error occurred. Please try again.',
+        consent: 'You must accept the privacy policy to submit the survey.'
+      }
+    },
+    englishBarrier: {
+      title: 'English Barrier Survey',
+      role: 'Main role in technology',
+      experience: 'Years of experience',
+      experienceOptions: {
+        lessThanOne: '<1 year',
+        oneToThree: '1-3 years',
+        threeToFive: '3-5 years',
+        fiveToTen: '5-10 years',
+        tenPlus: '10+ years'
+      },
+      englishLevel: 'English level',
+      englishLevelOptions: {
+        basic: 'Basic',
+        intermediate: 'Intermediate',
+        advanced: 'Advanced',
+        fluent: 'Fluent'
+      },
+      lostOpportunity: 'Have you lost opportunities for not speaking fluent English?',
+      lostOpportunityOptions: {
+        several: 'Yes, several times',
+        once: 'Yes, once',
+        worried: 'No, but it worries me',
+        never: 'No, never'
+      },
+      feelings: 'How did you feel in those situations?',
+      optional: 'optional',
+      wantsToImprove: 'Would you like to improve your professional/tech English?',
+      wantsToImproveOptions: {
+        urgent: 'Yes, urgently',
+        notPriority: 'Yes, but it is not a priority',
+        no: 'No, I do not need it'
+      },
+      appInterest: 'How would you feel about an app with a conversational AI agent, spaced repetition and gamification?',
+      appInterestOptions: {
+        loveIt: 'I would love to try it',
+        interesting: 'Sounds interesting, but I have doubts',
+        preferClasses: 'I prefer traditional classes',
+        notInterested: 'I am not interested'
+      },
+      features: 'Which feature would motivate you the most?',
+      multiple: 'select several',
+      featuresOptions: {
+        conversational: 'Conversational AI practice',
+        challenges: 'Daily challenges and achievements',
+        interviews: 'Technical interview simulations',
+        progress: 'Progress tracking and ranking',
+        reminders: 'Smart reminders',
+        other: 'Other'
+      },
+      contact: 'Would you like to be contacted to try the MVP?',
+      contactHint: 'email or LinkedIn',
+      country: 'Country',
+      submit: 'Submit Survey',
+      sending: 'Sending...',
+      success: 'Survey sent successfully!',
+      error: 'An error occurred. Please try again.'
     }
   },
   resume: {
@@ -601,5 +762,53 @@ export default {
     },
     opensource: 'I contribute to open source projects and share code on',
     talks: "I'm open to collaborating and giving talks on AI, tech entrepreneurship, productivity, web development, and online events. Want to invite me to speak? Contact me."
+  },
+  meeting: {
+    title: 'Schedule a Meeting',
+    form: {
+      date: 'Date',
+      time: 'Time',
+      message: 'Additional message',
+      messagePlaceholder: 'Anything you want to mention before the meeting?',
+      submitButton: 'Send Meeting Request',
+      close: 'Close',
+    },
+    success: 'Meeting request sent successfully!',
+    error: 'Error sending meeting request.'
+  },
+  links: {
+    categories: {
+      social: 'Social & Professional Profiles',
+      projects: 'Featured Projects',
+      personal: 'Personal Resources',
+      resources: 'Recommended Tools & Resources',
+      contact: 'Contact'
+    },
+    social: {
+      linkedin: 'Connect with me for professional opportunities and networking.',
+      github: 'My main repository for open source projects and experiments.',
+      twitter: 'Thoughts, ideas and tech updates.',
+      instagram: 'My creative and visual side, projects and tech life.'
+    },
+    projects: {
+      portfolio: 'My professional portfolio and AI experiments.',
+      automation: 'Collection of useful bots and automations.'
+    },
+    personal: {
+      blog: 'Articles on development, AI and productivity.',
+      newsletter: 'Subscribe to receive exclusive news and resources.'
+    },
+    resources: {
+      zeroToOne: 'Key book for tech entrepreneurs.',
+      pragmatic: 'Essential book for developers.',
+      fullstack: 'Free modern web development course.',
+      vscode: 'My favorite code editor.',
+      figma: 'Collaborative design tool.',
+      notion: 'Personal productivity tool.'
+    },
+    contact: {
+      email: 'Contact me directly by email.',
+      meeting: 'Book a 1:1 meeting with me.'
+    }
   },
 };

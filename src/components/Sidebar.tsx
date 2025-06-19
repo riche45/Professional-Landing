@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { X, Home, Archive, Search, Mic, FileText, AtSign, BarChart } from 'lucide-react';
+import { X, Home, Archive, Search, Mic, FileText, AtSign, BarChart, Lock } from 'lucide-react';
 import { cn } from '../utils/cn';
 import LanguageSwitcher from './LanguageSwitcher';
 import SocialLinks from './SocialLinks';
@@ -28,7 +28,9 @@ export default function Sidebar({ onClose }: SidebarProps) {
     <div className="flex flex-col h-full py-6">
       <div className="px-4 mb-6 flex justify-between items-center">
         <div className="flex items-center">
-          <Avatar size="lg" />
+          <div className="flex flex-col items-center mb-6 px-4">
+            <Avatar size="xl" />
+          </div>
           <button className="lg:hidden ml-auto p-1 text-gray-600 dark:text-gray-300" onClick={onClose}>
             <X size={24} />
           </button>
@@ -63,6 +65,34 @@ export default function Sidebar({ onClose }: SidebarProps) {
               </NavLink>
             </li>
           ))}
+          {localStorage.getItem('admin_logged') === 'true' && (
+            <>
+              <li>
+                <NavLink
+                  to="/admin/surveys"
+                  className={({ isActive }) => cn(
+                    "flex items-center gap-3 px-4 py-2.5 rounded-lg transition-colors",
+                    isActive 
+                      ? "bg-blue-100 dark:bg-dark-700 text-blue-600 dark:text-primary-400" 
+                      : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-dark-700 hover:text-gray-900 dark:hover:text-white"
+                  )}
+                  onClick={onClose}
+                >
+                  <Lock size={20} />
+                  <span>Admin Dashboard</span>
+                </NavLink>
+              </li>
+              <li>
+                <button
+                  onClick={() => { localStorage.removeItem('admin_logged'); window.location.href = '/admin/login'; }}
+                  className="flex items-center gap-3 px-4 py-2.5 rounded-lg text-red-500 hover:bg-red-100 dark:hover:bg-dark-700 transition-colors w-full"
+                >
+                  <Lock size={20} />
+                  <span>Cerrar sesión</span>
+                </button>
+              </li>
+            </>
+          )}
           <li>
             <ThemeToggle />
           </li>

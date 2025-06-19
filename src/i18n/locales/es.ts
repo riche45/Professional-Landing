@@ -78,7 +78,7 @@ export default {
     }
   },
   errors: {
-    pageNotFound: 'Página no encontrada',
+    pageNotFound: 'Página No Encontrada',
   },
   accessibility: {
     scrollLeft: 'Desplazar a la izquierda',
@@ -272,11 +272,12 @@ export default {
     title: 'Conexiones',
     connectionHub: {
       title: 'Centro de Conexiones',
-      description: 'Conéctate conmigo para oportunidades freelance, colaboraciones o simplemente para charlar sobre tecnología.',
+      description: 'Conéctate conmigo para oportunidades freelance, colaboraciones, o simplemente para charlar sobre tecnología.',
       buttons: {
         connectGlobally: 'Conectar Globalmente',
         scheduleMeeting: 'Agendar Reunión',
-        joinCommunity: 'Unirse a la Comunidad'
+        joinCommunity: 'Unirse a la Comunidad',
+        proposeCollab: 'Proponer Colaboración'
       }
     },
     availableFor: {
@@ -294,83 +295,89 @@ export default {
       connect: 'Conectar'
     },
     opportunities: {
-      title: 'Oportunidades Actuales',
+      title: 'Soluciones que ofrezco',
+      description: 'Estos son algunos de los servicios y soluciones que puedo desarrollar para tu empresa. Si tienes una necesidad diferente, también puedes solicitar un presupuesto personalizado.',
       labels: {
         new: 'Nuevo',
         featured: 'Destacado',
         timeAgo: 'hace 1 semana',
         budget: 'Presupuesto:',
-        applyNow: 'Aplicar Ahora'
+        applyNow: 'Solicitar Ahora',
+        requestBudget: 'Solicitar Presupuesto'
       },
       projects: {
+        automationAI: {
+          title: 'Automatización de Procesos y Agentes de IA',
+          description: 'Implemento agentes inteligentes y soluciones de automatización para optimizar procesos en pequeñas y grandes empresas. Mejora la eficiencia, reduce errores y libera tiempo para tareas estratégicas.'
+        },
         websiteRedesign: {
-          title: 'Proyecto de Rediseño Web',
-          description: 'Buscando un desarrollador front-end experimentado para rediseñar un sitio web corporativo con React y principios de diseño moderno.',
-          skills: ['React', 'UI/UX', 'Responsive']
+          title: 'Rediseño Web Corporativo',
+          description: 'Modernizo y optimizo sitios web corporativos con diseño profesional, responsive y enfocado en conversión.'
         },
         aiIntegration: {
           title: 'Integración de IA para E-commerce',
-          description: 'Buscando un especialista en IA para implementar recomendaciones inteligentes de productos y funcionalidad de búsqueda para una plataforma de e-commerce.',
-          skills: ['Python', 'AI/ML', 'API']
+          description: 'Soluciones de inteligencia artificial para recomendaciones de productos, búsqueda inteligente y personalización en tiendas online.'
         },
         mobileApp: {
           title: 'Desarrollo de App Móvil',
-          description: 'Buscando un desarrollador móvil para crear una aplicación de seguimiento fitness multiplataforma con React Native.',
-          skills: ['React Native', 'Mobile', 'Firebase']
+          description: 'Desarrollo aplicaciones móviles multiplataforma para Android y iOS, integrando funcionalidades modernas y experiencia de usuario avanzada.'
         }
       }
     },
     clients: {
-      title: 'Clientes Anteriores',
+      title: 'Clientes y Socios',
       companies: {
-        techCorp: {
-          name: 'TechCorp Inc.',
-          description: 'Rediseño de dashboard empresarial'
+        vya: {
+          name: 'Vya Projects',
+          description: 'Desarrollo de sistema de lectores NFC con Python para servicios de entretenimiento y control de acceso. Málaga, España.'
         },
-        healthTrack: {
-          name: 'HealthTrack',
-          description: 'App móvil de monitoreo de salud'
+        educapro: {
+          name: 'EducaPro',
+          description: 'Colaboracion en la Implementación de plataforma e-learning personalizada para universidades y centros educativos.'
         },
-        eduLearn: {
-          name: 'Plataforma EduLearn',
-          description: 'Desarrollo de sistema e-learning'
+        finagil: {
+          name: 'Finanzas Ágiles',
+          description: 'Desarrollo de dashboard financiero y automatización de reportes para pymes.'
         },
-        finTrack: {
-          name: 'FinTrack Solutions',
-          description: 'Dashboard de análisis financiero'
+        innovatek: {
+          name: 'Innovatek Solutions',
+          description: 'Consultoría y desarrollo de soluciones tecnológicas a medida para empresas del sector IT.'
         }
       },
       testimonials: {
         title: 'Testimonios',
         sarah: {
-          name: 'Sarah Johnson',
-          role: 'CTO, TechCorp Inc.'
+          name: 'Sara Serrano',
+          role: 'CTO, SolucionesTech SL.',
+          testimonial: 'Trabajar con Richard fue una experiencia excelente. Su capacidad para entender nuestras necesidades técnicas y entregar soluciones innovadoras superó nuestras expectativas.',
+          photo: '/images/clients/sarah.jpg'
         }
+      },
+      submitButton: 'Enviar Solicitud'
+    },
+    budget: {
+      title: 'Solicitar Presupuesto',
+      description: '¿Tienes un proyecto en mente? Dame algunos detalles y te responderé con una cotización.',
+      form: {
+        budgetType: 'Tipo de Tarifa',
+        budgetTypeOptions: {
+          project: 'Por Proyecto',
+          hourly: 'Por Hora',
+          retainer: 'Retainer Mensual'
+        },
+        budgetAmount: 'Presupuesto / Tarifa',
+        budgetAmountPlaceholder: 'ej. $5000 proyecto, $75/hora, 20 horas/mes',
+        timeline: 'Tiempo Estimado',
+        submitButton: 'Enviar Solicitud de Presupuesto'
       }
     },
-    contact: {
-      title: 'Conectemos',
-      description: '¿Interesado en trabajar juntos? Completa el formulario a continuación y me pondré en contacto contigo pronto.',
+    collab: {
+      title: 'Proponer una Colaboración',
+      description: '¿Tienes una idea para un proyecto, una charla, o quieres que creemos contenido juntos? ¡Estoy abierto a sugerencias!',
       form: {
-        fullName: 'Nombre Completo',
-        emailAddress: 'Correo Electrónico',
-        companyOrg: 'Empresa/Organización',
-        projectType: {
-          label: 'Tipo de Proyecto',
-          options: {
-            webDev: 'Desarrollo Web',
-            mobileDev: 'Desarrollo de App Móvil',
-            uiDesign: 'Diseño UI/UX',
-            consulting: 'Consultoría Técnica',
-            other: 'Otro'
-          }
-        },
-        projectDetails: {
-          label: 'Detalles del Proyecto',
-          placeholder: 'Por favor proporciona detalles sobre tu proyecto, cronograma y presupuesto.'
-        },
-        privacyPolicy: 'Acepto la política de privacidad y los términos de servicio',
-        submitButton: 'Enviar Solicitud'
+        role: 'Tu Rol / Empresa',
+        ideaPlaceholder: 'Describe brevemente tu idea de colaboración...',
+        submitButton: 'Enviar Propuesta de Colaboración'
       }
     }
   },
@@ -406,6 +413,15 @@ export default {
       jobRole: {
         label: "Puesto de Trabajo",
         placeholder: "ej. Desarrollador de Software, Diseñador, Gerente de Producto"
+      },
+      startupFounder: {
+        label: '¿Cuál es tu perfil principal?',
+        options: {
+          founder: 'Fundador/a de startup',
+          entrepreneur: 'Emprendedor/a',
+          technical: 'Solo técnico',
+          other: 'Otro'
+        }
       }
     },
     technicalSkills: {
@@ -461,6 +477,109 @@ export default {
       next: "Siguiente",
       previous: "Anterior",
       submit: "Enviar Encuesta"
+    },
+    feedback: {
+      success: '¡Encuesta enviada con éxito!',
+      error: 'Ocurrió un error al enviar la encuesta. Intenta de nuevo.',
+      required: 'Por favor, completa todos los campos obligatorios.',
+      consent: 'Debes aceptar la política de privacidad para enviar la encuesta.'
+    },
+    consent: {
+      label: 'He leído y acepto la política de privacidad.',
+      link: 'Ver política de privacidad'
+    },
+    otherSurveys: {
+      title: 'Otras Encuestas',
+      surveys: [
+        {
+          title: 'Encuesta: Barreras de Fluidez en Inglés en Tech',
+          description: '¿El inglés te ha frenado en tu carrera tech? Ayúdanos a validar una solución innovadora.'
+        },
+        {
+          title: 'Encuesta de Experiencia Profesional',
+          description: 'Por favor, comparte tu experiencia profesional para ayudarnos a entender mejor a nuestra audiencia.'
+        }
+      ]
+    },
+    aiAgents: {
+      title: 'Encuesta: Uso de Agentes de IA.',
+      description: 'Identifica los 3 casos de uso más costosos y repetitivos en tu trabajo. Buscamos crear prototipos de agentes de IA que realmente te ayuden.',
+      role: 'Rol profesional',
+      industry: 'Industria',
+      experience: 'Años de experiencia',
+      painPoint1: '1er punto más costoso/repetitivo',
+      painPoint2: '2º punto más costoso/repetitivo',
+      painPoint3: '3er punto más costoso/repetitivo',
+      repetitiveTasks: '¿Qué tareas repetitivas realizas a menudo?',
+      aiAgentInterest: '¿Te interesaría un agente de IA para automatizar alguna de estas tareas?',
+      keyFunctionality: '¿Qué funcionalidad sería clave para ti?',
+      contact: '¿Te gustaría ser contactado para una demo o asesoría gratuita? (email o LinkedIn, opcional)',
+      country: 'País',
+      consent: 'He leído y acepto la política de privacidad.',
+      submit: 'Enviar Encuesta',
+      feedback: {
+        success: '¡Encuesta enviada con éxito!',
+        error: 'Ocurrió un error. Intenta de nuevo.',
+        consent: 'Debes aceptar la política de privacidad para enviar la encuesta.'
+      }
+    },
+    englishBarrier: {
+      title: 'Encuesta: Barreras de Fluidez en Inglés en Tech',
+      role: 'Rol principal en tecnología',
+      experience: 'Años de experiencia',
+      experienceOptions: {
+        lessThanOne: '<1 año',
+        oneToThree: '1-3 años',
+        threeToFive: '3-5 años',
+        fiveToTen: '5-10 años',
+        tenPlus: '10+ años'
+      },
+      englishLevel: 'Nivel de inglés',
+      englishLevelOptions: {
+        basic: 'Básico',
+        intermediate: 'Intermedio',
+        advanced: 'Avanzado',
+        fluent: 'Fluido'
+      },
+      lostOpportunity: '¿Has perdido oportunidades por no hablar inglés fluido?',
+      lostOpportunityOptions: {
+        several: 'Sí, varias veces',
+        once: 'Sí, alguna vez',
+        worried: 'No, pero me preocupa',
+        never: 'No, nunca'
+      },
+      feelings: '¿Cómo te sentiste en esas situaciones?',
+      optional: 'opcional',
+      wantsToImprove: '¿Te gustaría mejorar tu inglés profesional/tech?',
+      wantsToImproveOptions: {
+        urgent: 'Sí, urgente',
+        notPriority: 'Sí, pero no es prioridad',
+        no: 'No, no lo necesito'
+      },
+      appInterest: '¿Qué te parecería una app con agente IA conversacional, repetición espaciada y gamificación?',
+      appInterestOptions: {
+        loveIt: 'Me encantaría probarla',
+        interesting: 'Suena interesante, pero tengo dudas',
+        preferClasses: 'Prefiero clases tradicionales',
+        notInterested: 'No me interesa'
+      },
+      features: '¿Qué funcionalidad te motivaría más?',
+      multiple: 'elige varias',
+      featuresOptions: {
+        conversational: 'Práctica conversacional IA',
+        challenges: 'Retos diarios y logros',
+        interviews: 'Simulaciones de entrevistas técnicas',
+        progress: 'Seguimiento de progreso y ranking',
+        reminders: 'Recordatorios inteligentes',
+        other: 'Otro'
+      },
+      contact: '¿Te gustaría ser contactado para probar el MVP?',
+      contactHint: 'email o LinkedIn',
+      country: 'País',
+      submit: 'Enviar Encuesta',
+      sending: 'Enviando...',
+      success: '¡Encuesta enviada con éxito!',
+      error: 'Ocurrió un error. Intenta de nuevo.'
     }
   },
   resume: {
@@ -584,5 +703,53 @@ export default {
     },
     opensource: 'Contribuyo a proyectos open source y comparto código en',
     talks: 'Estoy abierto a colaborar y dar charlas sobre IA, emprendimiento tech, productividad, desarrollo web, y eventos online. ¿Quieres invitarme a dar una charla? Contáctame.'
+  },
+  meeting: {
+    title: 'Agendar Reunión',
+    form: {
+      date: 'Fecha',
+      time: 'Hora',
+      message: 'Mensaje adicional',
+      messagePlaceholder: '¿Algo que quieras comentar antes de la reunión?',
+      submitButton: 'Enviar Solicitud de Reunión',
+      close: 'Cerrar',
+    },
+    success: '¡Solicitud de reunión enviada exitosamente!',
+    error: 'Error al enviar la solicitud de reunión.'
+  },
+  links: {
+    categories: {
+      social: 'Redes y Perfiles Profesionales',
+      projects: 'Proyectos Destacados',
+      personal: 'Recursos Personales',
+      resources: 'Recomendaciones y Recursos Útiles',
+      contact: 'Contacto'
+    },
+    social: {
+      linkedin: 'Conecta conmigo para oportunidades profesionales y networking.',
+      github: 'Mi repositorio principal de proyectos open source y experimentos.',
+      twitter: 'Reflexiones, ideas y novedades tech.',
+      instagram: 'Mi lado creativo y visual, proyectos y vida tech.'
+    },
+    projects: {
+      portfolio: 'Mi portafolio profesional y experimentos con IA.',
+      automation: 'Colección de bots y automatizaciones útiles.'
+    },
+    personal: {
+      blog: 'Artículos sobre desarrollo, IA y productividad.',
+      newsletter: 'Suscríbete para recibir novedades y recursos exclusivos.'
+    },
+    resources: {
+      zeroToOne: 'Libro clave para emprendedores tech.',
+      pragmatic: 'Libro esencial para desarrolladores.',
+      fullstack: 'El mejor curso gratuito de desarrollo web.',
+      vscode: 'Mi editor de código favorito.',
+      figma: 'Herramienta de diseño colaborativo.',
+      notion: 'Organización y productividad personal.'
+    },
+    contact: {
+      email: 'Contáctame directamente por correo.',
+      meeting: 'Reserva una reunión 1:1 conmigo.'
+    }
   },
 };

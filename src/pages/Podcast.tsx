@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Mic, Send, Bell, ThumbsUp, Clock, Users } from 'lucide-react';
 import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 
 interface SuggestedTopic {
   title: string;
@@ -10,32 +11,77 @@ interface SuggestedTopic {
 }
 
 export default function Podcast() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [email, setEmail] = useState('');
   const [topicSuggestion, setTopicSuggestion] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [suggestionSubmitted, setSuggestionSubmitted] = useState(false);
+  const [loading, setLoading] = useState<'none' | 'suggest' | 'subscribe'>('none');
 
   const suggestedTopics = (t('podcast.suggestedTopics.topics', { returnObjects: true }) as SuggestedTopic[]).map((topic: SuggestedTopic, index: number) => ({
     ...topic,
     votes: Math.floor(Math.random() * 30) + 10 // Simulando votos aleatorios
   }));
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email.trim()) {
+    if (!email.trim()) return;
+    setLoading('subscribe');
+    const language = i18n.language;
+    const message = `
+      <h2>${language === 'en' ? 'Podcast Notification Subscription' : 'Suscripción a notificaciones del Podcast'}</h2>
+      <table class="info-table">
+        <tr><th>Email</th><td>${email}</td></tr>
+        <tr><th>Idioma</th><td>${language}</td></tr>
+      </table>
+      <p>${language === 'en' ? 'New podcast notification subscription from your portfolio.' : 'Nueva suscripción a notificaciones del podcast desde tu portafolio.'}</p>
+    `;
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        language === 'es'
+          ? import.meta.env.VITE_EMAILJS_TEMPLATE_ID_ES
+          : import.meta.env.VITE_EMAILJS_TEMPLATE_ID_EN,
+        { message },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
       setIsSubscribed(true);
       setEmail('');
+    } catch (err) {
+      alert('Error al suscribirse. Intenta de nuevo.');
     }
+    setLoading('none');
   };
 
-  const handleSuggestTopic = (e: React.FormEvent) => {
+  const handleSuggestTopic = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (topicSuggestion.trim()) {
+    if (!topicSuggestion.trim()) return;
+    setLoading('suggest');
+    const language = i18n.language;
+    const message = `
+      <h2>${language === 'en' ? 'Podcast Topic Suggestion' : 'Sugerencia de Tema para el Podcast'}</h2>
+      <table class="info-table">
+        <tr><th>${language === 'en' ? 'Suggestion' : 'Sugerencia'}</th><td>${topicSuggestion}</td></tr>
+        <tr><th>Idioma</th><td>${language}</td></tr>
+      </table>
+      <p>${language === 'en' ? 'New podcast topic suggestion from your portfolio.' : 'Nueva sugerencia de tema para el podcast desde tu portafolio.'}</p>
+    `;
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        language === 'es'
+          ? import.meta.env.VITE_EMAILJS_TEMPLATE_ID_ES
+          : import.meta.env.VITE_EMAILJS_TEMPLATE_ID_EN,
+        { message },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
       setSuggestionSubmitted(true);
       setTopicSuggestion('');
       setTimeout(() => setSuggestionSubmitted(false), 3000);
+    } catch (err) {
+      alert('Error al enviar la sugerencia. Intenta de nuevo.');
     }
+    setLoading('none');
   };
 
   return (
@@ -98,6 +144,7 @@ export default function Podcast() {
             <button
               type="submit"
               className="w-full bg-primary-600 hover:bg-primary-700 text-white py-3 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
+              disabled={loading === 'suggest'}
             >
               <Send size={18} />
               {t('podcast.suggestTopic.submitButton')}
@@ -148,6 +195,7 @@ export default function Podcast() {
               <button
                 type="submit"
                 className="w-full bg-accent-600 hover:bg-accent-700 text-white py-3 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
+                disabled={loading === 'subscribe'}
               >
                 <Bell size={18} />
                 {t('podcast.notifications.subscribeButton')}

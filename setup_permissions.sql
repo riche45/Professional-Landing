@@ -50,4 +50,38 @@ BEGIN
       subscribed_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
     );
   END IF;
-END $$; 
+END $$;
+
+-- Crear tabla surveys
+CREATE TABLE IF NOT EXISTS public.surveys (
+  id SERIAL PRIMARY KEY,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+  language TEXT NOT NULL,
+  years_of_experience TEXT NOT NULL,
+  industry TEXT NOT NULL,
+  job_role TEXT NOT NULL,
+  programming_languages TEXT[] NOT NULL,
+  frontend_frameworks TEXT[] NOT NULL,
+  ai_experience INTEGER NOT NULL,
+  topics TEXT[] NOT NULL,
+  discovery TEXT NOT NULL,
+  startup_founder TEXT NOT NULL
+);
+
+-- Dar permisos básicos a la tabla
+GRANT ALL ON TABLE public.surveys TO postgres;
+GRANT SELECT, INSERT ON TABLE public.surveys TO anon;
+GRANT SELECT, INSERT ON TABLE public.surveys TO authenticated;
+
+-- Habilitar RLS
+ALTER TABLE public.surveys ENABLE ROW LEVEL SECURITY;
+
+-- Crear políticas de seguridad
+DROP POLICY IF EXISTS "Allow anonymous insert" ON public.surveys;
+CREATE POLICY "Allow anonymous insert" ON public.surveys FOR INSERT TO anon WITH CHECK (true);
+
+DROP POLICY IF EXISTS "Allow authenticated read" ON public.surveys;
+CREATE POLICY "Allow authenticated read" ON public.surveys FOR SELECT TO authenticated USING (true);
+
+DROP POLICY IF EXISTS "Allow authenticated update" ON public.surveys;
+CREATE POLICY "Allow authenticated update" ON public.surveys FOR UPDATE TO authenticated USING (true) WITH CHECK (true); 

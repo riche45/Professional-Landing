@@ -13,6 +13,13 @@ import Tutorials from './pages/Tutorials';
 import Memes from './pages/Memes';
 import Portfolio from './pages/Portfolio';
 import About from './pages/About';
+import SurveyDashboard from './pages/admin/SurveyDashboard';
+import AdminLogin from './pages/admin/AdminLogin';
+import EnglishBarrierSurvey from './pages/EnglishBarrierSurvey';
+import AIAgentsSurvey from './pages/AIAgentsSurvey';
+import Links from './pages/Links';
+import NewsletterPage from './pages/Newsletter';
+import ProfessionalExperienceSurvey from './pages/ProfessionalExperienceSurvey';
 
 function App() {
   const { t } = useTranslation();
@@ -39,6 +46,13 @@ function App() {
           <Route path="memes" element={<Memes />} />
           <Route path="portfolio" element={<Portfolio />} />
           <Route path="about" element={<About />} />
+          <Route path="admin/surveys" element={<SurveyDashboard />} />
+          <Route path="admin/login" element={<AdminLogin />} />
+          <Route path="english-barrier-survey" element={<EnglishBarrierSurvey />} />
+          <Route path="ai-agents-survey" element={<AIAgentsSurvey />} />
+          <Route path="links" element={<Links />} />
+          <Route path="newsletter" element={<NewsletterPage />} />
+          <Route path="surveys/professional-experience" element={<ProfessionalExperienceSurvey />} />
           <Route path="*" element={<div className="p-12 text-center"><h1 className="text-2xl">{t('errors.pageNotFound')}</h1></div>} />
         </Route>
       </Routes>

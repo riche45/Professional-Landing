@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Send } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 export default function Newsletter() {
   const { t, i18n } = useTranslation();
@@ -13,19 +14,36 @@ export default function Newsletter() {
     e.preventDefault();
     setStatus('loading');
     setMessage('');
-
+    const language = isEnglish ? 'en' : 'es';
     try {
       const res = await fetch('https://hhvbdncnelyerffeiwrs.functions.supabase.co/add-subscriber', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           email,
-          language: isEnglish ? 'en' : 'es',
+          language,
           source: window.location.pathname,
         }),
       });
 
       if (res.ok) {
+        // Enviar correo con EmailJS
+        const message = `
+          <h2>${isEnglish ? 'Newsletter Subscription' : 'Suscripción al Newsletter'}</h2>
+          <table class="info-table">
+            <tr><th>Email</th><td>${email}</td></tr>
+            <tr><th>Idioma</th><td>${language}</td></tr>
+          </table>
+          <p>${isEnglish ? 'Thank you for subscribing!' : '¡Gracias por suscribirte!'}</p>
+        `;
+        await emailjs.send(
+          import.meta.env.VITE_EMAILJS_SERVICE_ID,
+          language === 'es'
+            ? import.meta.env.VITE_EMAILJS_TEMPLATE_ID_ES
+            : import.meta.env.VITE_EMAILJS_TEMPLATE_ID_EN,
+          { message },
+          import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        );
         setStatus('success');
         setEmail('');
         setMessage(
