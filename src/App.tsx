@@ -20,6 +20,7 @@ import AIAgentsSurvey from './pages/AIAgentsSurvey';
 import Links from './pages/Links';
 import NewsletterPage from './pages/Newsletter';
 import ProfessionalExperienceSurvey from './pages/ProfessionalExperienceSurvey';
+import Projects from './pages/Projects';
 
 function App() {
   const { t } = useTranslation();
@@ -53,6 +54,7 @@ function App() {
           <Route path="links" element={<Links />} />
           <Route path="newsletter" element={<NewsletterPage />} />
           <Route path="surveys/professional-experience" element={<ProfessionalExperienceSurvey />} />
+          <Route path="proyectos" element={<Projects />} />
           <Route path="*" element={<div className="p-12 text-center"><h1 className="text-2xl">{t('errors.pageNotFound')}</h1></div>} />
         </Route>
       </Routes>

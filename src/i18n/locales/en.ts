@@ -11,6 +11,7 @@ export default {
     connects: 'Connects',
     surveys: 'Surveys',
     categories: 'Categories',
+    projects: 'Projects',
   },
   routes: {
     home: '/',
@@ -21,7 +22,7 @@ export default {
     connects: '/connects',
     surveys: '/surveys',
     about: '/about',
-    projects: '/portfolio',
+    projects: '/proyectos',
     articles: '/articles',
     conversations: '/chat',
   },
@@ -75,7 +76,8 @@ export default {
         description: 'Mobile app for health monitoring',
         content: 'App developed with React Native for physical activity tracking, vital signs monitoring, and wearable device synchronization.'
       }
-    }
+    },
+    talks: "I'm open to collaborating and giving talks on AI, tech entrepreneurship, productivity, web development, and online events. Want to invite me to speak? Contact me."
   },
   errors: {
     pageNotFound: 'Page Not Found',
@@ -714,6 +716,8 @@ export default {
     ]
   },
   portfolio: {
+    title: 'Portfolio',
+    subtitle: 'A showcase of my featured work and experiments.',
     netflix: {
       title: 'Netflix Clone with Django',
       description: 'I developed a functional Netflix-like platform allowing users to register, log in, browse a movie catalog by category, and simulate streaming. Includes admin panel, Docker packaging, and best development practices.'
@@ -739,8 +743,8 @@ export default {
       description: 'I designed and implemented neural network models from scratch using low-level PyTorch APIs to fully understand each step of the training process. This includes forward passes, error calculation, backpropagation, and weight updates. This practical experience provides a solid foundation for adapting deep learning architectures to specific problems and optimizing models effectively for production use. Applied concepts: activation functions, backpropagation, gradient descent, loss calculation, multi-layer networks.'
     },
     portfolio2025: {
-      title: 'Personal Portfolio 2025 (this site)',
-      description: 'Professional portfolio developed with React (Native), Vite, TypeScript, Tailwind CSS, and Supabase. Includes newsletter subscription, custom chat trained for OpenAI, modern and minimal design, internationalization, freelance, collaborations, and connects sections. High degree of customization and full stack focus to showcase modern web development skills.'
+      title: 'Personal Portfolio 2025 (This Site)',
+      description: 'Development of a professional portfolio with React (Native), Vite, TypeScript, Tailwind CSS, and Supabase. It includes a newsletter subscription, custom chatbot trained for OpenAI, modern and minimalist design, internationalization, and sections for freelance, collaborations, and connections. High degree of customization and full-stack approach to showcase modern web development capabilities.'
     },
     gestionai: {
       title: 'Financial Management with AI',
@@ -774,7 +778,11 @@ export default {
       close: 'Close',
     },
     success: 'Meeting request sent successfully!',
-    error: 'Error sending meeting request.'
+    error: 'Error sending meeting request.',
+    contact: {
+      email: 'Contact me directly by email.',
+      meeting: 'Book a 1:1 meeting with me.'
+    }
   },
   links: {
     categories: {
@@ -811,4 +819,27 @@ export default {
       meeting: 'Book a 1:1 meeting with me.'
     }
   },
+  projects: {
+    subtitle: 'A selection of my most recent and relevant projects.',
+    techTitle: 'Technologies',
+    viewDemo: 'View Demo',
+    viewRepo: 'View Repository',
+    status: {
+      live: 'Live',
+      soon: 'Coming Soon',
+      development: 'In Development'
+    },
+    portfolio2025: {
+      title: 'Personal Portfolio 2025 (This Site)',
+      description: 'Development of a professional portfolio with React (Native), Vite, TypeScript, Tailwind CSS, and Supabase. It includes a newsletter subscription, custom chatbot trained for OpenAI, modern and minimalist design, internationalization, and sections for freelance, collaborations, and connections. High degree of customization and full-stack approach to showcase modern web development capabilities.'
+    },
+    englishApp: {
+      title: 'Conversational English Solution with AI',
+      description: 'An innovative mobile application that uses a conversational AI agent to help tech professionals overcome the English language barrier. It includes gamification, spaced repetition, and simulations of technical interviews to improve fluency and confidence in a professional context.'
+    },
+    aiMarketplace: {
+      title: 'AI Agents Marketplace',
+      description: 'A platform for discovering, testing, and deploying pre-trained AI agents to automate repetitive tasks. The marketplace will allow companies to find solutions for specific use cases, from data analysis to process optimization, without needing a dedicated development team.'
+    }
+  }
 };

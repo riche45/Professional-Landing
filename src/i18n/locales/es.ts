@@ -11,6 +11,7 @@ export default {
     connects: 'Conexiones',
     surveys: 'Encuestas',
     categories: 'Categorías',
+    projects: 'Proyectos',
   },
   routes: {
     home: '/',
@@ -21,7 +22,8 @@ export default {
     connects: '/conexiones',
     surveys: '/encuestas',
     about: '/about',
-    projects: '/portfolio',
+    projects: '/proyectos',
+    portfolio: '/portfolio',
     articles: '/articulos',
     conversations: '/chat',
   },
@@ -75,6 +77,10 @@ export default {
         description: 'Aplicación móvil para monitoreo de salud',
         content: 'App desarrollada con React Native para tracking de actividad física, monitoreo de signos vitales y sincronización con dispositivos wearables.'
       }
+    },
+    contact: {
+      email: 'Contáctame directamente por correo.',
+      meeting: 'Reserva una reunión 1:1 conmigo.'
     }
   },
   errors: {
@@ -655,6 +661,8 @@ export default {
     ]
   },
   portfolio: {
+    title: 'Portafolio',
+    subtitle: 'Una muestra de mis trabajos y experimentos destacados.',
     netflix: {
       title: 'Clon de Netflix con Django',
       description: 'Desarrollé una plataforma funcional tipo Netflix que permite a los usuarios registrarse, iniciar sesión, explorar un catálogo de películas por categoría y simular la reproducción de contenido en streaming. Incluye panel de administración, Docker y buenas prácticas de desarrollo.'
@@ -680,8 +688,8 @@ export default {
       description: 'Diseñé e implementé modelos de redes neuronales desde cero utilizando las API de PyTorch de bajo nivel para comprender a fondo cada paso del entrenamiento. Esto incluye pases hacia adelante, cálculo de errores, retropropagación y actualizaciones de pesos. Esta experiencia práctica me proporciona bases sólidas para adaptar arquitecturas de aprendizaje profundo a problemas específicos y optimizar los modelos eficazmente para su uso en producción. Conceptos aplicados: funciones de activación, retropropagación, descenso de gradiente, cálculo de pérdidas, redes multicapa.'
     },
     portfolio2025: {
-      title: 'Portafolio Personal 2025 (este sitio)',
-      description: 'Desarrollo de portafolio profesional con React (Native), Vite, TypeScript, Tailwind CSS y Supabase. Incluye suscripción a newsletter, chat personalizado y entrenado para OpenAI, diseño moderno y minimalista, internacionalización, secciones de freelance, colaboraciones y conexiones. Alto grado de personalización y enfoque full stack para mostrar capacidades en desarrollo web moderno.'
+      title: 'Portafolio Personal 2025 (Este Sitio)',
+      description: 'Desarrollo de un portafolio profesional con React (Native), Vite, TypeScript, Tailwind CSS y Supabase. Incluye suscripción a newsletter, chat personalizado entrenado para OpenAI, diseño moderno y minimalista, internacionalización y secciones de freelance, colaboraciones y conexiones. Alto grado de personalización y enfoque full-stack para mostrar capacidades en desarrollo web moderno.'
     },
     gestionai: {
       title: 'Gestión Financiera con IA',
@@ -752,4 +760,27 @@ export default {
       meeting: 'Reserva una reunión 1:1 conmigo.'
     }
   },
+  projects: {
+    subtitle: 'Una selección de mis proyectos más recientes y relevantes.',
+    techTitle: 'Tecnologías',
+    viewDemo: 'Ver Demo',
+    viewRepo: 'Ver Repositorio',
+    status: {
+      live: 'Publicado',
+      soon: 'Próximamente',
+      development: 'En Desarrollo'
+    },
+    portfolio2025: {
+      title: 'Portafolio Personal 2025 (Este Sitio)',
+      description: 'Desarrollo de un portafolio profesional con React (Native), Vite, TypeScript, Tailwind CSS y Supabase. Incluye suscripción a newsletter, chat personalizado entrenado para OpenAI, diseño moderno y minimalista, internacionalización y secciones de freelance, colaboraciones y conexiones. Alto grado de personalización y enfoque full-stack para mostrar capacidades en desarrollo web moderno.'
+    },
+    englishApp: {
+      title: 'Solución de Inglés Conversacional con IA',
+      description: 'Una innovadora aplicación móvil que utiliza un agente de IA conversacional para ayudar a profesionales tech a superar la barrera del idioma inglés. Incluye gamificación, repetición espaciada y simulaciones de entrevistas técnicas para mejorar la fluidez y confianza en un contexto profesional.'
+    },
+    aiMarketplace: {
+      title: 'Marketplace de Agentes de IA',
+      description: 'Una plataforma para descubrir, probar y desplegar agentes de IA pre-entrenados para automatizar tareas repetitivas. El marketplace permitirá a las empresas encontrar soluciones para casos de uso específicos, desde análisis de datos hasta optimización de procesos, sin necesidad de un equipo de desarrollo dedicado.'
+    }
+  }
 };

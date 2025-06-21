@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { X, Home, Archive, Search, Mic, FileText, AtSign, BarChart, Lock } from 'lucide-react';
+import { X, Home, Archive, Search, Mic, FileText, AtSign, BarChart, Lock, FolderKanban, Briefcase } from 'lucide-react';
 import { cn } from '../utils/cn';
 import LanguageSwitcher from './LanguageSwitcher';
 import SocialLinks from './SocialLinks';
@@ -16,7 +16,8 @@ export default function Sidebar({ onClose }: SidebarProps) {
   
   const navItems = [
     { icon: <Home size={20} />, label: t('nav.home'), path: t('routes.home') },
-    { icon: <Archive size={20} />, label: t('nav.archives'), path: t('routes.archives') },
+    { icon: <Briefcase size={20} />, label: t('portfolio.title'), path: t('routes.portfolio') },
+    { icon: <FolderKanban size={20} />, label: t('nav.projects'), path: t('routes.projects') },
     { icon: <Search size={20} />, label: t('nav.search'), path: t('routes.search') },
     { icon: <Mic size={20} />, label: t('nav.podcast'), path: t('routes.podcast') },
     { icon: <FileText size={20} />, label: t('nav.resume'), path: t('routes.resume') },
