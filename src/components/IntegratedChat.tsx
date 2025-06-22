@@ -151,7 +151,7 @@ export default function IntegratedChat() {
           </div>
         </div>
         <p className="text-gray-700 dark:text-gray-300 mb-2">
-          {t('profile.description')} <a href="/curriculum" className="text-blue-600 dark:text-primary-400 hover:underline">{t('nav.resume')}</a>.
+          {t('profile.description')} <Link to="/curriculum" className="text-blue-600 dark:text-primary-400 hover:underline">{t('nav.resume')}</Link>.
         </p>
         <p className="text-gray-700 dark:text-gray-300 text-sm">{t('profile.experience')}</p>
       </div>
