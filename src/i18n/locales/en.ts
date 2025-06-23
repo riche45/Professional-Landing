@@ -23,6 +23,7 @@ export default {
     surveys: '/surveys',
     about: '/about',
     projects: '/proyectos',
+    portfolio: '/portfolio',
     articles: '/articles',
     conversations: '/chat',
   },
