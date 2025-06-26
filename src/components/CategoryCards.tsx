@@ -51,6 +51,12 @@ export default function CategoryCards() {
       color: 'bg-amber-500/10' 
     },
     {
+      title: t('categories.aiServices'),
+      imageSrc: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      to: '/ai-services',
+      color: 'bg-purple-500/10'
+    },
+    {
       title: t('categories.portfolio'),
       imageSrc: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       to: '/portfolio',

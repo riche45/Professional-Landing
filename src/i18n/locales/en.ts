@@ -34,6 +34,7 @@ export default {
     podcast: 'Into the Hopper Podcast',
     links: 'Links',
     portfolio: 'Portfolio',
+    aiServices: 'AI Services',
   },
   search: {
     title: 'Global Search',
@@ -123,6 +124,61 @@ export default {
   language: {
     en: 'English',
     es: 'Spanish',
+  },
+  aiServices: {
+    title: 'AI Services',
+    subtitle: 'Expert in training AI agents with limited resources',
+    description: 'Specialist in "guerrilla" methodology for training AI models without big budgets. From custom chatbots to business automation.',
+    services: {
+      training: {
+        title: 'Custom Chatbot Training',
+        description: 'I train AI agents specific to your business using advanced fine-tuning techniques.',
+        price: '$500 - $2,000',
+        duration: '2-4 weeks'
+      },
+      consulting: {
+        title: 'AI Consulting for SMEs',
+        description: 'Strategic AI implementation for small and medium enterprises.',
+        price: '$100 - $300/hour',
+        duration: 'Flexible'
+      },
+      automation: {
+        title: 'Customer Service Agents',
+        description: 'Complete customer service automation with conversational AI.',
+        price: '$1,000 - $5,000',
+        duration: '3-6 weeks'
+      },
+      courses: {
+        title: 'Course: "AI Training Without Resources"',
+        description: 'Learn my guerrilla methodology to train AI models for free.',
+        price: '$50 - $500',
+        duration: 'Self-paced'
+      }
+    },
+    products: {
+      title: 'Digital Products',
+      templates: {
+        title: 'Specialized Agent Templates',
+        description: 'Pre-configured templates for different industries'
+      },
+      scripts: {
+        title: 'Optimized Training Scripts',
+        description: 'Optimized code for training'
+      },
+      chatbots: {
+        title: 'White-Label Chatbots',
+        description: 'Ready-to-implement solutions for businesses'
+      },
+      saas: {
+        title: 'SaaS: "Train your Agent in 10 minutes"',
+        description: 'No-code platform for rapid training'
+      }
+    },
+    cta: {
+      title: 'Ready to implement AI in your business?',
+      description: 'Contact me for a free 30-minute consultation',
+      button: 'Free Consultation'
+    }
   },
   cta: {
     connect: 'Connect with me',

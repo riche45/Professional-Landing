@@ -34,6 +34,7 @@ export default {
     podcast: 'Podcast Into the Hopper',
     links: 'Enlaces',
     portfolio: 'Portafolio',
+    aiServices: 'Servicios IA',
   },
   search: {
     title: 'Búsqueda Global',
@@ -102,7 +103,7 @@ export default {
     experience: 'Durante más de 5 años, he ayudado a empresas a resolver problemas de negocio con soluciones innovadoras en dominios como finanzas, tecnología, salud y educación.',
   },
   chat: {
-    welcome: "¡Hola! 👋 Soy el asistente personal de Richard. Puedo informarte sobre:\n\n📊 Experiencia y proyectos realizados\n💻 Tecnologías y habilidades\n💰 Tarifas por hora (desde $20 para proyectos freelance)\n📝 Artículos y contenido\n\nPuedes preguntarme sobre cualquiera de estos temas o escribir 'precios' para ver las tarifas detalladas. ¿En qué puedo ayudarte?",
+    welcome: "¡Hola! 👋 Soy el asistente personal de Richard. Puedo informarte sobre:\n\n🤖 Servicios de IA especializada (metodología guerrilla)\n📊 Experiencia y proyectos realizados\n💻 Tecnologías y habilidades\n💰 Tarifas por hora (desde $20 para proyectos freelance)\n📝 Artículos y contenido\n\nPuedes preguntarme sobre cualquiera de estos temas o escribir 'precios' para ver las tarifas detalladas. ¿En qué puedo ayudarte?",
     input_placeholder: "Escribe tu mensaje aquí...",
     assistant_status: "Asistente personal",
     error_message: "Lo siento, ha ocurrido un error. Por favor, intenta de nuevo.",
@@ -125,6 +126,61 @@ export default {
   language: {
     en: 'Inglés',
     es: 'Español',
+  },
+  aiServices: {
+    title: 'Servicios de IA',
+    subtitle: 'Experto en entrenar agentes de IA con recursos limitados',
+    description: 'Especialista en metodología "guerrilla" para entrenar modelos de IA sin grandes presupuestos. Desde chatbots personalizados hasta automatización empresarial.',
+    services: {
+      training: {
+        title: 'Entrenamiento de Chatbots Personalizados',
+        description: 'Entreno agentes de IA específicos para tu negocio usando técnicas avanzadas de fine-tuning.',
+        price: '$500 - $2,000',
+        duration: '2-4 semanas'
+      },
+      consulting: {
+        title: 'Consultoría IA para PyMEs',
+        description: 'Implementación estratégica de IA en pequeñas y medianas empresas.',
+        price: '$100 - $300/hora',
+        duration: 'Flexible'
+      },
+      automation: {
+        title: 'Agentes para Atención al Cliente',
+        description: 'Automatización completa de atención al cliente con IA conversacional.',
+        price: '$1,000 - $5,000',
+        duration: '3-6 semanas'
+      },
+      courses: {
+        title: 'Curso: "Entrenamiento IA sin Recursos"',
+        description: 'Aprende mi metodología guerrilla para entrenar modelos de IA gratis.',
+        price: '$50 - $500',
+        duration: 'Auto-dirigido'
+      }
+    },
+    products: {
+      title: 'Productos Digitales',
+      templates: {
+        title: 'Templates de Agentes Especializados',
+        description: 'Plantillas pre-configuradas para diferentes industrias'
+      },
+      scripts: {
+        title: 'Scripts de Entrenamiento Optimizados',
+        description: 'Código optimizado listo para entrenar'
+      },
+      chatbots: {
+        title: 'Chatbots White-Label',
+        description: 'Soluciones listas para implementar en empresas'
+      },
+      saas: {
+        title: 'SaaS: "Entrena tu Agente en 10 minutos"',
+        description: 'Plataforma no-code para entrenamiento rápido'
+      }
+    },
+    cta: {
+      title: '¿Listo para implementar IA en tu negocio?',
+      description: 'Contacta conmigo para una consulta gratuita de 30 minutos',
+      button: 'Consulta Gratuita'
+    }
   },
   cta: {
     connect: 'Conecta conmigo',
