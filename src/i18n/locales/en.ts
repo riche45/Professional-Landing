@@ -223,6 +223,18 @@ export default {
           price: '$250-600/month',
           benefit: 'Knows your inventory, available 24/7'
         },
+        dental: {
+          title: 'Dental Clinics',
+          service: 'Appointment management and reminders',
+          price: '$200-500/month',
+          benefit: 'Reduces no-shows, optimizes schedule'
+        },
+        fitness: {
+          title: 'Gyms/Personal Trainers',
+          service: 'Personalized training plans',
+          price: '$300-700/month',
+          benefit: '24/7 advice, automatic tracking'
+        },
         startup: {
           title: 'Tech Startups',
           service: 'Technical assistant and support',

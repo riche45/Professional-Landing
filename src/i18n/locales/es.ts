@@ -225,6 +225,18 @@ export default {
           price: '$250-600/mes',
           benefit: 'Conoce tu inventario, disponible 24/7'
         },
+        dental: {
+          title: 'Clínicas Dentales',
+          service: 'Gestión de citas y recordatorios',
+          price: '$200-500/mes',
+          benefit: 'Reduce no-shows, optimiza agenda'
+        },
+        fitness: {
+          title: 'Gimnasios/Entrenadores',
+          service: 'Planes de entrenamiento personalizados',
+          price: '$300-700/mes',
+          benefit: 'Asesoría 24/7, seguimiento automático'
+        },
         startup: {
           title: 'Startups Tech',
           service: 'Asistente técnico y soporte',

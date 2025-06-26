@@ -169,69 +169,99 @@ export default function AIServices() {
         {/* Use Cases */}
         <div className="mb-12">
           <h3 className="text-2xl font-semibold mb-8 text-center">{t('aiServices.localServices.useCases.title')}</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-dark-800/50 rounded-card p-6 border border-green-500/20">
-              <div className="text-2xl mb-3">🏪</div>
-              <h4 className="font-semibold mb-2 text-white">{t('aiServices.localServices.useCases.restaurant.title')}</h4>
-              <p className="text-gray-400 mb-2 text-sm">{t('aiServices.localServices.useCases.restaurant.service')}</p>
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-green-400 font-semibold">{t('aiServices.localServices.useCases.restaurant.price')}</span>
+          
+          {/* Microempresas */}
+          <div className="mb-12">
+            <h4 className="text-xl font-semibold mb-6 text-center text-green-400">Pequeños Negocios</h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-dark-800/50 rounded-card p-6 border border-green-500/20">
+                <div className="text-2xl mb-3">🏪</div>
+                <h4 className="font-semibold mb-2 text-white">{t('aiServices.localServices.useCases.restaurant.title')}</h4>
+                <p className="text-gray-400 mb-2 text-sm">{t('aiServices.localServices.useCases.restaurant.service')}</p>
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-green-400 font-semibold">{t('aiServices.localServices.useCases.restaurant.price')}</span>
+                </div>
+                <p className="text-green-300 text-sm italic">{t('aiServices.localServices.useCases.restaurant.benefit')}</p>
               </div>
-              <p className="text-green-300 text-sm italic">{t('aiServices.localServices.useCases.restaurant.benefit')}</p>
+              <div className="bg-dark-800/50 rounded-card p-6 border border-green-500/20">
+                <div className="text-2xl mb-3">🏥</div>
+                <h4 className="font-semibold mb-2 text-white">{t('aiServices.localServices.useCases.medical.title')}</h4>
+                <p className="text-gray-400 mb-2 text-sm">{t('aiServices.localServices.useCases.medical.service')}</p>
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-green-400 font-semibold">{t('aiServices.localServices.useCases.medical.price')}</span>
+                </div>
+                <p className="text-green-300 text-sm italic">{t('aiServices.localServices.useCases.medical.benefit')}</p>
+              </div>
+              <div className="bg-dark-800/50 rounded-card p-6 border border-green-500/20">
+                <div className="text-2xl mb-3">🏢</div>
+                <h4 className="font-semibold mb-2 text-white">{t('aiServices.localServices.useCases.accounting.title')}</h4>
+                <p className="text-gray-400 mb-2 text-sm">{t('aiServices.localServices.useCases.accounting.service')}</p>
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-green-400 font-semibold">{t('aiServices.localServices.useCases.accounting.price')}</span>
+                </div>
+                <p className="text-green-300 text-sm italic">{t('aiServices.localServices.useCases.accounting.benefit')}</p>
+              </div>
+              <div className="bg-dark-800/50 rounded-card p-6 border border-green-500/20">
+                <div className="text-2xl mb-3">🏠</div>
+                <h4 className="font-semibold mb-2 text-white">{t('aiServices.localServices.useCases.realestate.title')}</h4>
+                <p className="text-gray-400 mb-2 text-sm">{t('aiServices.localServices.useCases.realestate.service')}</p>
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-green-400 font-semibold">{t('aiServices.localServices.useCases.realestate.price')}</span>
+                </div>
+                <p className="text-green-300 text-sm italic">{t('aiServices.localServices.useCases.realestate.benefit')}</p>
+              </div>
+              <div className="bg-dark-800/50 rounded-card p-6 border border-green-500/20">
+                <div className="text-2xl mb-3">🦷</div>
+                <h4 className="font-semibold mb-2 text-white">{t('aiServices.localServices.useCases.dental.title')}</h4>
+                <p className="text-gray-400 mb-2 text-sm">{t('aiServices.localServices.useCases.dental.service')}</p>
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-green-400 font-semibold">{t('aiServices.localServices.useCases.dental.price')}</span>
+                </div>
+                <p className="text-green-300 text-sm italic">{t('aiServices.localServices.useCases.dental.benefit')}</p>
+              </div>
+              <div className="bg-dark-800/50 rounded-card p-6 border border-green-500/20">
+                <div className="text-2xl mb-3">💪</div>
+                <h4 className="font-semibold mb-2 text-white">{t('aiServices.localServices.useCases.fitness.title')}</h4>
+                <p className="text-gray-400 mb-2 text-sm">{t('aiServices.localServices.useCases.fitness.service')}</p>
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-green-400 font-semibold">{t('aiServices.localServices.useCases.fitness.price')}</span>
+                </div>
+                <p className="text-green-300 text-sm italic">{t('aiServices.localServices.useCases.fitness.benefit')}</p>
+              </div>
             </div>
-            <div className="bg-dark-800/50 rounded-card p-6 border border-green-500/20">
-              <div className="text-2xl mb-3">🏥</div>
-              <h4 className="font-semibold mb-2 text-white">{t('aiServices.localServices.useCases.medical.title')}</h4>
-              <p className="text-gray-400 mb-2 text-sm">{t('aiServices.localServices.useCases.medical.service')}</p>
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-green-400 font-semibold">{t('aiServices.localServices.useCases.medical.price')}</span>
+          </div>
+
+          {/* Servicios Premium */}
+          <div>
+            <h4 className="text-xl font-semibold mb-6 text-center text-yellow-400">Servicios Premium</h4>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-dark-800/50 rounded-card p-6 border border-purple-500/20">
+                <div className="text-2xl mb-3">🚀</div>
+                <h4 className="font-semibold mb-2 text-white">{t('aiServices.localServices.useCases.startup.title')}</h4>
+                <p className="text-gray-400 mb-2 text-sm">{t('aiServices.localServices.useCases.startup.service')}</p>
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-purple-400 font-semibold">{t('aiServices.localServices.useCases.startup.price')}</span>
+                </div>
+                <p className="text-purple-300 text-sm italic">{t('aiServices.localServices.useCases.startup.benefit')}</p>
               </div>
-              <p className="text-green-300 text-sm italic">{t('aiServices.localServices.useCases.medical.benefit')}</p>
-            </div>
-            <div className="bg-dark-800/50 rounded-card p-6 border border-green-500/20">
-              <div className="text-2xl mb-3">🏢</div>
-              <h4 className="font-semibold mb-2 text-white">{t('aiServices.localServices.useCases.accounting.title')}</h4>
-              <p className="text-gray-400 mb-2 text-sm">{t('aiServices.localServices.useCases.accounting.service')}</p>
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-green-400 font-semibold">{t('aiServices.localServices.useCases.accounting.price')}</span>
+              <div className="bg-dark-800/50 rounded-card p-6 border border-yellow-500/20">
+                <div className="text-2xl mb-3">🏦</div>
+                <h4 className="font-semibold mb-2 text-white">{t('aiServices.localServices.useCases.financial.title')}</h4>
+                <p className="text-gray-400 mb-2 text-sm">{t('aiServices.localServices.useCases.financial.service')}</p>
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-yellow-400 font-semibold">{t('aiServices.localServices.useCases.financial.price')}</span>
+                </div>
+                <p className="text-yellow-300 text-sm italic">{t('aiServices.localServices.useCases.financial.benefit')}</p>
               </div>
-              <p className="text-green-300 text-sm italic">{t('aiServices.localServices.useCases.accounting.benefit')}</p>
-            </div>
-            <div className="bg-dark-800/50 rounded-card p-6 border border-green-500/20">
-              <div className="text-2xl mb-3">🏠</div>
-              <h4 className="font-semibold mb-2 text-white">{t('aiServices.localServices.useCases.realestate.title')}</h4>
-              <p className="text-gray-400 mb-2 text-sm">{t('aiServices.localServices.useCases.realestate.service')}</p>
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-green-400 font-semibold">{t('aiServices.localServices.useCases.realestate.price')}</span>
+              <div className="bg-dark-800/50 rounded-card p-6 border border-blue-500/20">
+                <div className="text-2xl mb-3">⚖️</div>
+                <h4 className="font-semibold mb-2 text-white">{t('aiServices.localServices.useCases.legal.title')}</h4>
+                <p className="text-gray-400 mb-2 text-sm">{t('aiServices.localServices.useCases.legal.service')}</p>
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-blue-400 font-semibold">{t('aiServices.localServices.useCases.legal.price')}</span>
+                </div>
+                <p className="text-blue-300 text-sm italic">{t('aiServices.localServices.useCases.legal.benefit')}</p>
               </div>
-              <p className="text-green-300 text-sm italic">{t('aiServices.localServices.useCases.realestate.benefit')}</p>
-            </div>
-            <div className="bg-dark-800/50 rounded-card p-6 border border-purple-500/20">
-              <div className="text-2xl mb-3">🚀</div>
-              <h4 className="font-semibold mb-2 text-white">{t('aiServices.localServices.useCases.startup.title')}</h4>
-              <p className="text-gray-400 mb-2 text-sm">{t('aiServices.localServices.useCases.startup.service')}</p>
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-purple-400 font-semibold">{t('aiServices.localServices.useCases.startup.price')}</span>
-              </div>
-              <p className="text-purple-300 text-sm italic">{t('aiServices.localServices.useCases.startup.benefit')}</p>
-            </div>
-            <div className="bg-dark-800/50 rounded-card p-6 border border-yellow-500/20">
-              <div className="text-2xl mb-3">🏦</div>
-              <h4 className="font-semibold mb-2 text-white">{t('aiServices.localServices.useCases.financial.title')}</h4>
-              <p className="text-gray-400 mb-2 text-sm">{t('aiServices.localServices.useCases.financial.service')}</p>
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-yellow-400 font-semibold">{t('aiServices.localServices.useCases.financial.price')}</span>
-              </div>
-              <p className="text-yellow-300 text-sm italic">{t('aiServices.localServices.useCases.financial.benefit')}</p>
-            </div>
-            <div className="bg-dark-800/50 rounded-card p-6 border border-blue-500/20">
-              <div className="text-2xl mb-3">⚖️</div>
-              <h4 className="font-semibold mb-2 text-white">{t('aiServices.localServices.useCases.legal.title')}</h4>
-              <p className="text-gray-400 mb-2 text-sm">{t('aiServices.localServices.useCases.legal.service')}</p>
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-blue-400 font-semibold">{t('aiServices.localServices.useCases.legal.price')}</span>
-              </div>
-              <p className="text-blue-300 text-sm italic">{t('aiServices.localServices.useCases.legal.benefit')}</p>
             </div>
           </div>
         </div>
