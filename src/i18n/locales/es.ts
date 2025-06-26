@@ -129,30 +129,30 @@ export default {
   },
   aiServices: {
     title: 'Servicios de IA',
-    subtitle: 'Experto en entrenar agentes de IA con recursos limitados',
-    description: 'Especialista en metodología "guerrilla" para entrenar modelos de IA sin grandes presupuestos. Desde chatbots personalizados hasta automatización empresarial.',
+    subtitle: 'Especialista en desarrollo de agentes de IA empresariales',
+    description: 'Experto en implementación de soluciones de inteligencia artificial optimizadas y escalables. Desarrollo de chatbots personalizados, automatización empresarial y consultoría estratégica en IA.',
     services: {
       training: {
-        title: 'Entrenamiento de Chatbots Personalizados',
-        description: 'Entreno agentes de IA específicos para tu negocio usando técnicas avanzadas de fine-tuning.',
+        title: 'Desarrollo de Chatbots Personalizados',
+        description: 'Creo agentes de IA específicos para tu negocio usando técnicas avanzadas de machine learning y procesamiento de lenguaje natural.',
         price: '$500 - $2,000',
         duration: '2-4 semanas'
       },
       consulting: {
-        title: 'Consultoría IA para PyMEs',
-        description: 'Implementación estratégica de IA en pequeñas y medianas empresas.',
+        title: 'Consultoría Estratégica en IA',
+        description: 'Implementación y optimización de soluciones de IA para pequeñas y medianas empresas.',
         price: '$100 - $300/hora',
         duration: 'Flexible'
       },
       automation: {
-        title: 'Agentes para Atención al Cliente',
-        description: 'Automatización completa de atención al cliente con IA conversacional.',
+        title: 'Automatización con IA Conversacional',
+        description: 'Sistemas completos de atención al cliente automatizada con inteligencia artificial avanzada.',
         price: '$1,000 - $5,000',
         duration: '3-6 semanas'
       },
       courses: {
-        title: 'Curso: "Entrenamiento IA sin Recursos"',
-        description: 'Aprende mi metodología guerrilla para entrenar modelos de IA gratis.',
+        title: 'Formación: "IA Empresarial Accesible"',
+        description: 'Capacitación en implementación de IA con metodologías eficientes y recursos optimizados.',
         price: '$50 - $500',
         duration: 'Auto-dirigido'
       }
@@ -172,8 +172,8 @@ export default {
         description: 'Soluciones listas para implementar en empresas'
       },
       saas: {
-        title: 'SaaS: "Entrena tu Agente en 10 minutos"',
-        description: 'Plataforma no-code para entrenamiento rápido'
+        title: 'Plataforma: "Entrenamiento IA Rápido"',
+        description: 'Herramienta no-code para desarrollo ágil de agentes'
       }
     },
     cta: {

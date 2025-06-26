@@ -127,30 +127,30 @@ export default {
   },
   aiServices: {
     title: 'AI Services',
-    subtitle: 'Expert in training AI agents with limited resources',
-    description: 'Specialist in "guerrilla" methodology for training AI models without big budgets. From custom chatbots to business automation.',
+    subtitle: 'Specialist in enterprise AI agent development',
+    description: 'Expert in implementing optimized and scalable artificial intelligence solutions. Custom chatbot development, business automation, and strategic AI consulting.',
     services: {
       training: {
-        title: 'Custom Chatbot Training',
-        description: 'I train AI agents specific to your business using advanced fine-tuning techniques.',
+        title: 'Custom Chatbot Development',
+        description: 'I create AI agents specific to your business using advanced machine learning and natural language processing techniques.',
         price: '$500 - $2,000',
         duration: '2-4 weeks'
       },
       consulting: {
-        title: 'AI Consulting for SMEs',
-        description: 'Strategic AI implementation for small and medium enterprises.',
+        title: 'Strategic AI Consulting',
+        description: 'Implementation and optimization of AI solutions for small and medium enterprises.',
         price: '$100 - $300/hour',
         duration: 'Flexible'
       },
       automation: {
-        title: 'Customer Service Agents',
-        description: 'Complete customer service automation with conversational AI.',
+        title: 'Conversational AI Automation',
+        description: 'Complete automated customer service systems with advanced artificial intelligence.',
         price: '$1,000 - $5,000',
         duration: '3-6 weeks'
       },
       courses: {
-        title: 'Course: "AI Training Without Resources"',
-        description: 'Learn my guerrilla methodology to train AI models for free.',
+        title: 'Training: "Accessible Enterprise AI"',
+        description: 'Training in AI implementation with efficient methodologies and optimized resources.',
         price: '$50 - $500',
         duration: 'Self-paced'
       }
@@ -170,8 +170,8 @@ export default {
         description: 'Ready-to-implement solutions for businesses'
       },
       saas: {
-        title: 'SaaS: "Train your Agent in 10 minutes"',
-        description: 'No-code platform for rapid training'
+        title: 'Platform: "Rapid AI Training"',
+        description: 'No-code tool for agile agent development'
       }
     },
     cta: {

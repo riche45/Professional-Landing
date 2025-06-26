@@ -129,22 +129,22 @@ export default function AIServices() {
 
       {/* Methodology Section */}
       <div className="mb-16 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-card p-8">
-        <h2 className="text-3xl font-semibold mb-6 text-center">Metodología "Guerrilla"</h2>
+        <h2 className="text-3xl font-semibold mb-6 text-center">Metodología de Implementación</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div>
             <div className="text-4xl mb-4">🎯</div>
-            <h3 className="text-xl font-semibold mb-2 text-white">Fase 1: Colab</h3>
-            <p className="text-gray-400">Entrenamiento base gratuito con GPU T4</p>
+            <h3 className="text-xl font-semibold mb-2 text-white">Fase 1: Análisis</h3>
+            <p className="text-gray-400">Evaluación de necesidades y arquitectura base del sistema</p>
           </div>
           <div>
             <div className="text-4xl mb-4">⚡</div>
-            <h3 className="text-xl font-semibold mb-2 text-white">Fase 2: Kaggle</h3>
-            <p className="text-gray-400">Fine-tuning especializado con P100</p>
+            <h3 className="text-xl font-semibold mb-2 text-white">Fase 2: Desarrollo</h3>
+            <p className="text-gray-400">Entrenamiento especializado y optimización de modelos</p>
           </div>
           <div>
             <div className="text-4xl mb-4">🚀</div>
-            <h3 className="text-xl font-semibold mb-2 text-white">Fase 3: Deploy</h3>
-            <p className="text-gray-400">Optimización y puesta en producción</p>
+            <h3 className="text-xl font-semibold mb-2 text-white">Fase 3: Implementación</h3>
+            <p className="text-gray-400">Deploy, testing y puesta en producción</p>
           </div>
         </div>
       </div>
