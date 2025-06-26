@@ -176,7 +176,7 @@ export default {
     },
     localServices: {
       title: 'Local AI Services',
-      subtitle: 'Your chatbot, your server, your data',
+      subtitle: 'Your Bot, your server, your data',
       description: 'Implementation of AI agents that run completely on your servers. Maximum privacy, zero external dependencies.',
       advantages: {
         title: 'Local AI Advantages',
@@ -222,6 +222,24 @@ export default {
           service: 'Property assistant',
           price: '$250-600/month',
           benefit: 'Knows your inventory, available 24/7'
+        },
+        startup: {
+          title: 'Tech Startups',
+          service: 'Technical assistant and support',
+          price: '$800-2000/month',
+          benefit: 'Open source, total customization'
+        },
+        financial: {
+          title: 'Financial Institutions',
+          service: 'Regulatory analysis and consultations',
+          price: '$1500-5000/month',
+          benefit: 'SOX compliance, ultra-secure data'
+        },
+        legal: {
+          title: 'Law Firms',
+          service: 'Legal research and documents',
+          price: '$1000-3000/month',
+          benefit: 'Absolute confidentiality, no third parties'
         }
       },
       deployment: {
