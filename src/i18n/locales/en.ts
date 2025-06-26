@@ -174,6 +174,75 @@ export default {
         description: 'No-code tool for agile agent development'
       }
     },
+    localServices: {
+      title: 'Local AI Services',
+      subtitle: 'Your chatbot, your server, your data',
+      description: 'Implementation of AI agents that run completely on your servers. Maximum privacy, zero external dependencies.',
+      advantages: {
+        title: 'Local AI Advantages',
+        privacy: {
+          title: 'Total Privacy',
+          description: 'Your data never leaves your infrastructure'
+        },
+        costs: {
+          title: 'Predictable Costs',
+          description: 'No surprises in token billing'
+        },
+        speed: {
+          title: 'Optimal Speed',
+          description: 'No latency from external APIs'
+        },
+        compliance: {
+          title: 'Regulatory Compliance',
+          description: 'HIPAA, GDPR and other regulations'
+        }
+      },
+      useCases: {
+        title: 'Business Use Cases',
+        restaurant: {
+          title: 'Restaurants/Cafes',
+          service: 'Chatbot for orders and reservations',
+          price: '$200-500/month',
+          benefit: 'Total control of ordering system'
+        },
+        medical: {
+          title: 'Medical Offices',
+          service: 'Assistant for appointments and information',
+          price: '$300-800/month',
+          benefit: 'HIPAA compliant, data stays local'
+        },
+        accounting: {
+          title: 'Accounting Offices',
+          service: 'Assistant for tax consultations',
+          price: '$400-1000/month',
+          benefit: 'Confidential information, 100% private'
+        },
+        realestate: {
+          title: 'Real Estate',
+          service: 'Property assistant',
+          price: '$250-600/month',
+          benefit: 'Knows your inventory, available 24/7'
+        }
+      },
+      deployment: {
+        title: 'Implementation Options',
+        local: {
+          title: 'Local Server',
+          description: 'Installation on your existing hardware',
+          price: 'From $500 setup'
+        },
+        cloud: {
+          title: 'Private Cloud',
+          description: 'Dedicated VPS with exclusive access',
+          price: 'From $300/month'
+        },
+        hybrid: {
+          title: 'Hybrid',
+          description: 'Combination of local + API as needed',
+          price: 'Customized'
+        }
+      }
+    },
     cta: {
       title: 'Ready to implement AI in your business?',
       description: 'Contact me for a free 30-minute consultation',

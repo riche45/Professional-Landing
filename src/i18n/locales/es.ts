@@ -176,6 +176,75 @@ export default {
         description: 'Herramienta no-code para desarrollo ágil de agentes'
       }
     },
+    localServices: {
+      title: 'Servicios de IA Local',
+      subtitle: 'Tu chatbot, tu servidor, tus datos',
+      description: 'Implementación de agentes de IA que funcionan completamente en tus servidores. Máxima privacidad, cero dependencias externas.',
+      advantages: {
+        title: 'Ventajas de IA Local',
+        privacy: {
+          title: 'Privacidad Total',
+          description: 'Tus datos nunca salen de tu infraestructura'
+        },
+        costs: {
+          title: 'Costos Predecibles',
+          description: 'Sin sorpresas en facturación por tokens'
+        },
+        speed: {
+          title: 'Velocidad Óptima',
+          description: 'Sin latencia de APIs externas'
+        },
+        compliance: {
+          title: 'Cumplimiento Normativo',
+          description: 'HIPAA, GDPR y otras regulaciones'
+        }
+      },
+      useCases: {
+        title: 'Casos de Uso Empresariales',
+        restaurant: {
+          title: 'Restaurantes/Cafeterías',
+          service: 'Chatbot para pedidos y reservas',
+          price: '$200-500/mes',
+          benefit: 'Control total del sistema de pedidos'
+        },
+        medical: {
+          title: 'Consultorios Médicos',
+          service: 'Asistente para citas e información',
+          price: '$300-800/mes',
+          benefit: 'HIPAA compliant, datos no salen'
+        },
+        accounting: {
+          title: 'Oficinas de Contadores',
+          service: 'Asistente para consultas fiscales',
+          price: '$400-1000/mes',
+          benefit: 'Información confidencial, 100% privada'
+        },
+        realestate: {
+          title: 'Inmobiliarias',
+          service: 'Asistente para propiedades',
+          price: '$250-600/mes',
+          benefit: 'Conoce tu inventario, disponible 24/7'
+        }
+      },
+      deployment: {
+        title: 'Opciones de Implementación',
+        local: {
+          title: 'Servidor Local',
+          description: 'Instalación en tu hardware existente',
+          price: 'Desde $500 setup'
+        },
+        cloud: {
+          title: 'Nube Privada',
+          description: 'VPS dedicado con acceso exclusivo',
+          price: 'Desde $300/mes'
+        },
+        hybrid: {
+          title: 'Híbrido',
+          description: 'Combinación de local + API según necesidad',
+          price: 'Personalizado'
+        }
+      }
+    },
     cta: {
       title: '¿Listo para implementar IA en tu negocio?',
       description: 'Contacta conmigo para una consulta gratuita de 30 minutos',
