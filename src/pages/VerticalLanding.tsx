@@ -47,7 +47,7 @@ const verticalConfigs: Record<string, VerticalConfig> = {
       'Disponible 24/7 sin costos extra',
       'Integración directa con tu sistema POS'
     ],
-    pricing: '$200-500/mes',
+    pricing: '€180-450/mes',
     cta: 'Demo Gratuito para Restaurantes',
     metaTitle: 'Automatiza los Pedidos de tu Restaurante con IA',
     metaDescription: 'Chatbot inteligente que gestiona pedidos, reservas y consultas 24/7. Sin dependencias externas.',
@@ -61,7 +61,7 @@ const verticalConfigs: Record<string, VerticalConfig> = {
   medical: {
     icon: '🏥',
     heroTitle: 'Asistente de IA para tu Consultorio Médico',
-    heroSubtitle: 'Gestión inteligente de citas y consultas. 100% HIPAA compliant, datos seguros.',
+    heroSubtitle: 'Gestión inteligente de citas y consultas. 100% GDPR compliant, datos seguros.',
     painPoints: [
       'Recepcionista saturada con llamadas',
       'Pacientes que no confirman citas',
@@ -72,14 +72,14 @@ const verticalConfigs: Record<string, VerticalConfig> = {
     benefits: [
       'Reduce no-shows en 70%',
       'Libera tiempo de recepción',
-      'HIPAA compliant automático',
+      'GDPR compliant automático',
       'Datos nunca salen de tu servidor'
     ],
-    pricing: '$300-800/mes',
+    pricing: '€270-720/mes',
     cta: 'Consulta Médica Gratuita',
     metaTitle: 'Asistente de IA para tu Consultorio Médico',
-    metaDescription: 'Gestión inteligente de citas y consultas. 100% HIPAA compliant, datos seguros.',
-    keywords: ['consultorio', 'IA', 'citas', 'consultas', 'HIPAA'],
+    metaDescription: 'Gestión inteligente de citas y consultas. 100% GDPR compliant, datos seguros.',
+    keywords: ['consultorio', 'IA', 'citas', 'consultas', 'GDPR'],
     testimonial: {
       name: 'Lic. Ana Martínez',
       business: 'Martínez Legal',
@@ -103,7 +103,7 @@ const verticalConfigs: Record<string, VerticalConfig> = {
       'Educa pacientes sobre tratamientos',
       'Genera leads para tratamientos premium'
     ],
-    pricing: '$200-500/mes',
+    pricing: '€180-450/mes',
     cta: 'Demo para Clínicas Dentales',
     metaTitle: 'Optimiza tu Clínica Dental con IA',
     metaDescription: 'Gestión automática de citas, recordatorios y consultas. Reduce no-shows significativamente.',
@@ -131,7 +131,7 @@ const verticalConfigs: Record<string, VerticalConfig> = {
       'Planes personalizados escalables',
       'Motivación constante entre sesiones'
     ],
-    pricing: '$300-700/mes',
+    pricing: '€270-630/mes',
     cta: 'Demo para Gimnasios',
     metaTitle: 'Entrenador Personal de IA para tu Gimnasio',
     metaDescription: 'Planes personalizados, seguimiento automático y motivación 24/7 para tus clientes.',
@@ -159,7 +159,7 @@ const verticalConfigs: Record<string, VerticalConfig> = {
       'Guía paso a paso para documentos',
       'Disponible 24/7 para urgencias fiscales'
     ],
-    pricing: '$400-1000/mes',
+    pricing: '€360-900/mes',
     cta: 'Demo para Contadores',
     metaTitle: 'Asistente Fiscal de IA para tu Despacho Contable',
     metaDescription: 'Consultas automáticas sobre impuestos, deadlines y documentación. Datos 100% confidenciales.',
@@ -187,7 +187,7 @@ const verticalConfigs: Record<string, VerticalConfig> = {
       'Programa visitas sin intervención',
       'Información instantánea de propiedades'
     ],
-    pricing: '$250-600/mes',
+    pricing: '€225-540/mes',
     cta: 'Demo para Inmobiliarias',
     metaTitle: 'Agente Inmobiliario de IA 24/7',
     metaDescription: 'Atiende prospectos, programa visitas y califica leads automáticamente. Nunca pierdas una oportunidad.',
@@ -215,7 +215,7 @@ const verticalConfigs: Record<string, VerticalConfig> = {
       'Confidencialidad garantizada localmente',
       'Agenda optimizada para casos complejos'
     ],
-    pricing: '$500-1200/mes',
+    pricing: '€450-1080/mes',
     cta: 'Demo para Abogados',
     metaTitle: 'Asistente Legal de IA para tu Despacho',
     metaDescription: 'Consultas iniciales, programación de citas y orientación legal básica. Confidencialidad absoluta.',
@@ -243,7 +243,7 @@ const verticalConfigs: Record<string, VerticalConfig> = {
       'Escalabilidad predecible',
       'Comunidad de desarrolladores'
     ],
-    pricing: '$800-2000/mes',
+    pricing: '€720-1800/mes',
     cta: 'Demo para Startups',
     metaTitle: 'Asistente de IA Open Source para tu Startup',
     metaDescription: 'Solución completamente personalizable y escalable. Código abierto, cero vendor lock-in.',
@@ -257,25 +257,25 @@ const verticalConfigs: Record<string, VerticalConfig> = {
   financial: {
     icon: '🏦',
     heroTitle: 'IA Financiera con Máxima Seguridad',
-    heroSubtitle: 'Cumplimiento SOX automático, auditorías integradas y seguridad bancaria. Cero riesgo de filtración.',
+    heroSubtitle: 'Cumplimiento MiFID II automático, auditorías integradas y seguridad bancaria. Cero riesgo de filtración.',
     painPoints: [
-      'Regulaciones estrictas (SOX, Basel III)',
+      'Regulaciones estrictas (MiFID II, GDPR)',
       'Auditorías constantes y costosas',
       'Riesgo de filtración de datos sensibles',
       'Latencia inaceptable en operaciones'
     ],
     solution: 'Sistema de IA con cumplimiento regulatorio automático, auditorías integradas y seguridad nivel bancario.',
     benefits: [
-      'SOX compliance automático',
+      'MiFID II compliance automático',
       'Auditorías en tiempo real',
       'Latencia sub-milisegundo',
       'Cifrado nivel militar'
     ],
-    pricing: '$1500-5000/mes',
+    pricing: '€1350-4500/mes',
     cta: 'Demo para Instituciones Financieras',
     metaTitle: 'IA Financiera con Máxima Seguridad',
-    metaDescription: 'Cumplimiento SOX automático, auditorías integradas y seguridad bancaria. Cero riesgo de filtración.',
-    keywords: ['IA', 'financiera', 'SOX', 'auditorías', 'seguridad'],
+    metaDescription: 'Cumplimiento MiFID II automático, auditorías integradas y seguridad bancaria. Cero riesgo de filtración.',
+    keywords: ['IA', 'financiera', 'MiFID II', 'auditorías', 'seguridad'],
     testimonial: {
       name: 'María Elena Vásquez',
       business: 'Banco Regional',

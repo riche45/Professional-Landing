@@ -9,7 +9,10 @@
     <meta name="description" content="Portafolio profesional de Richard Garcia, desarrollador de software especializado en IA, blockchain y desarrollo web moderno. Explora mis proyectos, artículos y colaboraciones." />
     <meta name="theme-color" content="#121212" />
     
-    <!-- Google Tag Manager -->
+    <!-- Google Site Verification - CÓDIGO REAL -->
+    <meta name="google-site-verification" content="0e0c866a3f188821" />
+    
+    <!-- Google Tag Manager - REEMPLAZAR GTM-XXXXXXX con tu ID real -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -17,18 +20,36 @@
     })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
     <!-- End Google Tag Manager -->
     
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <!-- Google Analytics 4 - ID REAL -->
+    <!-- Ve a GA4 > Administrar > Flujos de datos > Tu sitio web > Verás el ID G-XXXXXXXXXX -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RR6KGGNGXW"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX', {
-        // Configuración para cada vertical
+      gtag('config', 'G-RR6KGGNGXW', {
+        // Configuración específica para España/Europa
+        page_title: document.title,
+        page_location: window.location.href,
+        currency: 'EUR',
+        country: 'ES',
+        language: 'es',
         custom_map: {
           'custom_parameter_1': 'vertical_type',
           'custom_parameter_2': 'lead_source'
-        }
+        },
+        // Eventos de conversión
+        send_page_view: true,
+        // Configuración de comercio electrónico mejorado
+        allow_enhanced_conversions: true
+      });
+      
+      // Evento personalizado para tracking de verticales en España
+      gtag('event', 'page_view', {
+        page_title: document.title,
+        page_location: 'https://richard-garcia.vercel.app' + window.location.pathname,
+        currency: 'EUR',
+        country: 'ES'
       });
     </script>
   </head>

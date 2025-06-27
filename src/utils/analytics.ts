@@ -5,7 +5,7 @@ export const trackConversion = (vertical: string, conversionType: string, value?
       vertical_type: vertical,
       conversion_type: conversionType,
       value: value || 1,
-      currency: 'USD'
+      currency: 'EUR'
     });
   }
 };

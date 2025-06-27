@@ -9,7 +9,7 @@ export const generateServiceSchema = (vertical: string, config: any) => {
       "@type": "Person",
       "name": "Richard Guerrero",
       "jobTitle": "AI Developer & Consultant",
-      "url": "https://tu-dominio.com"
+      "url": "https://richard-garcia.vercel.app"
     },
     "serviceType": "Artificial Intelligence Automation",
     "areaServed": "Mexico",
@@ -23,8 +23,8 @@ export const generateServiceSchema = (vertical: string, config: any) => {
       "category": "Restaurant Technology",
       "offers": {
         "@type": "Offer",
-        "price": "200-500",
-        "priceCurrency": "USD",
+        "price": "180-450",
+        "priceCurrency": "EUR",
         "priceSpecification": {
           "@type": "UnitPriceSpecification",
           "billingDuration": "P1M",
@@ -41,8 +41,8 @@ export const generateServiceSchema = (vertical: string, config: any) => {
       "category": "Healthcare Technology",
       "offers": {
         "@type": "Offer",
-        "price": "300-800",
-        "priceCurrency": "USD",
+        "price": "270-720",
+        "priceCurrency": "EUR",
         "priceSpecification": {
           "@type": "UnitPriceSpecification",
           "billingDuration": "P1M",
@@ -55,7 +55,7 @@ export const generateServiceSchema = (vertical: string, config: any) => {
       },
       "additionalProperty": {
         "@type": "PropertyValue",
-        "name": "HIPAA Compliant",
+        "name": "GDPR Compliant",
         "value": "Yes"
       }
     },
@@ -64,8 +64,8 @@ export const generateServiceSchema = (vertical: string, config: any) => {
       "category": "Enterprise Software",
       "offers": {
         "@type": "Offer",
-        "price": "800-2000",
-        "priceCurrency": "USD",
+        "price": "720-1800",
+        "priceCurrency": "EUR",
         "priceSpecification": {
           "@type": "UnitPriceSpecification",
           "billingDuration": "P1M",
@@ -96,19 +96,19 @@ export const generateBreadcrumbSchema = (vertical: string) => {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://tu-dominio.com"
+        "item": "https://richard-garcia.vercel.app"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "AI Services",
-        "item": "https://tu-dominio.com/ai-services"
+        "item": "https://richard-garcia.vercel.app/ai-services"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": vertical.charAt(0).toUpperCase() + vertical.slice(1),
-        "item": `https://tu-dominio.com/ai-services/${vertical}`
+        "item": `https://richard-garcia.vercel.app/ai-services/${vertical}`
       }
     ]
   };

@@ -2,96 +2,96 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Página principal -->
   <url>
-    <loc>https://tu-dominio.com/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <loc>https://richard-garcia.vercel.app/</loc>
+    <lastmod>2024-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <!-- Servicios de IA -->
   <url>
-    <loc>https://tu-dominio.com/ai-services</loc>
-    <lastmod>2024-01-01</lastmod>
+    <loc>https://richard-garcia.vercel.app/ai-services</loc>
+    <lastmod>2024-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <!-- Verticales Small Business -->
   <url>
-    <loc>https://tu-dominio.com/ai-services/restaurants</loc>
-    <lastmod>2024-01-01</lastmod>
+    <loc>https://richard-garcia.vercel.app/ai-services/restaurants</loc>
+    <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://tu-dominio.com/ai-services/medical</loc>
-    <lastmod>2024-01-01</lastmod>
+    <loc>https://richard-garcia.vercel.app/ai-services/medical</loc>
+    <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://tu-dominio.com/ai-services/dental</loc>
-    <lastmod>2024-01-01</lastmod>
+    <loc>https://richard-garcia.vercel.app/ai-services/dental</loc>
+    <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://tu-dominio.com/ai-services/fitness</loc>
-    <lastmod>2024-01-01</lastmod>
+    <loc>https://richard-garcia.vercel.app/ai-services/fitness</loc>
+    <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://tu-dominio.com/ai-services/accounting</loc>
-    <lastmod>2024-01-01</lastmod>
+    <loc>https://richard-garcia.vercel.app/ai-services/accounting</loc>
+    <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://tu-dominio.com/ai-services/realestate</loc>
-    <lastmod>2024-01-01</lastmod>
+    <loc>https://richard-garcia.vercel.app/ai-services/realestate</loc>
+    <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <!-- Verticales Premium -->
   <url>
-    <loc>https://tu-dominio.com/ai-services/startup</loc>
-    <lastmod>2024-01-01</lastmod>
+    <loc>https://richard-garcia.vercel.app/ai-services/startup</loc>
+    <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://tu-dominio.com/ai-services/financial</loc>
-    <lastmod>2024-01-01</lastmod>
+    <loc>https://richard-garcia.vercel.app/ai-services/financial</loc>
+    <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://tu-dominio.com/ai-services/legal</loc>
-    <lastmod>2024-01-01</lastmod>
+    <loc>https://richard-garcia.vercel.app/ai-services/legal</loc>
+    <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <!-- Otras páginas importantes -->
   <url>
-    <loc>https://tu-dominio.com/portfolio</loc>
-    <lastmod>2024-01-01</lastmod>
+    <loc>https://richard-garcia.vercel.app/portfolio</loc>
+    <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://tu-dominio.com/connects</loc>
-    <lastmod>2024-01-01</lastmod>
+    <loc>https://richard-garcia.vercel.app/connects</loc>
+    <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
