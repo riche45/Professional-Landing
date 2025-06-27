@@ -1,6 +1,13 @@
 import { useTranslation } from 'react-i18next';
 import { useParams, Link } from 'react-router-dom';
 import { Bot, CheckCircle, DollarSign, Shield, Zap, Clock } from 'lucide-react';
+import { useEffect } from 'react';
+import { updateMetaTags, trackPageView, trackCTAClick } from '../utils/seo';
+
+// Declaración para Google Analytics
+declare global {
+  function gtag(...args: any[]): void;
+}
 
 interface VerticalConfig {
   icon: string;
@@ -11,6 +18,10 @@ interface VerticalConfig {
   benefits: string[];
   pricing: string;
   cta: string;
+  // SEO específico
+  metaTitle: string;
+  metaDescription: string;
+  keywords: string[];
   testimonial?: {
     name: string;
     business: string;
@@ -37,7 +48,15 @@ const verticalConfigs: Record<string, VerticalConfig> = {
       'Integración directa con tu sistema POS'
     ],
     pricing: '$200-500/mes',
-    cta: 'Demo Gratuito para Restaurantes'
+    cta: 'Demo Gratuito para Restaurantes',
+    metaTitle: 'Automatiza los Pedidos de tu Restaurante con IA',
+    metaDescription: 'Chatbot inteligente que gestiona pedidos, reservas y consultas 24/7. Sin dependencias externas.',
+    keywords: ['restaurante', 'IA', 'pedidos', 'reservas', 'consultas'],
+    testimonial: {
+      name: 'CPA María Rodríguez',
+      business: 'Rodríguez & Asociados',
+      quote: 'El bot maneja 90% de las consultas rutinarias. Ahora puedo enfocarme en casos complejos y estrategia fiscal.'
+    }
   },
   medical: {
     icon: '🏥',
@@ -57,7 +76,15 @@ const verticalConfigs: Record<string, VerticalConfig> = {
       'Datos nunca salen de tu servidor'
     ],
     pricing: '$300-800/mes',
-    cta: 'Consulta Médica Gratuita'
+    cta: 'Consulta Médica Gratuita',
+    metaTitle: 'Asistente de IA para tu Consultorio Médico',
+    metaDescription: 'Gestión inteligente de citas y consultas. 100% HIPAA compliant, datos seguros.',
+    keywords: ['consultorio', 'IA', 'citas', 'consultas', 'HIPAA'],
+    testimonial: {
+      name: 'Lic. Ana Martínez',
+      business: 'Martínez Legal',
+      quote: 'El asistente hace el 70% del trabajo inicial. Llego a las consultas ya conociendo el caso y optimizo mi tiempo.'
+    }
   },
   dental: {
     icon: '🦷',
@@ -77,7 +104,15 @@ const verticalConfigs: Record<string, VerticalConfig> = {
       'Genera leads para tratamientos premium'
     ],
     pricing: '$200-500/mes',
-    cta: 'Demo para Clínicas Dentales'
+    cta: 'Demo para Clínicas Dentales',
+    metaTitle: 'Optimiza tu Clínica Dental con IA',
+    metaDescription: 'Gestión automática de citas, recordatorios y consultas. Reduce no-shows significativamente.',
+    keywords: ['clínica', 'IA', 'odontología', 'citas', 'tratamientos'],
+    testimonial: {
+      name: 'Lic. Carlos Vega',
+      business: 'Vega Propiedades',
+      quote: 'Desde que tengo el bot, mis ventas nocturnas y de fin de semana aumentaron 40%. Es como tener un asistente que nunca duerme.'
+    }
   },
   fitness: {
     icon: '💪',
@@ -97,7 +132,15 @@ const verticalConfigs: Record<string, VerticalConfig> = {
       'Motivación constante entre sesiones'
     ],
     pricing: '$300-700/mes',
-    cta: 'Demo para Gimnasios'
+    cta: 'Demo para Gimnasios',
+    metaTitle: 'Entrenador Personal de IA para tu Gimnasio',
+    metaDescription: 'Planes personalizados, seguimiento automático y motivación 24/7 para tus clientes.',
+    keywords: ['gimnasio', 'IA', 'planes', 'seguimiento', 'motivación'],
+    testimonial: {
+      name: 'Alex Chen',
+      business: 'TechFlow Startup',
+      quote: 'Tener el código fuente nos permitió adaptar la IA exactamente a nuestro producto. Ahora es parte integral de nuestra plataforma.'
+    }
   },
   accounting: {
     icon: '🏢',
@@ -118,6 +161,9 @@ const verticalConfigs: Record<string, VerticalConfig> = {
     ],
     pricing: '$400-1000/mes',
     cta: 'Demo para Contadores',
+    metaTitle: 'Asistente Fiscal de IA para tu Despacho Contable',
+    metaDescription: 'Consultas automáticas sobre impuestos, deadlines y documentación. Datos 100% confidenciales.',
+    keywords: ['despacho', 'IA', 'impuestos', 'deadlines', 'documentación'],
     testimonial: {
       name: 'CPA María Rodríguez',
       business: 'Rodríguez & Asociados',
@@ -143,6 +189,9 @@ const verticalConfigs: Record<string, VerticalConfig> = {
     ],
     pricing: '$250-600/mes',
     cta: 'Demo para Inmobiliarias',
+    metaTitle: 'Agente Inmobiliario de IA 24/7',
+    metaDescription: 'Atiende prospectos, programa visitas y califica leads automáticamente. Nunca pierdas una oportunidad.',
+    keywords: ['inmobiliario', 'IA', 'prospectos', 'visitas', 'calificación'],
     testimonial: {
       name: 'Lic. Carlos Vega',
       business: 'Vega Propiedades',
@@ -168,6 +217,9 @@ const verticalConfigs: Record<string, VerticalConfig> = {
     ],
     pricing: '$500-1200/mes',
     cta: 'Demo para Abogados',
+    metaTitle: 'Asistente Legal de IA para tu Despacho',
+    metaDescription: 'Consultas iniciales, programación de citas y orientación legal básica. Confidencialidad absoluta.',
+    keywords: ['despacho', 'IA', 'consultas', 'programación', 'orientación'],
     testimonial: {
       name: 'Lic. Ana Martínez',
       business: 'Martínez Legal',
@@ -193,6 +245,9 @@ const verticalConfigs: Record<string, VerticalConfig> = {
     ],
     pricing: '$800-2000/mes',
     cta: 'Demo para Startups',
+    metaTitle: 'Asistente de IA Open Source para tu Startup',
+    metaDescription: 'Solución completamente personalizable y escalable. Código abierto, cero vendor lock-in.',
+    keywords: ['startup', 'IA', 'open source', 'personalizable', 'escalable'],
     testimonial: {
       name: 'Alex Chen',
       business: 'TechFlow Startup',
@@ -218,6 +273,9 @@ const verticalConfigs: Record<string, VerticalConfig> = {
     ],
     pricing: '$1500-5000/mes',
     cta: 'Demo para Instituciones Financieras',
+    metaTitle: 'IA Financiera con Máxima Seguridad',
+    metaDescription: 'Cumplimiento SOX automático, auditorías integradas y seguridad bancaria. Cero riesgo de filtración.',
+    keywords: ['IA', 'financiera', 'SOX', 'auditorías', 'seguridad'],
     testimonial: {
       name: 'María Elena Vásquez',
       business: 'Banco Regional',
@@ -230,6 +288,17 @@ export default function VerticalLanding() {
   const { vertical } = useParams<{ vertical: string }>();
   
   const config = vertical ? verticalConfigs[vertical] : null;
+  
+  // SEO dinámico y Analytics
+  useEffect(() => {
+    if (config) {
+      // Actualizar meta tags
+      updateMetaTags(config.metaTitle, config.metaDescription, config.keywords);
+      
+      // Track page view
+      trackPageView(vertical!, config);
+    }
+  }, [config, vertical]);
   
   if (!config) {
     return (

@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://tu-dominio.com/sitemap.xml
+
+# Páginas importantes para crawling
+Allow: /ai-services/
+Allow: /ai-services/restaurants
+Allow: /ai-services/medical
+Allow: /ai-services/dental
+Allow: /ai-services/fitness
+Allow: /ai-services/accounting
+Allow: /ai-services/realestate
+Allow: /ai-services/startup
+Allow: /ai-services/financial
+Allow: /ai-services/legal
+
+# Bloquear archivos innecesarios
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /*.json$
+Disallow: /*.ts$
+Disallow: /*.tsx$
+
+# Crawl delay (opcional)
+Crawl-delay: 1 
