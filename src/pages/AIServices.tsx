@@ -192,7 +192,7 @@ export default function AIServices() {
                 </div>
                 <p className="text-green-300 text-sm italic">{t('aiServices.localServices.useCases.medical.benefit')}</p>
               </Link>
-              <div className="bg-dark-800/50 rounded-card p-6 border border-green-500/20">
+              <Link to="/ai-services/accounting" className="bg-dark-800/50 rounded-card p-6 border border-green-500/20 hover:border-green-500/40 transition-colors">
                 <div className="text-2xl mb-3">🏢</div>
                 <h4 className="font-semibold mb-2 text-white">{t('aiServices.localServices.useCases.accounting.title')}</h4>
                 <p className="text-gray-400 mb-2 text-sm">{t('aiServices.localServices.useCases.accounting.service')}</p>
@@ -200,8 +200,8 @@ export default function AIServices() {
                   <span className="text-green-400 font-semibold">{t('aiServices.localServices.useCases.accounting.price')}</span>
                 </div>
                 <p className="text-green-300 text-sm italic">{t('aiServices.localServices.useCases.accounting.benefit')}</p>
-              </div>
-              <div className="bg-dark-800/50 rounded-card p-6 border border-green-500/20">
+              </Link>
+              <Link to="/ai-services/realestate" className="bg-dark-800/50 rounded-card p-6 border border-green-500/20 hover:border-green-500/40 transition-colors">
                 <div className="text-2xl mb-3">🏠</div>
                 <h4 className="font-semibold mb-2 text-white">{t('aiServices.localServices.useCases.realestate.title')}</h4>
                 <p className="text-gray-400 mb-2 text-sm">{t('aiServices.localServices.useCases.realestate.service')}</p>
@@ -209,7 +209,7 @@ export default function AIServices() {
                   <span className="text-green-400 font-semibold">{t('aiServices.localServices.useCases.realestate.price')}</span>
                 </div>
                 <p className="text-green-300 text-sm italic">{t('aiServices.localServices.useCases.realestate.benefit')}</p>
-              </div>
+              </Link>
               <Link to="/ai-services/dental" className="bg-dark-800/50 rounded-card p-6 border border-green-500/20 hover:border-green-500/40 transition-colors">
                 <div className="text-2xl mb-3">🦷</div>
                 <h4 className="font-semibold mb-2 text-white">{t('aiServices.localServices.useCases.dental.title')}</h4>
@@ -233,9 +233,9 @@ export default function AIServices() {
 
           {/* Servicios Premium */}
           <div>
-            <h4 className="text-xl font-semibold mb-6 text-center text-yellow-400">Servicios Premium</h4>
+            <h4 className="text-xl font-semibold mb-6 text-center text-purple-400">Premium</h4>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-dark-800/50 rounded-card p-6 border border-purple-500/20">
+              <Link to="/ai-services/startup" className="bg-dark-800/50 rounded-card p-6 border border-purple-500/30 hover:border-purple-500/50 transition-colors">
                 <div className="text-2xl mb-3">🚀</div>
                 <h4 className="font-semibold mb-2 text-white">{t('aiServices.localServices.useCases.startup.title')}</h4>
                 <p className="text-gray-400 mb-2 text-sm">{t('aiServices.localServices.useCases.startup.service')}</p>
@@ -243,25 +243,25 @@ export default function AIServices() {
                   <span className="text-purple-400 font-semibold">{t('aiServices.localServices.useCases.startup.price')}</span>
                 </div>
                 <p className="text-purple-300 text-sm italic">{t('aiServices.localServices.useCases.startup.benefit')}</p>
-              </div>
-              <div className="bg-dark-800/50 rounded-card p-6 border border-yellow-500/20">
+              </Link>
+              <Link to="/ai-services/financial" className="bg-dark-800/50 rounded-card p-6 border border-purple-500/30 hover:border-purple-500/50 transition-colors">
                 <div className="text-2xl mb-3">🏦</div>
                 <h4 className="font-semibold mb-2 text-white">{t('aiServices.localServices.useCases.financial.title')}</h4>
                 <p className="text-gray-400 mb-2 text-sm">{t('aiServices.localServices.useCases.financial.service')}</p>
                 <div className="flex justify-between items-center mb-2">
-                  <span className="text-yellow-400 font-semibold">{t('aiServices.localServices.useCases.financial.price')}</span>
+                  <span className="text-purple-400 font-semibold">{t('aiServices.localServices.useCases.financial.price')}</span>
                 </div>
-                <p className="text-yellow-300 text-sm italic">{t('aiServices.localServices.useCases.financial.benefit')}</p>
-              </div>
-              <div className="bg-dark-800/50 rounded-card p-6 border border-blue-500/20">
+                <p className="text-purple-300 text-sm italic">{t('aiServices.localServices.useCases.financial.benefit')}</p>
+              </Link>
+              <Link to="/ai-services/legal" className="bg-dark-800/50 rounded-card p-6 border border-purple-500/30 hover:border-purple-500/50 transition-colors">
                 <div className="text-2xl mb-3">⚖️</div>
-                <h4 className="font-semibold mb-2 text-white">{t('aiServices.localServices.useCases.legal.title')}</h4>
-                <p className="text-gray-400 mb-2 text-sm">{t('aiServices.localServices.useCases.legal.service')}</p>
+                <h4 className="font-semibold mb-2 text-white">Despachos Legales</h4>
+                <p className="text-gray-400 mb-2 text-sm">Consultas iniciales, orientación legal, programación especializada</p>
                 <div className="flex justify-between items-center mb-2">
-                  <span className="text-blue-400 font-semibold">{t('aiServices.localServices.useCases.legal.price')}</span>
+                  <span className="text-purple-400 font-semibold">$500-1200/mes</span>
                 </div>
-                <p className="text-blue-300 text-sm italic">{t('aiServices.localServices.useCases.legal.benefit')}</p>
-              </div>
+                <p className="text-purple-300 text-sm italic">Confidencialidad absoluta, casos pre-filtrados</p>
+              </Link>
             </div>
           </div>
         </div>

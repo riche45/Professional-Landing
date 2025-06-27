@@ -98,6 +98,131 @@ const verticalConfigs: Record<string, VerticalConfig> = {
     ],
     pricing: '$300-700/mes',
     cta: 'Demo para Gimnasios'
+  },
+  accounting: {
+    icon: '🏢',
+    heroTitle: 'Asistente Fiscal de IA para tu Despacho Contable',
+    heroSubtitle: 'Consultas automáticas sobre impuestos, deadlines y documentación. Datos 100% confidenciales.',
+    painPoints: [
+      'Clientes llamando por consultas básicas',
+      'Fechas límite que se olvidan',
+      'Documentación incompleta de clientes',
+      'Tiempo perdido en consultas repetitivas'
+    ],
+    solution: 'Bot especializado en normativa fiscal que responde consultas, recuerda deadlines y guía documentación.',
+    benefits: [
+      'Reduce consultas básicas en 85%',
+      'Recordatorios automáticos de fechas límite',
+      'Guía paso a paso para documentos',
+      'Disponible 24/7 para urgencias fiscales'
+    ],
+    pricing: '$400-1000/mes',
+    cta: 'Demo para Contadores',
+    testimonial: {
+      name: 'CPA María Rodríguez',
+      business: 'Rodríguez & Asociados',
+      quote: 'El bot maneja 90% de las consultas rutinarias. Ahora puedo enfocarme en casos complejos y estrategia fiscal.'
+    }
+  },
+  realestate: {
+    icon: '🏠',
+    heroTitle: 'Agente Inmobiliario de IA 24/7',
+    heroSubtitle: 'Atiende prospectos, programa visitas y califica leads automáticamente. Nunca pierdas una oportunidad.',
+    painPoints: [
+      'Llamadas fuera de horario laboral',
+      'Prospectos que no califican perdiendo tiempo',
+      'Información repetitiva sobre propiedades',
+      'Seguimiento manual de leads'
+    ],
+    solution: 'Asistente de IA que califica leads, programa visitas y proporciona información detallada de propiedades.',
+    benefits: [
+      'Atiende prospectos 24/7',
+      'Califica leads automáticamente',
+      'Programa visitas sin intervención',
+      'Información instantánea de propiedades'
+    ],
+    pricing: '$250-600/mes',
+    cta: 'Demo para Inmobiliarias',
+    testimonial: {
+      name: 'Lic. Carlos Vega',
+      business: 'Vega Propiedades',
+      quote: 'Desde que tengo el bot, mis ventas nocturnas y de fin de semana aumentaron 40%. Es como tener un asistente que nunca duerme.'
+    }
+  },
+  legal: {
+    icon: '⚖️',
+    heroTitle: 'Asistente Legal de IA para tu Despacho',
+    heroSubtitle: 'Consultas iniciales, programación de citas y orientación legal básica. Confidencialidad absoluta.',
+    painPoints: [
+      'Consultas iniciales que consumen tiempo',
+      'Clientes sin orientación sobre tipo de caso',
+      'Agenda saturada con consultas básicas',
+      'Preocupaciones por confidencialidad'
+    ],
+    solution: 'Bot legal que hace consultas iniciales, orienta sobre tipos de casos y programa citas especializadas.',
+    benefits: [
+      'Filtra casos según especialidad',
+      'Consultas iniciales automatizadas',
+      'Confidencialidad garantizada localmente',
+      'Agenda optimizada para casos complejos'
+    ],
+    pricing: '$500-1200/mes',
+    cta: 'Demo para Abogados',
+    testimonial: {
+      name: 'Lic. Ana Martínez',
+      business: 'Martínez Legal',
+      quote: 'El asistente hace el 70% del trabajo inicial. Llego a las consultas ya conociendo el caso y optimizo mi tiempo.'
+    }
+  },
+  startup: {
+    icon: '🚀',
+    heroTitle: 'Asistente de IA Open Source para tu Startup',
+    heroSubtitle: 'Solución completamente personalizable y escalable. Código abierto, cero vendor lock-in.',
+    painPoints: [
+      'Presupuesto limitado para herramientas',
+      'Necesidad de customización extrema',
+      'Vendor lock-in con proveedores grandes',
+      'Escalabilidad impredecible de costos'
+    ],
+    solution: 'Plataforma de IA completamente open source, modificable y desplegable en tu infraestructura.',
+    benefits: [
+      'Código fuente completo incluido',
+      'Personalización ilimitada',
+      'Escalabilidad predecible',
+      'Comunidad de desarrolladores'
+    ],
+    pricing: '$800-2000/mes',
+    cta: 'Demo para Startups',
+    testimonial: {
+      name: 'Alex Chen',
+      business: 'TechFlow Startup',
+      quote: 'Tener el código fuente nos permitió adaptar la IA exactamente a nuestro producto. Ahora es parte integral de nuestra plataforma.'
+    }
+  },
+  financial: {
+    icon: '🏦',
+    heroTitle: 'IA Financiera con Máxima Seguridad',
+    heroSubtitle: 'Cumplimiento SOX automático, auditorías integradas y seguridad bancaria. Cero riesgo de filtración.',
+    painPoints: [
+      'Regulaciones estrictas (SOX, Basel III)',
+      'Auditorías constantes y costosas',
+      'Riesgo de filtración de datos sensibles',
+      'Latencia inaceptable en operaciones'
+    ],
+    solution: 'Sistema de IA con cumplimiento regulatorio automático, auditorías integradas y seguridad nivel bancario.',
+    benefits: [
+      'SOX compliance automático',
+      'Auditorías en tiempo real',
+      'Latencia sub-milisegundo',
+      'Cifrado nivel militar'
+    ],
+    pricing: '$1500-5000/mes',
+    cta: 'Demo para Instituciones Financieras',
+    testimonial: {
+      name: 'María Elena Vásquez',
+      business: 'Banco Regional',
+      quote: 'La primera IA que pasa todas nuestras auditorías sin modificaciones. Reducimos costos de compliance en 80%.'
+    }
   }
 };
 
