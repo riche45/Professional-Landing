@@ -22,6 +22,7 @@ import NewsletterPage from './pages/Newsletter';
 import ProfessionalExperienceSurvey from './pages/ProfessionalExperienceSurvey';
 import Projects from './pages/Projects';
 import AIServices from './pages/AIServices';
+import VerticalLanding from './pages/VerticalLanding';
 
 function App() {
   const { t } = useTranslation();
@@ -44,6 +45,8 @@ function App() {
           <Route path="conexiones" element={<Connects />} />
           <Route path="ai-services" element={<AIServices />} />
           <Route path="servicios-ia" element={<AIServices />} />
+          <Route path="ai-services/:vertical" element={<VerticalLanding />} />
+          <Route path="servicios-ia/:vertical" element={<VerticalLanding />} />
           <Route path="surveys" element={<Surveys />} />
           <Route path="encuestas" element={<Surveys />} />
           <Route path="tutorials" element={<Tutorials />} />
