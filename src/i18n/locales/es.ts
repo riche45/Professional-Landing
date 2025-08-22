@@ -103,7 +103,7 @@ export default {
     experience: 'Durante más de 5 años, he ayudado a empresas a resolver problemas de negocio con soluciones innovadoras en dominios como finanzas, tecnología, salud y educación.',
   },
   chat: {
-    welcome: "¡Hola! 👋 Soy el asistente personal de Richard. Puedo informarte sobre:\n\n🤖 Servicios de IA especializada (metodología guerrilla)\n📊 Experiencia y proyectos realizados\n💻 Tecnologías y habilidades\n💰 Tarifas por hora (desde $20 para proyectos freelance)\n📝 Artículos y contenido\n\nPuedes preguntarme sobre cualquiera de estos temas o escribir 'precios' para ver las tarifas detalladas. ¿En qué puedo ayudarte?",
+    welcome: "¡Hola! 👋 Soy el asistente personal de Richard. Puedo informarte sobre:\n\n🤖 Servicios de IA especializada\n📊 Experiencia y proyectos realizados\n💻 Tecnologías y habilidades\n💰 Tarifas por hora (desde $20 para proyectos freelance)\n📝 Artículos y contenido\n\nPuedes preguntarme sobre cualquiera de estos temas o escribir 'precios' para ver las tarifas detalladas. ¿En qué puedo ayudarte?",
     input_placeholder: "Escribe tu mensaje aquí...",
     assistant_status: "Asistente personal",
     error_message: "Lo siento, ha ocurrido un error. Por favor, intenta de nuevo.",
