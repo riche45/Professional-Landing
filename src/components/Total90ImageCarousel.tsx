@@ -122,11 +122,11 @@ const Total90ImageCarousel: React.FC<Total90ImageCarouselProps> = ({ isEnglish =
   const currentImage = images[currentIndex];
 
   return (
-    <div className="relative w-full max-w-5xl mx-auto">
+    <div className="relative w-full bg-dark-700 p-6 rounded-lg mb-8">
       {/* Header con contador y controles */}
-      <div className="flex justify-between items-center mb-4">
-        <div className="flex items-center gap-4">
-          <h3 className="text-lg font-medium text-white">
+      <div className="flex justify-between items-center mb-4 flex-wrap gap-2">
+        <div className="flex items-center gap-2 sm:gap-4">
+          <h3 className="text-base sm:text-lg font-medium text-white">
             {isEnglish ? 'TOTAL 90 Screenshots' : 'Capturas de TOTAL 90'}
           </h3>
           <span className="text-sm text-gray-400">
@@ -158,7 +158,7 @@ const Total90ImageCarousel: React.FC<Total90ImageCarouselProps> = ({ isEnglish =
               <img
                 src={image.src}
                 alt={isEnglish ? image.titleEN : image.titleES}
-                className="w-full h-auto max-h-[600px] object-contain hover:scale-105 transition-transform duration-300"
+                className="w-full h-auto max-h-[300px] sm:max-h-[400px] md:max-h-[500px] lg:max-h-[600px] object-contain hover:scale-105 transition-transform duration-300"
                 loading="lazy"
               />
             </div>
@@ -168,25 +168,25 @@ const Total90ImageCarousel: React.FC<Total90ImageCarouselProps> = ({ isEnglish =
         {/* Navegación con flechas */}
         <button
           onClick={goToPrevious}
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
+          className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-1.5 sm:p-2 rounded-full transition-colors z-10"
           aria-label={isEnglish ? 'Previous image' : 'Imagen anterior'}
         >
-          <ChevronLeft size={24} />
+          <ChevronLeft size={20} className="sm:w-6 sm:h-6" />
         </button>
         <button
           onClick={goToNext}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
+          className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-1.5 sm:p-2 rounded-full transition-colors z-10"
           aria-label={isEnglish ? 'Next image' : 'Siguiente imagen'}
         >
-          <ChevronRight size={24} />
+          <ChevronRight size={20} className="sm:w-6 sm:h-6" />
         </button>
 
         {/* Overlay con información */}
-        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-          <h4 className="text-white font-medium text-lg mb-1">
+        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 sm:p-6 pointer-events-none">
+          <h4 className="text-white font-medium text-sm sm:text-base md:text-lg mb-1 pointer-events-auto">
             {isEnglish ? currentImage.titleEN : currentImage.titleES}
           </h4>
-          <p className="text-gray-300 text-sm">
+          <p className="text-gray-300 text-xs sm:text-base pointer-events-auto">
             {isEnglish ? currentImage.descriptionEN : currentImage.descriptionES}
           </p>
         </div>
@@ -209,12 +209,12 @@ const Total90ImageCarousel: React.FC<Total90ImageCarouselProps> = ({ isEnglish =
       </div>
 
       {/* Thumbnails navegables */}
-      <div className="flex gap-2 overflow-x-auto pb-2">
+      <div className="hidden sm:flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
         {images.map((image, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`flex-shrink-0 w-20 h-12 rounded overflow-hidden border-2 transition-all ${
+            className={`flex-shrink-0 w-12 h-8 sm:w-16 sm:h-10 md:w-20 md:h-12 rounded overflow-hidden border-2 transition-all ${
               index === currentIndex 
                 ? 'border-primary-400 opacity-100' 
                 : 'border-gray-600 opacity-60 hover:opacity-80'
@@ -229,9 +229,29 @@ const Total90ImageCarousel: React.FC<Total90ImageCarouselProps> = ({ isEnglish =
         ))}
       </div>
 
+      {/* Versión móvil: Solo indicadores de puntos */}
+      <div className="sm:hidden flex justify-center gap-1 mt-2">
+        {images.slice(0, 5).map((_, index) => (
+          <button
+            key={index}
+            onClick={() => goToSlide(index)}
+            className={`w-2 h-2 rounded-full transition-colors ${
+              index === currentIndex 
+                ? 'bg-primary-400' 
+                : 'bg-gray-600'
+            }`}
+          />
+        ))}
+        {images.length > 5 && (
+          <span className="text-gray-400 text-xs ml-2">
+            +{images.length - 5}
+          </span>
+        )}
+      </div>
+
       {/* Información adicional */}
       <div className="mt-4 text-center">
-        <p className="text-sm text-gray-400">
+        <p className="text-xs sm:text-sm text-gray-400 px-2">
           {isEnglish 
             ? '💡 Tip: Click on thumbnails to navigate quickly, or use arrow keys'
             : '💡 Tip: Haz clic en las miniaturas para navegar rápido, o usa las flechas del teclado'

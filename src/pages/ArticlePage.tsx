@@ -1010,13 +1010,11 @@ bot.onText(/\/remind (.+)/, (msg, match) => {
       </p>
 
       {/* Carrusel de imágenes TOTAL 90 */}
-      <div className="mb-12">
+      <div className="mb-8">
         <h2 className="text-2xl font-medium text-primary-400 mb-6">
           🖥️ TOTAL 90 en Acción - Capturas de Pantalla
         </h2>
-        <div className="bg-dark-800/50 rounded-xl p-6 border border-dark-600">
-          <Total90ImageCarousel isEnglish={false} />
-        </div>
+        <Total90ImageCarousel isEnglish={false} />
       </div>
 
       <h2 className="text-2xl font-medium text-primary-400 mb-6">
@@ -1025,24 +1023,36 @@ bot.onText(/\/remind (.+)/, (msg, match) => {
 
       <div className="bg-dark-700 p-6 rounded-lg mb-8">
         <h3 className="text-lg font-medium text-white mb-4">🎯 Características principales:</h3>
-        <ul className="space-y-3">
-          <li className="flex items-start">
-            <span className="text-primary-400 mr-3">•</span>
-            <strong className="text-primary-400">Predicción 1X2:</strong> Probabilidades por liga con análisis de calidad del partido
-          </li>
-          <li className="flex items-start">
-            <span className="text-primary-400 mr-3">•</span>
-            <strong className="text-primary-400">Análisis de goles:</strong> HT/ST/total, BTTS y Over/Under usando los últimos 5 partidos (GF/GC)
-          </li>
-          <li className="flex items-start">
-            <span className="text-primary-400 mr-3">•</span>
-            <strong className="text-primary-400">Visualizaciones claras:</strong> UI simple en Streamlit + Plotly para entender lo importante sin perderse en la data
-          </li>
-          <li className="flex items-start">
-            <span className="text-primary-400 mr-3">•</span>
-            <strong className="text-primary-400">Modelo Freemium:</strong> Acceso abierto para probar + modo Premium con insights más profundos
-          </li>
-        </ul>
+        <div className="space-y-4">
+          <div className="flex items-start gap-3">
+            <span className="text-primary-400 text-lg flex-shrink-0">⚽</span>
+            <div>
+              <strong className="text-primary-400 block mb-1">Predicción 1X2</strong>
+              <span className="text-gray-300 text-sm">Probabilidades por liga con análisis de calidad del partido</span>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <span className="text-primary-400 text-lg flex-shrink-0">📊</span>
+            <div>
+              <strong className="text-primary-400 block mb-1">Análisis de goles</strong>
+              <span className="text-gray-300 text-sm">HT/ST/total, BTTS y Over/Under usando los últimos 5 partidos (GF/GC)</span>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <span className="text-primary-400 text-lg flex-shrink-0">📈</span>
+            <div>
+              <strong className="text-primary-400 block mb-1">Visualizaciones claras</strong>
+              <span className="text-gray-300 text-sm">UI simple en Streamlit + Plotly para entender lo importante sin perderse en la data</span>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <span className="text-primary-400 text-lg flex-shrink-0">💎</span>
+            <div>
+              <strong className="text-primary-400 block mb-1">Modelo Freemium</strong>
+              <span className="text-gray-300 text-sm">Acceso abierto para probar + modo Premium con insights más profundos</span>
+            </div>
+          </div>
+        </div>
       </div>
 
       <h2 className="text-2xl font-medium text-primary-400 mb-6">
@@ -1206,7 +1216,7 @@ bot.onText(/\/remind (.+)/, (msg, match) => {
         </p>
         <div className="flex flex-wrap gap-4">
           <a 
-            href="https://www.linkedin.com/in/richard-garcia-vizcaino?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BHMn5696vRn2r90zf33OFow%3D%3D"
+            href="https://www.linkedin.com/in/richard-garcia-vizcaino"
             target="_blank" 
             rel="noopener noreferrer"
             className="px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
@@ -1238,13 +1248,11 @@ bot.onText(/\/remind (.+)/, (msg, match) => {
       </p>
 
       {/* Carrusel de imágenes TOTAL 90 */}
-      <div className="mb-12">
+      <div className="mb-8">
         <h2 className="text-2xl font-medium text-primary-400 mb-6">
           🖥️ TOTAL 90 in Action - Screenshots
         </h2>
-        <div className="bg-dark-800/50 rounded-xl p-6 border border-dark-600">
-          <Total90ImageCarousel isEnglish={true} />
-        </div>
+        <Total90ImageCarousel isEnglish={true} />
       </div>
 
       <h2 className="text-2xl font-medium text-primary-400 mb-6">
@@ -1253,24 +1261,36 @@ bot.onText(/\/remind (.+)/, (msg, match) => {
 
       <div className="bg-dark-700 p-6 rounded-lg mb-8">
         <h3 className="text-lg font-medium text-white mb-4">🎯 Main features:</h3>
-        <ul className="space-y-3">
-          <li className="flex items-start">
-            <span className="text-primary-400 mr-3">•</span>
-            <strong className="text-primary-400">1X2 Prediction:</strong> League probabilities with match quality analysis
-          </li>
-          <li className="flex items-start">
-            <span className="text-primary-400 mr-3">•</span>
-            <strong className="text-primary-400">Goals Analysis:</strong> HT/ST/total, BTTS and Over/Under using last 5 matches (GF/GC)
-          </li>
-          <li className="flex items-start">
-            <span className="text-primary-400 mr-3">•</span>
-            <strong className="text-primary-400">Clear Visualizations:</strong> Simple UI in Streamlit + Plotly to understand what matters without getting lost in data
-          </li>
-          <li className="flex items-start">
-            <span className="text-primary-400 mr-3">•</span>
-            <strong className="text-primary-400">Freemium Model:</strong> Open access to try + Premium mode with deeper insights
-          </li>
-        </ul>
+        <div className="space-y-4">
+          <div className="flex items-start gap-3">
+            <span className="text-primary-400 text-lg flex-shrink-0">⚽</span>
+            <div>
+              <strong className="text-primary-400 block mb-1">1X2 Prediction</strong>
+              <span className="text-gray-300 text-sm">League probabilities with match quality analysis</span>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <span className="text-primary-400 text-lg flex-shrink-0">📊</span>
+            <div>
+              <strong className="text-primary-400 block mb-1">Goals Analysis</strong>
+              <span className="text-gray-300 text-sm">HT/ST/total, BTTS and Over/Under using last 5 matches (GF/GC)</span>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <span className="text-primary-400 text-lg flex-shrink-0">📈</span>
+            <div>
+              <strong className="text-primary-400 block mb-1">Clear Visualizations</strong>
+              <span className="text-gray-300 text-sm">Simple UI in Streamlit + Plotly to understand what matters without getting lost in data</span>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <span className="text-primary-400 text-lg flex-shrink-0">💎</span>
+            <div>
+              <strong className="text-primary-400 block mb-1">Freemium Model</strong>
+              <span className="text-gray-300 text-sm">Open access to try + Premium mode with deeper insights</span>
+            </div>
+          </div>
+        </div>
       </div>
 
       <h2 className="text-2xl font-medium text-primary-400 mb-6">
@@ -1434,7 +1454,7 @@ bot.onText(/\/remind (.+)/, (msg, match) => {
         </p>
         <div className="flex flex-wrap gap-4">
           <a 
-            href="https://www.linkedin.com/in/richard-garcia-vizcaino?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BHMn5696vRn2r90zf33OFow%3D%3D" 
+            href="https://www.linkedin.com/in/richard-garcia-vizcaino" 
             target="_blank" 
             rel="noopener noreferrer"
             className="px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
