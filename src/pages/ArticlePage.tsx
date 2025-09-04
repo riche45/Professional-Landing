@@ -1237,6 +1237,16 @@ bot.onText(/\/remind (.+)/, (msg, match) => {
         that I named "TOTAL 90". ⚽️🧠
       </p>
 
+      {/* Carrusel de imágenes TOTAL 90 */}
+      <div className="mb-12">
+        <h2 className="text-2xl font-medium text-primary-400 mb-6">
+          🖥️ TOTAL 90 in Action - Screenshots
+        </h2>
+        <div className="bg-dark-800/50 rounded-xl p-6 border border-dark-600">
+          <Total90ImageCarousel isEnglish={true} />
+        </div>
+      </div>
+
       <h2 className="text-2xl font-medium text-primary-400 mb-6">
         What does TOTAL 90 do today?
       </h2>

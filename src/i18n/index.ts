@@ -19,8 +19,8 @@ i18n
         translation: esTranslation,
       },
     },
-    fallbackLng: 'en',
-    lng: savedLanguage || 'en',
+    fallbackLng: 'es',
+    lng: savedLanguage || 'es',
     detection: {
       order: ['localStorage', 'navigator'],
       lookupLocalStorage: 'i18nextLng',
