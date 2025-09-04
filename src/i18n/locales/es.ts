@@ -396,6 +396,14 @@ export default {
         category: 'Artículos',
         slug: 'founder-vs-emprendedor',
         imageSrc: 'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+      },
+      {
+        title: 'De los 90 minutos a "TOTAL 90": Construyendo una App de Predicciones de Fútbol con IA ⚽️🧠',
+        description: 'Este verano me propuse unir mi profesión con mi hobby: el fútbol. El resultado: una app de predicciones impulsada por IA que combina Machine Learning, APIs deportivas y visualizaciones interactivas para entender los partidos más allá de la intuición.',
+        date: '2025-08-28',
+        category: 'Artículos',
+        slug: 'total-90-football-ai-app',
+        imageSrc: '/images/articles/total90/total90-1.png'
       }
     ]
   },

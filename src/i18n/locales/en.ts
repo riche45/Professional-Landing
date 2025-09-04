@@ -396,6 +396,14 @@ export default {
         imageSrc: 'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
       },
       {
+        title: 'From 90 Minutes to "TOTAL 90": Building a Football AI Prediction App ⚽️🧠',
+        description: 'This summer I set out to unite my profession with my hobby: football. The result: an AI-powered prediction app that combines Machine Learning, sports APIs, and interactive visualizations to understand matches beyond intuition.',
+        date: '2025-08-28',
+        category: 'Articles',
+        slug: 'total-90-football-ai-app',
+        imageSrc: '/images/articles/total90/total90-1.png'
+      },
+      {
         title: 'Automate Your Life: How to Build Your First Personal AI Bot',
         description: 'Learn step by step how to build a personal AI bot to help you organize tasks, send reminders, and even reply to messages. Perfect for anyone wanting to dive into automation without being an expert!',
         date: '2025-04-10',

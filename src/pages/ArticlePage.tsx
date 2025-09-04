@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Calendar, Share2, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Newsletter from '../components/Newsletter';
+import Total90ImageCarousel from '../components/Total90ImageCarousel.tsx';
 
 export default function ArticlePage() {
   const { slug } = useParams();
@@ -999,6 +1000,457 @@ bot.onText(/\/remind (.+)/, (msg, match) => {
     </div>
   );
 
+  // Contenido específico para el artículo TOTAL 90
+  const total90ContentES = (
+    <div className="prose prose-invert max-w-none">
+      <p className="text-xl text-gray-300 mb-8">
+        Este verano me propuse unir mi profesión con mi hobby: el fútbol. Quería entender los partidos 
+        más allá de la intuición y las emociones. El resultado: construí una app de predicciones 
+        impulsada por IA que bauticé "TOTAL 90". ⚽️🧠
+      </p>
+
+      {/* Carrusel de imágenes TOTAL 90 */}
+      <div className="mb-12">
+        <h2 className="text-2xl font-medium text-primary-400 mb-6">
+          🖥️ TOTAL 90 en Acción - Capturas de Pantalla
+        </h2>
+        <div className="bg-dark-800/50 rounded-xl p-6 border border-dark-600">
+          <Total90ImageCarousel isEnglish={false} />
+        </div>
+      </div>
+
+      <h2 className="text-2xl font-medium text-primary-400 mb-6">
+        ¿Qué hace TOTAL 90 hoy?
+      </h2>
+
+      <div className="bg-dark-700 p-6 rounded-lg mb-8">
+        <h3 className="text-lg font-medium text-white mb-4">🎯 Características principales:</h3>
+        <ul className="space-y-3">
+          <li className="flex items-start">
+            <span className="text-primary-400 mr-3">•</span>
+            <strong className="text-primary-400">Predicción 1X2:</strong> Probabilidades por liga con análisis de calidad del partido
+          </li>
+          <li className="flex items-start">
+            <span className="text-primary-400 mr-3">•</span>
+            <strong className="text-primary-400">Análisis de goles:</strong> HT/ST/total, BTTS y Over/Under usando los últimos 5 partidos (GF/GC)
+          </li>
+          <li className="flex items-start">
+            <span className="text-primary-400 mr-3">•</span>
+            <strong className="text-primary-400">Visualizaciones claras:</strong> UI simple en Streamlit + Plotly para entender lo importante sin perderse en la data
+          </li>
+          <li className="flex items-start">
+            <span className="text-primary-400 mr-3">•</span>
+            <strong className="text-primary-400">Modelo Freemium:</strong> Acceso abierto para probar + modo Premium con insights más profundos
+          </li>
+        </ul>
+      </div>
+
+      <h2 className="text-2xl font-medium text-primary-400 mb-6">
+        Stack Tecnológico: De Google Colab al Mundo Real
+      </h2>
+
+      <p className="mb-6">
+        La app está construida con un stack robusto pero accesible. Todo comenzó en <strong className="text-primary-400">Google Colab</strong> 
+        para el prototipado y análisis exploratorio de datos, donde pude experimentar rápidamente con diferentes algoritmos y visualizaciones.
+      </p>
+
+      <div className="grid md:grid-cols-2 gap-6 mb-8">
+        <div className="bg-dark-700 p-6 rounded-lg">
+          <h3 className="text-lg font-medium text-white mb-4">🐍 Backend & ML</h3>
+          <ul className="space-y-2 text-gray-300">
+            <li><strong className="text-primary-400">Python:</strong> Core del proyecto</li>
+            <li><strong className="text-primary-400">Scikit-learn:</strong> Algoritmo SVC (Support Vector Classifier)</li>
+            <li><strong className="text-primary-400">Pandas & NumPy:</strong> Procesamiento de datos</li>
+            <li><strong className="text-primary-400">APIs deportivas:</strong> Datos de temporadas recientes</li>
+            <li><strong className="text-primary-400">Web Scraping:</strong> Datos históricos complementarios</li>
+          </ul>
+        </div>
+        <div className="bg-dark-700 p-6 rounded-lg">
+          <h3 className="text-lg font-medium text-white mb-4">📊 Frontend & Viz</h3>
+          <ul className="space-y-2 text-gray-300">
+            <li><strong className="text-primary-400">Streamlit:</strong> Interfaz rápida y funcional</li>
+            <li><strong className="text-primary-400">Plotly:</strong> Gráficos interactivos</li>
+            <li><strong className="text-primary-400">Google Colab:</strong> Desarrollo y prototipado</li>
+            <li><strong className="text-primary-400">Localhost:</strong> Actualmente en desarrollo</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 className="text-2xl font-medium text-primary-400 mb-6">
+        El Algoritmo SVC: ¿Por qué Support Vector Classifier?
+      </h2>
+
+      <p className="mb-6">
+        Después de experimentar con varios algoritmos, elegí <strong className="text-primary-400">SVC (Support Vector Classifier)</strong> 
+        por su capacidad para manejar datos de alta dimensionalidad y su robustez en problemas de clasificación multiclase como 1X2.
+      </p>
+
+      <div className="bg-dark-700 p-6 rounded-lg mb-8">
+        <h3 className="text-lg font-medium text-white mb-4">🧠 ¿Por qué SVC funciona para fútbol?</h3>
+        <ul className="space-y-3">
+          <li>
+            <strong className="text-primary-400">Separación no lineal:</strong> Los resultados de fútbol no siguen patrones lineales simples
+          </li>
+          <li>
+            <strong className="text-primary-400">Manejo de ruido:</strong> Perfecto para datos deportivos con muchas variables impredecibles
+          </li>
+          <li>
+            <strong className="text-primary-400">Clasificación multiclase:</strong> Victoria local, empate, victoria visitante (1X2)
+          </li>
+          <li>
+            <strong className="text-primary-400">Generalización:</strong> Evita el overfitting con datos históricos limitados
+          </li>
+        </ul>
+      </div>
+
+      <h2 className="text-2xl font-medium text-primary-400 mb-6">
+        Casos de Uso: Colombia vs Bolivia
+      </h2>
+
+      <p className="mb-6">
+        La verdadera prueba llegó con las eliminatorias. Usé TOTAL 90 para analizar Colombia vs Bolivia, 
+        y los resultados fueron fascinantes. La app no solo predijo probabilidades, sino que identificó 
+        patrones en el rendimiento ofensivo y defensivo que no eran obvios a simple vista.
+      </p>
+
+      <div className="bg-primary-900/30 border border-primary-500/30 p-6 rounded-lg mb-8">
+        <h3 className="text-lg font-medium text-white mb-4">⚠️ Disclaimer Importante</h3>
+        <p className="text-gray-300">
+          TOTAL 90 es una herramienta educativa para análisis deportivo y comprensión de patrones en el fútbol. 
+          <strong className="text-primary-400"> No es asesoría financiera</strong> y no debe usarse como base única para decisiones de apuestas.
+        </p>
+      </div>
+
+      <h2 className="text-2xl font-medium text-primary-400 mb-6">
+        Roadmap: Lo que viene
+      </h2>
+
+      <div className="space-y-4 mb-8">
+        <div className="flex items-start">
+          <span className="text-green-400 mr-3 font-bold">✓</span>
+          <div>
+            <strong className="text-white">Algoritmo SVC implementado</strong>
+            <p className="text-gray-400">Predicciones 1X2 con probabilidades de goles</p>
+          </div>
+        </div>
+        <div className="flex items-start">
+          <span className="text-green-400 mr-3 font-bold">✓</span>
+          <div>
+            <strong className="text-white">Visualizaciones Plotly</strong>
+            <p className="text-gray-400">Gráficos interactivos para análisis de tendencias</p>
+          </div>
+        </div>
+        <div className="flex items-start">
+          <span className="text-yellow-400 mr-3 font-bold">🔄</span>
+          <div>
+            <strong className="text-white">Deploy en producción</strong>
+            <p className="text-gray-400">Finales de septiembre 2025 - Acceso público</p>
+          </div>
+        </div>
+        <div className="flex items-start">
+          <span className="text-gray-400 mr-3 font-bold">⏳</span>
+          <div>
+            <strong className="text-white">Modo Premium</strong>
+            <p className="text-gray-400">Insights avanzados y análisis más profundos</p>
+          </div>
+        </div>
+        <div className="flex items-start">
+          <span className="text-gray-400 mr-3 font-bold">⏳</span>
+          <div>
+            <strong className="text-white">API pública - muy pronto</strong>
+            <p className="text-gray-400">Para desarrolladores que quieran integrar predicciones</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 className="text-2xl font-medium text-primary-400 mb-6">
+        Lecciones Aprendidas: Build in Public
+      </h2>
+
+      <p className="mb-6">
+        Una de las decisiones más importantes fue hacer este proyecto "build in public". Compartir el proceso, 
+        los desafíos y los pequeños wins ha sido increíblemente valioso tanto para mí como para la comunidad.
+      </p>
+
+      <div className="space-y-4 mb-8">
+        <div className="bg-dark-700 p-4 rounded-lg">
+          <h4 className="text-white font-medium mb-2">💡 Insight técnico:</h4>
+          <p className="text-gray-300">
+            Los datos de fútbol son más ruidosos de lo que esperaba. La clave estuvo en el feature engineering: 
+            crear variables que capturen el "momentum" del equipo en los últimos 5 partidos.
+          </p>
+        </div>
+        <div className="bg-dark-700 p-4 rounded-lg">
+          <h4 className="text-white font-medium mb-2">🎯 Insight de producto:</h4>
+          <p className="text-gray-300">
+            La simplicidad en la UI es crucial. Los usuarios quieren insights rápidos, no perderse en 
+            tablas complejas. Streamlit + Plotly resultó ser la combinación perfecta.
+          </p>
+        </div>
+        <div className="bg-dark-700 p-4 rounded-lg">
+          <h4 className="text-white font-medium mb-2">🚀 Insight de negocio:</h4>
+          <p className="text-gray-300">
+            El modelo freemium permite que la gente pruebe la herramienta sin fricción, mientras que 
+            el modo premium puede ofrecer análisis más sofisticados para usuarios avanzados.
+          </p>
+        </div>
+      </div>
+
+      <div className="bg-gradient-to-r from-primary-600/20 to-blue-600/20 p-8 rounded-xl mb-8">
+        <h2 className="text-2xl font-medium text-white mb-4">
+          🚀 ¿Quieres ser Beta Tester?
+        </h2>
+        <p className="text-gray-300 mb-6">
+          TOTAL 90 está en sus fases finales de desarrollo. Si amas el fútbol + data y quieres acceso 
+          anticipado para probar la herramienta antes del lanzamiento oficial, ¡me encantaría tu feedback!
+        </p>
+        <div className="flex flex-wrap gap-4">
+          <a 
+            href="https://www.linkedin.com/in/richard-garcia-vizcaino?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BHMn5696vRn2r90zf33OFow%3D%3D"
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
+          >
+            Contactar en LinkedIn
+          </a>
+          <a 
+            href="mailto:richardlisongarcia@gmail.com"
+            className="px-6 py-3 bg-dark-700 text-gray-300 rounded-lg hover:bg-dark-600 transition-colors"
+          >
+            Enviar Email
+          </a>
+        </div>
+      </div>
+
+      <p className="text-lg text-gray-300 italic">
+        Si conoces a alguien que ame fútbol + data, ¡compártelo! El poder de TOTAL 90 está en la comunidad 
+        que lo usa y mejora. ⚽️📊
+      </p>
+    </div>
+  );
+
+  const total90ContentEN = (
+    <div className="prose prose-invert max-w-none">
+      <p className="text-xl text-gray-300 mb-8">
+        This summer I set out to unite my profession with my hobby: football. I wanted to understand 
+        matches beyond intuition and emotions. The result: I built an AI-powered prediction app 
+        that I named "TOTAL 90". ⚽️🧠
+      </p>
+
+      <h2 className="text-2xl font-medium text-primary-400 mb-6">
+        What does TOTAL 90 do today?
+      </h2>
+
+      <div className="bg-dark-700 p-6 rounded-lg mb-8">
+        <h3 className="text-lg font-medium text-white mb-4">🎯 Main features:</h3>
+        <ul className="space-y-3">
+          <li className="flex items-start">
+            <span className="text-primary-400 mr-3">•</span>
+            <strong className="text-primary-400">1X2 Prediction:</strong> League probabilities with match quality analysis
+          </li>
+          <li className="flex items-start">
+            <span className="text-primary-400 mr-3">•</span>
+            <strong className="text-primary-400">Goals Analysis:</strong> HT/ST/total, BTTS and Over/Under using last 5 matches (GF/GC)
+          </li>
+          <li className="flex items-start">
+            <span className="text-primary-400 mr-3">•</span>
+            <strong className="text-primary-400">Clear Visualizations:</strong> Simple UI in Streamlit + Plotly to understand what matters without getting lost in data
+          </li>
+          <li className="flex items-start">
+            <span className="text-primary-400 mr-3">•</span>
+            <strong className="text-primary-400">Freemium Model:</strong> Open access to try + Premium mode with deeper insights
+          </li>
+        </ul>
+      </div>
+
+      <h2 className="text-2xl font-medium text-primary-400 mb-6">
+        Tech Stack: From Google Colab to the Real World
+      </h2>
+
+      <p className="mb-6">
+        The app is built with a robust yet accessible stack. It all started in <strong className="text-primary-400">Google Colab</strong> 
+        for prototyping and exploratory data analysis, where I could quickly experiment with different algorithms and visualizations.
+      </p>
+
+      <div className="grid md:grid-cols-2 gap-6 mb-8">
+        <div className="bg-dark-700 p-6 rounded-lg">
+          <h3 className="text-lg font-medium text-white mb-4">🐍 Backend & ML</h3>
+          <ul className="space-y-2 text-gray-300">
+            <li><strong className="text-primary-400">Python:</strong> Project core</li>
+            <li><strong className="text-primary-400">Scikit-learn:</strong> SVC (Support Vector Classifier) algorithm</li>
+            <li><strong className="text-primary-400">Pandas & NumPy:</strong> Data processing</li>
+            <li><strong className="text-primary-400">Sports APIs:</strong> Recent data</li>
+            <li><strong className="text-primary-400">Web Scraping:</strong> Complementary historical data</li>
+          </ul>
+        </div>
+        <div className="bg-dark-700 p-6 rounded-lg">
+          <h3 className="text-lg font-medium text-white mb-4">📊 Frontend & Viz</h3>
+          <ul className="space-y-2 text-gray-300">
+            <li><strong className="text-primary-400">Streamlit:</strong> Fast and functional interface</li>
+            <li><strong className="text-primary-400">Plotly:</strong> Interactive charts</li>
+            <li><strong className="text-primary-400">Google Colab:</strong> Development and prototyping</li>
+            <li><strong className="text-primary-400">Localhost:</strong> Currently in development</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 className="text-2xl font-medium text-primary-400 mb-6">
+        The SVC Algorithm: Why Support Vector Classifier?
+      </h2>
+
+      <p className="mb-6">
+        After experimenting with various algorithms, I chose <strong className="text-primary-400">SVC (Support Vector Classifier)</strong> 
+        for its ability to handle high-dimensional data and its robustness in multiclass classification problems like 1X2.
+      </p>
+
+      <div className="bg-dark-700 p-6 rounded-lg mb-8">
+        <h3 className="text-lg font-medium text-white mb-4">🧠 Why SVC works for football?</h3>
+        <ul className="space-y-3">
+          <li>
+            <strong className="text-primary-400">Non-linear separation:</strong> Football results don't follow simple linear patterns
+          </li>
+          <li>
+            <strong className="text-primary-400">Noise handling:</strong> Perfect for sports data with many unpredictable variables
+          </li>
+          <li>
+            <strong className="text-primary-400">Multiclass classification:</strong> Home win, draw, away win (1X2)
+          </li>
+          <li>
+            <strong className="text-primary-400">Generalization:</strong> Avoids overfitting with limited historical data
+          </li>
+        </ul>
+      </div>
+
+      <h2 className="text-2xl font-medium text-primary-400 mb-6">
+        Use Cases: Colombia vs Bolivia
+      </h2>
+
+      <p className="mb-6">
+        The real test came with the qualifiers. I used TOTAL 90 to analyze Colombia vs Bolivia, 
+        and the results were fascinating. The app not only predicted probabilities but identified 
+        patterns in offensive and defensive performance that weren't obvious at first glance.
+      </p>
+
+      <div className="bg-primary-900/30 border border-primary-500/30 p-6 rounded-lg mb-8">
+        <h3 className="text-lg font-medium text-white mb-4">⚠️ Important Disclaimer</h3>
+        <p className="text-gray-300">
+          TOTAL 90 is an educational tool for sports analysis and understanding football patterns. 
+          <strong className="text-primary-400"> It is not financial advice</strong> and should not be used as the sole basis for betting decisions.
+        </p>
+      </div>
+
+      <h2 className="text-2xl font-medium text-primary-400 mb-6">
+        Roadmap: What's Coming
+      </h2>
+
+      <div className="space-y-4 mb-8">
+        <div className="flex items-start">
+          <span className="text-green-400 mr-3 font-bold">✓</span>
+          <div>
+            <strong className="text-white">SVC Algorithm implemented</strong>
+            <p className="text-gray-400">1X2 predictions with probabilities of goals</p>
+          </div>
+        </div>
+        <div className="flex items-start">
+          <span className="text-green-400 mr-3 font-bold">✓</span>
+          <div>
+            <strong className="text-white">Plotly Visualizations</strong>
+            <p className="text-gray-400">Interactive charts for trend analysis</p>
+          </div>
+        </div>
+        <div className="flex items-start">
+          <span className="text-yellow-400 mr-3 font-bold">🔄</span>
+          <div>
+            <strong className="text-white">Production Deploy</strong>
+            <p className="text-gray-400">End of September 2025 - Public access</p>
+          </div>
+        </div>
+        <div className="flex items-start">
+          <span className="text-gray-400 mr-3 font-bold">⏳</span>
+          <div>
+            <strong className="text-white">Premium Mode</strong>
+            <p className="text-gray-400">Advanced insights and deeper analysis</p>
+          </div>
+        </div>
+        <div className="flex items-start">
+          <span className="text-gray-400 mr-3 font-bold">⏳</span>
+          <div>
+            <strong className="text-white">Public API - very soon</strong>
+            <p className="text-gray-400">For developers wanting to integrate predictions</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 className="text-2xl font-medium text-primary-400 mb-6">
+        Lessons Learned: Building in Public
+      </h2>
+
+      <p className="mb-6">
+        One of the most important decisions was to make this project "build in public". Sharing the process, 
+        challenges, and small wins has been incredibly valuable both for me and the community.
+      </p>
+
+      <div className="space-y-4 mb-8">
+        <div className="bg-dark-700 p-4 rounded-lg">
+          <h4 className="text-white font-medium mb-2">💡 Technical insight:</h4>
+          <p className="text-gray-300">
+            Football data is noisier than expected. The key was in feature engineering: 
+            creating variables that capture team "momentum" in the last 5 matches.
+          </p>
+        </div>
+        <div className="bg-dark-700 p-4 rounded-lg">
+          <h4 className="text-white font-medium mb-2">🎯 Product insight:</h4>
+          <p className="text-gray-300">
+            Simplicity in UI is crucial. Users want quick insights, not to get lost in 
+            complex tables. Streamlit + Plotly turned out to be the perfect combination.
+          </p>
+        </div>
+        <div className="bg-dark-700 p-4 rounded-lg">
+          <h4 className="text-white font-medium mb-2">🚀 Business insight:</h4>
+          <p className="text-gray-300">
+            The freemium model allows people to try the tool without friction, while 
+            premium mode can offer more sophisticated analysis for advanced users.
+          </p>
+        </div>
+      </div>
+
+      <div className="bg-gradient-to-r from-primary-600/20 to-blue-600/20 p-8 rounded-xl mb-8">
+        <h2 className="text-2xl font-medium text-white mb-4">
+          🚀 Want to be a Beta Tester?
+        </h2>
+        <p className="text-gray-300 mb-6">
+          TOTAL 90 is in its final development phases. If you love football + data and want early 
+          access to test the tool before the official launch, I'd love your feedback!
+        </p>
+        <div className="flex flex-wrap gap-4">
+          <a 
+            href="https://www.linkedin.com/in/richard-garcia-vizcaino?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BHMn5696vRn2r90zf33OFow%3D%3D" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
+          >
+            Contact on LinkedIn
+          </a>
+          <a 
+            href="mailto:richardlisongarcia@gmail.com" 
+            className="px-6 py-3 bg-dark-700 text-gray-300 rounded-lg hover:bg-dark-600 transition-colors"
+          >
+            Send Email
+          </a>
+        </div>
+      </div>
+
+      <p className="text-lg text-gray-300 italic">
+        If you know someone who loves football + data, share it! TOTAL 90's power lies in the community 
+        that uses and improves it. ⚽️📊
+      </p>
+    </div>
+  );
+
+  const total90Content = slug === 'total-90-football-ai-app'
+    ? (isEnglish ? total90ContentEN : total90ContentES)
+    : null;
+
   const clientBudgetMemeContent = slug === 'cliente-exigente-presupuesto' || slug === 'demanding-client-budget'
     ? (isEnglish ? clientBudgetMemeContentEN : clientBudgetMemeContentES)
     : null;
@@ -1050,6 +1502,7 @@ bot.onText(/\/remind (.+)/, (msg, match) => {
       {teslaContent}
       {deepseekContent}
       {founderContent}
+      {total90Content}
       {promptsBookContent}
       {botTutorialContent}
       {memeContent}
