@@ -9,7 +9,7 @@ export default function SocialLinks({ className }: SocialLinksProps) {
   const socialLinks = [
     { icon: <Github size={20} />, href: 'https://github.com/riche45', label: 'GitHub' },
     { icon: <Twitter size={20} />, href: 'https://x.com/codeand0', label: 'Twitter/X' },
-    { icon: <Linkedin size={20} />, href: 'https://linkedin.com', label: 'LinkedIn' },
+    { icon: <Linkedin size={20} />, href: 'https://www.linkedin.com/in/richard-garcia-vizcaino', label: 'LinkedIn' },
   ];
 
   return (

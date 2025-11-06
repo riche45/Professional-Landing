@@ -53,7 +53,7 @@ export default function About() {
       <h2 className="text-2xl font-semibold text-primary-400 mb-4">{isEnglish ? 'Social & Contact' : 'Redes y contacto'}</h2>
       <p className="mb-8 text-gray-300 flex flex-wrap gap-4 items-center">
         <a href="https://twitter.com/codeand0" target="_blank" rel="noopener noreferrer" className="text-primary-400 underline">Twitter</a>
-        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" className="text-primary-400 underline">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/richard-garcia-vizcaino" target="_blank" rel="noopener noreferrer" className="text-primary-400 underline">LinkedIn</a>
         <a href="https://github.com/riche45" target="_blank" rel="noopener noreferrer" className="text-primary-400 underline">GitHub</a>
         <a href="mailto:richardlisongarcia@gmail.com" className="text-primary-400 underline">Email</a>
       </p>

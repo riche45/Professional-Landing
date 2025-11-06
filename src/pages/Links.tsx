@@ -9,7 +9,7 @@ export default function Links() {
       category: t('links.categories.social'),
       links: [
         {
-          icon: <Linkedin size={24} />, name: 'LinkedIn', url: 'https://linkedin.com', desc: t('links.social.linkedin')
+          icon: <Linkedin size={24} />, name: 'LinkedIn', url: 'https://www.linkedin.com/in/richard-garcia-vizcaino', desc: t('links.social.linkedin')
         },
         {
           icon: <Github size={24} />, name: 'GitHub', url: 'https://github.com/riche45', desc: t('links.social.github')
