@@ -89,14 +89,14 @@ export default {
     scrollRight: 'Scroll right',
   },
   footer: {
-    copyright: '© 2020 - 2025',
+    copyright: '© 2026',
     builtWith: 'Built with',
     theme: 'Theme',
     designedBy: 'designed by',
   },
   profile: {
     greeting: "Hey, I'm Richard García!",
-    description: 'entrepreneur,\n designer,\ncreator,\nsoftware dev.',
+    description: 'entrepreneur,\n designer,\ncreator,\ndev.',
     experience: "For over 5 years, I've helped companies solve business problems with innovative solutions in domains such as finance, technology, healthcare, and education.",
   },
   chat: {
@@ -418,6 +418,14 @@ export default {
         category: 'How Tos',
         slug: 'launch-intentional-startup',
         imageSrc: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+      },
+      {
+        title: 'COVID-19 Detection with AI: When Illness Became Code',
+        description: 'A personal experience with COVID-19 led me to build a Deep Learning detection system that achieved 99.5% sensitivity. This is the story of how pain transformed into a project with real impact.',
+        date: '2026-02-13',
+        category: 'Articles',
+        slug: 'covid19-ai-detection',
+        imageSrc: 'https://images.pexels.com/photos/3992933/pexels-photo-3992933.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
       }
     ]
   },

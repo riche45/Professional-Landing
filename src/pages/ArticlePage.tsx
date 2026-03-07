@@ -1485,6 +1485,394 @@ bot.onText(/\/remind (.+)/, (msg, match) => {
     ? (isEnglish ? clientBudgetMemeContentEN : clientBudgetMemeContentES)
     : null;
 
+  const covidContentES = (
+    <div className="prose prose-invert max-w-none">
+      <p className="text-xl text-gray-300 mb-8">
+        La pandemia de COVID-19 no fue solo un evento que vi en las noticias. Fue algo que viví en carne propia,
+        desde la cama en mi casa, luchando contra una enfermedad que me llevó al límite. Esa experiencia me obligó
+        a replantearme todo: mi carrera, mis prioridades, y sobre todo, cómo podía usar lo que sé para que otros no
+        pasaran por lo mismo.
+      </p>
+
+      <h2 className="text-2xl font-medium text-primary-400 mb-6">
+        Cuando el COVID dejó de ser una noticia y se convirtió en mi realidad
+      </h2>
+
+      <p className="mb-6">
+        Recuerdo perfectamente el momento en que todo cambió. La fiebre que no cedía, la dificultad para respirar,
+        y la sensación de que tu cuerpo está librando una batalla que no sabes si va a ganar. Me encontré gravemente
+        enfermo. Los hospitales estaban colapsados, los médicos agotados, y yo era uno más en una estadística que
+        crecía cada día.
+      </p>
+
+      <p className="mb-6">
+        En esos días de incertidumbre, entre la fiebre y el silencio de mi habitación, empecé a pensar
+        en lo que podría hacer diferente si salía de esta. No hablo solo de "vivir más", sino de desarrollar mis habilidades
+        para algo que realmente importara. Cuando me recuperé, esa idea se quedó conmigo como una deuda
+        pendiente.
+      </p>
+
+      <h2 className="text-2xl font-medium text-primary-400 mb-6">
+        De paciente a investigador: canalizando la frustración en código
+      </h2>
+
+      <p className="mb-6">
+        Años después, encontré un dataset en Kaggle con 5,856 radiografías de tórax: casos normales y casos de
+        neumonía (incluyendo COVID-19). Y algo hizo clic. ¿Y si pudiera construir un sistema que ayudara a detectar
+        la enfermedad automáticamente? No para reemplazar a los médicos, sino para darles una herramienta que les
+        ahorrara tiempo cuando más lo necesitaban.
+      </p>
+
+      <p className="mb-6">
+        El problema era real: durante la pandemia, los radiólogos analizaban más de 500 radiografías al día,
+        trabajando turnos de 12+ horas. La fatiga llevaba a errores, y un falso negativo podía significar enviar
+        a un paciente enfermo a casa. Yo había sido ese paciente. Sabía lo que se sentía.
+      </p>
+
+      <h2 className="text-2xl font-medium text-primary-400 mb-6">
+        La arquitectura: ResNet34 + Transfer Learning
+      </h2>
+
+      <p className="mb-6">
+        Elegí PyTorch como framework y ResNet34 como arquitectura base, aplicando Transfer Learning desde ImageNet
+        (1.2 millones de imágenes). La idea era simple pero poderosa: tomar una red neuronal que ya "sabe ver"
+        el mundo y enseñarle a ver radiografías de tórax.
+      </p>
+
+      <div className="bg-dark-800 rounded-lg p-6 mb-8">
+        <h4 className="text-lg font-medium text-primary-400 mb-4">Stack Tecnológico</h4>
+        <ul className="space-y-2 text-gray-300">
+          <li><strong className="text-white">Framework:</strong> PyTorch 2.0+</li>
+          <li><strong className="text-white">Arquitectura:</strong> ResNet34 (Transfer Learning desde ImageNet)</li>
+          <li><strong className="text-white">Data Augmentation:</strong> Albumentations (transformaciones seguras para imágenes médicas)</li>
+          <li><strong className="text-white">Optimización:</strong> Adam + ReduceLROnPlateau</li>
+          <li><strong className="text-white">Regularización:</strong> Class Weights para manejar desbalanceo</li>
+          <li><strong className="text-white">Interpretabilidad:</strong> Grad-CAM</li>
+          <li><strong className="text-white">Hardware:</strong> GPU Tesla T4 (Kaggle)</li>
+        </ul>
+      </div>
+
+      <p className="mb-6">
+        El pipeline procesaba las radiografías en formato JPEG (1024×1024), las redimensionaba a 224×224,
+        aplicaba normalización con estadísticas de ImageNet y augmentaciones cuidadosas: flip horizontal,
+        rotación ±10°, ajustes de brillo y contraste. Nunca flip vertical, porque una radiografía invertida
+        no tiene sentido anatómico.
+      </p>
+
+      <h2 className="text-2xl font-medium text-primary-400 mb-6">
+        99.5% de sensibilidad: por qué esta métrica importa más que la accuracy
+      </h2>
+
+      <p className="mb-6">
+        El modelo alcanzó un 84% de accuracy general, pero la métrica que realmente importa en un contexto de
+        screening médico es la <strong className="text-white">sensibilidad: 99.5%</strong>. De 390 casos reales
+        de neumonía/COVID en el set de test, el modelo detectó 388. Solo 2 casos se le escaparon.
+      </p>
+
+      <div className="bg-dark-800 rounded-lg p-6 mb-8">
+        <h4 className="text-lg font-medium text-primary-400 mb-4">Resultados clave</h4>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="text-center">
+            <p className="text-3xl font-bold text-primary-400">99.5%</p>
+            <p className="text-sm text-gray-400">Sensibilidad</p>
+          </div>
+          <div className="text-center">
+            <p className="text-3xl font-bold text-white">84%</p>
+            <p className="text-sm text-gray-400">Accuracy</p>
+          </div>
+          <div className="text-center">
+            <p className="text-3xl font-bold text-white">98.6%</p>
+            <p className="text-sm text-gray-400">NPV</p>
+          </div>
+          <div className="text-center">
+            <p className="text-3xl font-bold text-white">58.1%</p>
+            <p className="text-sm text-gray-400">Especificidad</p>
+          </div>
+        </div>
+      </div>
+
+      <p className="mb-6">
+        ¿Por qué aceptar una especificidad del 58.1%? Porque en contexto de pandemia y urgencias, la filosofía
+        es clara: <strong className="text-white">"Mejor prevenir que lamentar"</strong>. Los 98 falsos positivos
+        se confirman con un test PCR (costo: ~$20). Los 2 falsos negativos son 2 pacientes potencialmente enviados
+        a casa con COVID. Un modelo más "conservador" con 95% de especificidad tendría 50 falsos negativos.
+      </p>
+
+      <p className="mb-6">
+        La pregunta no es "¿cuántas PCR extras podemos evitar?" sino "¿cuántas vidas podemos salvar?".
+        48 detecciones adicionales frente al modelo conservador. Ese número no es abstracto cuando has estado
+        del otro lado de la camilla.
+      </p>
+
+      <h2 className="text-2xl font-medium text-primary-400 mb-6">
+        Grad-CAM: cuando la IA te muestra que está mirando donde debe
+      </h2>
+
+      <p className="mb-6">
+        Un modelo de IA que dice "neumonía" sin explicar por qué es una caja negra. Y los médicos no confían
+        en cajas negras. Por eso implementé Grad-CAM (Gradient-weighted Class Activation Mapping), una técnica
+        que genera mapas de calor mostrando qué regiones de la radiografía usa el modelo para tomar su decisión.
+      </p>
+
+      <p className="mb-6">
+        Los resultados fueron validadores: el modelo se enfocaba en las regiones basales de los pulmones,
+        detectaba patrones de "ground-glass" típicos de neumonía viral, y evaluaba ambos pulmones. No miraba
+        bordes, marcas ni artefactos. Estaba viendo lo que un radiólogo experimentado vería.
+      </p>
+
+      <div className="bg-dark-800 rounded-lg p-6 mb-8">
+        <h4 className="text-lg font-medium text-primary-400 mb-4">Lo que el modelo aprendió a detectar</h4>
+        <ul className="space-y-2 text-gray-300">
+          <li>✅ Opacidades pulmonares y consolidaciones</li>
+          <li>✅ Patrones ground-glass (típicos de COVID)</li>
+          <li>✅ Distribución bilateral (evalúa ambos pulmones)</li>
+          <li>✅ Foco en regiones basales (zona típica de neumonía)</li>
+          <li>✅ Ignora artefactos y marcas externas</li>
+          <li>✅ Limita su atención al parénquima pulmonar</li>
+        </ul>
+      </div>
+
+      <h2 className="text-2xl font-medium text-primary-400 mb-6">
+        Reflexión: cuando el dolor se convierte en propósito
+      </h2>
+
+      <p className="mb-6">
+        Este proyecto no es solo un ejercicio técnico. Es la forma en que canalicé una de las experiencias
+        más difíciles de mi vida. El COVID me enseñó que la tecnología no es un fin en sí misma; es una
+        herramienta que cobra sentido cuando resuelve problemas reales, cuando ayuda a personas reales.
+      </p>
+
+      <p className="mb-6">
+        Un sistema así, desplegado en urgencias, podría reducir un 58% la carga de trabajo de los radiólogos.
+        En telemedicina rural, podría dar un diagnóstico preliminar en menos de un segundo donde no hay
+        especialistas. En investigación retrospectiva, podría procesar miles de radiografías históricas
+        identificando casos no diagnosticados.
+      </p>
+
+      <p className="mb-8">
+        Pero más allá de los números, este proyecto me recuerda por qué elegí esta profesión. No por las
+        tecnologías de moda ni por los frameworks del momento, sino por la posibilidad de construir algo
+        que importe. Algo que, quizás, le ahorre a alguien ese momento de incertidumbre en una cama
+        de hospital.
+      </p>
+
+      <div className="bg-dark-800 rounded-lg p-6 mb-8">
+        <h4 className="text-lg font-medium text-primary-400 mb-4">Explora el proyecto</h4>
+        <p className="text-gray-300 mb-4">
+          El código fuente completo, los resultados y la documentación están disponibles en GitHub.
+        </p>
+        <a
+          href="https://github.com/riche45/COVID-Pneumonia-Detection"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
+        >
+          Ver en GitHub →
+        </a>
+      </div>
+
+      <p className="text-lg text-gray-300 italic">
+        Si este proyecto te resonó o conoces a alguien en el ámbito médico que podría beneficiarse de
+        herramientas como esta, compártelo. La IA en salud avanza cuando la comunidad se involucra. 🏥🤖
+      </p>
+    </div>
+  );
+
+  const covidContentEN = (
+    <div className="prose prose-invert max-w-none">
+      <p className="text-xl text-gray-300 mb-8">
+      The COVID-19 pandemic wasn't just something I saw on the news. It was something I experienced firsthand,
+
+        from my bed at home, battling an illness that pushed me to my limits. That experience forced
+        me to rethink everything: my career, my priorities, and above all, how I could use what I know so
+        others wouldn't have to go through the same thing.
+      </p>
+
+      <h2 className="text-2xl font-medium text-primary-400 mb-6">
+        When COVID stopped being news and became my reality
+      </h2>
+
+      <p className="mb-6">
+        I remember the exact moment everything changed. The fever that wouldn't break, the difficulty breathing,
+        and the feeling that your body is fighting a battle you're not sure it's going to win. I was seriously ill.
+        Hospitals were overwhelmed, doctors were exhausted, and I was just another number in a statistic that
+        grew every day.
+      </p>
+
+      <p className="mb-6">
+      In those uncertain days, between the fever and the silence of my room, I began to think
+      about what I could do differently if I made it through this. I'm not just talking about "living longer," but about developing my skills
+      for something that truly mattered. When I recovered, that idea stayed with me like an unfinished task.
+      </p>
+
+      <h2 className="text-2xl font-medium text-primary-400 mb-6">
+        From patient to researcher: channeling frustration into code
+      </h2>
+
+      <p className="mb-6">
+        Years later, I found a dataset on Kaggle with 5,856 chest X-rays: normal cases and pneumonia cases
+        (including COVID-19). And something clicked. What if I could build a system that helped detect the
+        disease automatically? Not to replace doctors, but to give them a tool that saved them time when they
+        needed it most.
+      </p>
+
+      <p className="mb-6">
+        The problem was real: during the pandemic, radiologists were analyzing over 500 X-rays per day,
+        working 12+ hour shifts. Fatigue led to errors, and a false negative could mean sending a sick
+        patient home. I had been that patient. I knew what it felt like.
+      </p>
+
+      <h2 className="text-2xl font-medium text-primary-400 mb-6">
+        The architecture: ResNet34 + Transfer Learning
+      </h2>
+
+      <p className="mb-6">
+        I chose PyTorch as my framework and ResNet34 as the base architecture, applying Transfer Learning
+        from ImageNet (1.2 million images). The idea was simple but powerful: take a neural network that
+        already "knows how to see" the world and teach it to see chest X-rays.
+      </p>
+
+      <div className="bg-dark-800 rounded-lg p-6 mb-8">
+        <h4 className="text-lg font-medium text-primary-400 mb-4">Tech Stack</h4>
+        <ul className="space-y-2 text-gray-300">
+          <li><strong className="text-white">Framework:</strong> PyTorch 2.0+</li>
+          <li><strong className="text-white">Architecture:</strong> ResNet34 (Transfer Learning from ImageNet)</li>
+          <li><strong className="text-white">Data Augmentation:</strong> Albumentations (medical-safe transforms)</li>
+          <li><strong className="text-white">Optimization:</strong> Adam + ReduceLROnPlateau</li>
+          <li><strong className="text-white">Regularization:</strong> Class Weights for imbalance handling</li>
+          <li><strong className="text-white">Interpretability:</strong> Grad-CAM</li>
+          <li><strong className="text-white">Hardware:</strong> GPU Tesla T4 (Kaggle)</li>
+        </ul>
+      </div>
+
+      <p className="mb-6">
+        The pipeline processed X-rays in JPEG format (1024×1024), resized them to 224×224, applied ImageNet
+        normalization and careful augmentations: horizontal flip, ±10° rotation, brightness and contrast
+        adjustments. Never vertical flip — an inverted X-ray makes no anatomical sense.
+      </p>
+
+      <h2 className="text-2xl font-medium text-primary-400 mb-6">
+        99.5% sensitivity: why this metric matters more than accuracy
+      </h2>
+
+      <p className="mb-6">
+        The model achieved 84% overall accuracy, but the metric that truly matters in a medical screening
+        context is <strong className="text-white">sensitivity: 99.5%</strong>. Out of 390 real pneumonia/COVID
+        cases in the test set, the model detected 388. Only 2 cases slipped through.
+      </p>
+
+      <div className="bg-dark-800 rounded-lg p-6 mb-8">
+        <h4 className="text-lg font-medium text-primary-400 mb-4">Key Results</h4>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="text-center">
+            <p className="text-3xl font-bold text-primary-400">99.5%</p>
+            <p className="text-sm text-gray-400">Sensitivity</p>
+          </div>
+          <div className="text-center">
+            <p className="text-3xl font-bold text-white">84%</p>
+            <p className="text-sm text-gray-400">Accuracy</p>
+          </div>
+          <div className="text-center">
+            <p className="text-3xl font-bold text-white">98.6%</p>
+            <p className="text-sm text-gray-400">NPV</p>
+          </div>
+          <div className="text-center">
+            <p className="text-3xl font-bold text-white">58.1%</p>
+            <p className="text-sm text-gray-400">Specificity</p>
+          </div>
+        </div>
+      </div>
+
+      <p className="mb-6">
+        Why accept 58.1% specificity? Because in the context of a pandemic and emergency rooms, the philosophy
+        is clear: <strong className="text-white">"Better safe than sorry."</strong> The 98 false positives are
+        confirmed with a PCR test (cost: ~$20). The 2 false negatives are 2 patients potentially sent home with
+        COVID. A more "conservative" model with 95% specificity would have 50 false negatives instead.
+      </p>
+
+      <p className="mb-6">
+        The question isn't "how many extra PCRs can we avoid?" but "how many lives can we save?" 48 additional
+        detections compared to the conservative model. That number isn't abstract when you've been on the other
+        side of the hospital bed.
+      </p>
+
+      <h2 className="text-2xl font-medium text-primary-400 mb-6">
+        Grad-CAM: when AI shows you it's looking where it should
+      </h2>
+
+      <p className="mb-6">
+        An AI model that says "pneumonia" without explaining why is a black box. And doctors don't trust black
+        boxes. That's why I implemented Grad-CAM (Gradient-weighted Class Activation Mapping), a technique that
+        generates heatmaps showing which regions of the X-ray the model uses to make its decision.
+      </p>
+
+      <p className="mb-6">
+        The results were validating: the model focused on the basal regions of the lungs, detected
+        "ground-glass" patterns typical of viral pneumonia, and evaluated both lungs. It didn't look at edges,
+        markings, or artifacts. It was seeing what an experienced radiologist would see.
+      </p>
+
+      <div className="bg-dark-800 rounded-lg p-6 mb-8">
+        <h4 className="text-lg font-medium text-primary-400 mb-4">What the model learned to detect</h4>
+        <ul className="space-y-2 text-gray-300">
+          <li>✅ Pulmonary opacities and consolidations</li>
+          <li>✅ Ground-glass patterns (typical of COVID)</li>
+          <li>✅ Bilateral distribution (evaluates both lungs)</li>
+          <li>✅ Focus on basal regions (typical pneumonia zone)</li>
+          <li>✅ Ignores artifacts and external markings</li>
+          <li>✅ Limits attention to lung parenchyma</li>
+        </ul>
+      </div>
+
+      <h2 className="text-2xl font-medium text-primary-400 mb-6">
+        Reflection: when pain becomes purpose
+      </h2>
+
+      <p className="mb-6">
+        This project isn't just a technical exercise. It's how I channeled one of the most difficult
+        experiences of my life. COVID taught me that technology isn't an end in itself — it's a tool that
+        gains meaning when it solves real problems, when it helps real people.
+      </p>
+
+      <p className="mb-6">
+        A system like this, deployed in emergency rooms, could reduce radiologists' workload by 58%. In
+        rural telemedicine, it could provide a preliminary diagnosis in under a second where there are no
+        specialists. In retrospective research, it could process thousands of historical X-rays identifying
+        undiagnosed cases.
+      </p>
+
+      <p className="mb-8">
+        But beyond the numbers, this project reminds me why I chose this profession. Not for the trendy
+        technologies or the frameworks of the moment, but for the possibility of building something that
+        matters. Something that might spare someone that moment of uncertainty in a hospital bed.
+      </p>
+
+      <div className="bg-dark-800 rounded-lg p-6 mb-8">
+        <h4 className="text-lg font-medium text-primary-400 mb-4">Explore the project</h4>
+        <p className="text-gray-300 mb-4">
+          The complete source code, results, and documentation are available on GitHub.
+        </p>
+        <a
+          href="https://github.com/riche45/COVID-Pneumonia-Detection"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
+        >
+          View on GitHub →
+        </a>
+      </div>
+
+      <p className="text-lg text-gray-300 italic">
+        If this project resonated with you or you know someone in the medical field who could benefit from
+        tools like this, share it. AI in healthcare advances when the community gets involved. 🏥🤖
+      </p>
+    </div>
+  );
+
+  const covidContent = slug === 'deteccion-covid19-ia' || slug === 'covid19-ai-detection'
+    ? (isEnglish ? covidContentEN : covidContentES)
+    : null;
+
   return (
     <div className="max-w-4xl mx-auto py-12 px-4">
       {/* Navegación */}
@@ -1539,6 +1927,7 @@ bot.onText(/\/remind (.+)/, (msg, match) => {
       {startupMvpContent}
       {privacyEthicsMemeContent}
       {clientBudgetMemeContent}
+      {covidContent}
 
       {/* Newsletter */}
       <Newsletter />

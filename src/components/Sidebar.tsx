@@ -19,7 +19,7 @@ export default function Sidebar({ onClose }: SidebarProps) {
     { icon: <Briefcase size={20} />, label: t('portfolio.title'), path: t('routes.portfolio') },
     { icon: <FolderKanban size={20} />, label: t('nav.projects'), path: t('routes.projects') },
     { icon: <Search size={20} />, label: t('nav.search'), path: t('routes.search') },
-    { icon: <Mic size={20} />, label: t('nav.podcast'), path: t('routes.podcast') },
+    // { icon: <Mic size={20} />, label: t('nav.podcast'), path: t('routes.podcast') },
     { icon: <FileText size={20} />, label: t('nav.resume'), path: t('routes.resume') },
     { icon: <AtSign size={20} />, label: t('nav.connects'), path: t('routes.connects') },
     { icon: <BarChart size={20} />, label: t('nav.surveys'), path: t('routes.surveys') },

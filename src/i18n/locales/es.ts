@@ -92,14 +92,14 @@ export default {
     scrollRight: 'Desplazar a la derecha',
   },
   footer: {
-    copyright: '© 2020 - 2025',
+    copyright: '© 2026',
     builtWith: 'Construido con',
     theme: 'Tema',
     designedBy: 'diseñado por',
   },
   profile: {
     greeting: '¡Hola, soy Richard García!',
-    description: 'emprendedor,\n diseñador,\ncreador,\ndev software.',
+    description: 'emprendedor,\n diseñador,\ncreador,\ndev.',
     experience: 'Durante más de 5 años, he ayudado a empresas a resolver problemas de negocio con soluciones innovadoras en dominios como finanzas, tecnología, salud y educación.',
   },
   chat: {
@@ -404,6 +404,14 @@ export default {
         category: 'Artículos',
         slug: 'total-90-football-ai-app',
         imageSrc: '/images/articles/total90/total90-1.png'
+      },
+      {
+        title: 'Detección de COVID-19 con IA: Cuando la Enfermedad se Convirtió en Código',
+        description: 'Una experiencia personal con el COVID-19 me llevó a desarrollar un sistema de detección con Deep Learning que alcanzó un 99.5% de sensibilidad. Esta es la historia de cómo el dolor se transformó en un proyecto con impacto real.',
+        date: '2026-02-13',
+        category: 'Artículos',
+        slug: 'deteccion-covid19-ia',
+        imageSrc: 'https://images.pexels.com/photos/3992933/pexels-photo-3992933.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
       }
     ]
   },

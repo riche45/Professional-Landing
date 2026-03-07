@@ -24,13 +24,13 @@ Este no es solo un portafolio estático. Es una aplicación web dinámica y mult
 
 ### Funcionalidades Destacadas
 
-*   **🧑‍💻 Perfil Profesional Dinámico**: Secciones interactivas para mostrar mi portafolio de trabajos, proyectos personales, artículos y currículum.
-*   **🌐 Soporte Multi-idioma (i18n)**: La aplicación está disponible en Español e Inglés, utilizando `react-i18next` para una experiencia de usuario localizada.
-*   **🎨 Tema Oscuro/Claro**: Selector de tema persistente para adaptarse a las preferencias del usuario.
-*   **🤖 Asistente con IA**: Un chatbot personalizado, integrado con la API de OpenAI, capaz de responder preguntas sobre mi experiencia, habilidades y proyectos.
-*   **📝 Formularios y Encuestas Dinámicas**: Múltiples formularios (suscripción a newsletter, sugerencias, contacto, CV) y encuestas interactivas, con los datos gestionados a través de **Supabase** y notificaciones por email con **EmailJS**.
-*   **📊 Dashboard de Administración**: Un panel privado para visualizar los resultados de las encuestas enviadas por los usuarios.
-*   **📱 Diseño 100% Responsive**: Interfaz moderna y totalmente adaptable a cualquier dispositivo, construida con Tailwind CSS.
+*   **Perfil Profesional Dinámico**: Secciones interactivas para mostrar mi portafolio de trabajos, proyectos personales, artículos y currículum.
+*   **Soporte Multi-idioma (i18n)**: La aplicación está disponible en Español e Inglés, utilizando `react-i18next` para una experiencia de usuario localizada.
+*   **Tema Oscuro/Claro**: Selector de tema persistente para adaptarse a las preferencias del usuario.
+*   **Asistente con IA**: Un chatbot personalizado, integrado con la API de OpenAI, capaz de responder preguntas sobre mi experiencia, habilidades y proyectos.
+*   **Formularios y Encuestas Dinámicas**: Múltiples formularios (suscripción a newsletter, sugerencias, contacto, CV) y encuestas interactivas, con los datos gestionados a través de **Supabase** y notificaciones por email con **EmailJS**.
+*   **Dashboard de Administración**: Un panel privado para visualizar los resultados de las encuestas enviadas por los usuarios.
+*   **Diseño 100% Responsive**: Interfaz moderna y totalmente adaptable a cualquier dispositivo, construida con Tailwind CSS.
 
 ---
 

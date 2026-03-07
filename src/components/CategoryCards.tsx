@@ -74,12 +74,12 @@ export default function CategoryCards() {
       to: '/memes', 
       color: 'bg-pink-500/10' 
     },
-    { 
-      title: t('categories.podcast'), 
-      imageSrc: 'https://images.pexels.com/photos/4467737/pexels-photo-4467737.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 
-      to: '/podcast', 
-      color: 'bg-blue-500/10' 
-    },
+    // { 
+    //   title: t('categories.podcast'), 
+    //   imageSrc: 'https://images.pexels.com/photos/4467737/pexels-photo-4467737.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 
+    //   to: '/podcast', 
+    //   color: 'bg-blue-500/10' 
+    // },
     { 
       title: t('categories.links'), 
       imageSrc: 'https://images.pexels.com/photos/5417664/pexels-photo-5417664.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 

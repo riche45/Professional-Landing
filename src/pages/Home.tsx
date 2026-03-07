@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import CategoryCards from '../components/CategoryCards';
 import ArticleCard from '../components/ArticleCard';
-import IntegratedChat from '../components/IntegratedChat';
+// import IntegratedChat from '../components/IntegratedChat';
 import Newsletter from '../components/Newsletter';
 
 interface Article {
@@ -35,7 +35,7 @@ export default function Home() {
 
   return (
     <div className="max-w-4xl mx-auto">
-      {/* Chat Section */}
+      {/* Chat Section - temporarily hidden
       <motion.div
         initial="hidden"
         animate="visible"
@@ -44,6 +44,7 @@ export default function Home() {
       >
         <IntegratedChat />
       </motion.div>
+      */}
 
       {/* Categories */}
       <motion.div
