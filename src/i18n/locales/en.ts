@@ -97,7 +97,7 @@ export default {
   profile: {
     greeting: "Hey, I'm Richard García!",
     description: 'entrepreneur,\n designer,\ncreator,\ndev.',
-    experience: "For over 5 years, I've helped companies solve business problems with innovative solutions in domains such as finance, technology, healthcare, and education.",
+    experience: "Experienced professional in solving business problems with innovative solutions in domains such as finance, technology, health and education.",
   },
   chat: {
     welcome: "Hi! 👋 I'm Richard's personal assistant. I can tell you about:\n\n📊 Experience and completed projects\n💻 Technologies and skills\n💰 Hourly rates (starting at $20 for freelance projects)\n📝 Articles and content\n\nYou can ask me about any of these topics or type 'prices' to see detailed rates. How can I help you?",

@@ -100,7 +100,7 @@ export default {
   profile: {
     greeting: '¡Hola, soy Richard García!',
     description: 'emprendedor,\n diseñador,\ncreador,\ndev.',
-    experience: 'Durante más de 5 años, he ayudado a empresas a resolver problemas de negocio con soluciones innovadoras en dominios como finanzas, tecnología, salud y educación.',
+    experience: 'Profesional experimentado en resolver problemas de negocio con soluciones innovadoras en dominios como finanzas, tecnología, salud y educación.',
   },
   chat: {
     welcome: "¡Hola! 👋 Soy el asistente personal de Richard. Puedo informarte sobre:\n\n🤖 Servicios de IA especializada\n📊 Experiencia y proyectos realizados\n💻 Tecnologías y habilidades\n💰 Tarifas por hora (desde $20 para proyectos freelance)\n📝 Artículos y contenido\n\nPuedes preguntarme sobre cualquiera de estos temas o escribir 'precios' para ver las tarifas detalladas. ¿En qué puedo ayudarte?",

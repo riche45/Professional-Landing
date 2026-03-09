@@ -1,4 +1,4 @@
-import { Github, Twitter, Linkedin } from 'lucide-react';
+import { Github, Linkedin } from 'lucide-react';
 import { cn } from '../utils/cn';
 
 interface SocialLinksProps {
@@ -8,7 +8,7 @@ interface SocialLinksProps {
 export default function SocialLinks({ className }: SocialLinksProps) {
   const socialLinks = [
     { icon: <Github size={20} />, href: 'https://github.com/riche45', label: 'GitHub' },
-    { icon: <Twitter size={20} />, href: 'https://x.com/codeand0', label: 'Twitter/X' },
+    { icon: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46L20 4"/></svg>, href: 'https://x.com/codeand0', label: 'X' },
     { icon: <Linkedin size={20} />, href: 'https://www.linkedin.com/in/richard-garcia-vizcaino', label: 'LinkedIn' },
   ];
 
